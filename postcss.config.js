@@ -24,8 +24,8 @@ module.export = {
         rule.selector.indexOf(':after') === -1 &&
         rule.selector.indexOf(':before') === -1,
     },
-    'cssnano':{
-        preset: 'default',
-    }
+    cssnano: {
+      preset: 'default',
+    },
   },
 };

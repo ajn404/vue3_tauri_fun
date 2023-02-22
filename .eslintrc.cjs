@@ -1,5 +1,5 @@
 /* eslint-env node */
-require("@rushstack/eslint-patch/modern-module-resolution");
+require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
   root: true,
@@ -19,10 +19,10 @@ module.exports = {
     },
   },
   extends: [
-    "eslint:recommended",
-    "plugin:vue/vue3-essential",
-    "plugin:@typescript-eslint/recommended",
-    "prettier",
+    'eslint:recommended',
+    'plugin:vue/vue3-essential',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
   ],
   rules: {
     'vue/script-setup-uses-vars': 'error',

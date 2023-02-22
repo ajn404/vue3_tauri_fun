@@ -5,3 +5,4 @@ CHANGELOG.en-US.md
 pnpm-lock.yaml
 */components.d.ts
 *.md
+package-lock.json
