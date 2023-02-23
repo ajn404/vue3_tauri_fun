@@ -5,3 +5,7 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>;
   export default component;
 }
+
+// vite-env.d.ts
+declare const NODE_ENV: string
+declare const VUE_APP_MODE: string
