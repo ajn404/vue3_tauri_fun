@@ -12,7 +12,6 @@ const endRoutes = Object.keys(routes).map((path) => {
     component: routes[path],
   };
 });
-console.log(import.meta.env.MODE);
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
