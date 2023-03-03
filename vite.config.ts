@@ -12,72 +12,25 @@ import {
   HeadlessUiResolver,
   ElementUiResolver,
 } from 'unplugin-vue-components/resolvers';
- 
-const localAddress = 'http://127.0.0.1/api/v1/';
-const proxyOrigibTargets = [
-  {
-    name: '/login',
-    target: `${localAddress}login-service`,
-  },
-  {
-    name: '/dcsRepair',
-    target: `${localAddress}dcs-repair-service`,
-  },
-  {
-    name: '/dcsPart',
-    target: `${localAddress}dcs-part-service`,
-  },
-  {
-    name: '/dcsManage',
-    target: `${localAddress}dcs-manage-service`,
-  },
-  {
-    name: '/dcsVehicle',
-    target: `${localAddress}dcs-vehicle-service`,
-  },
-  {
-    name: '/dmsRepair',
-    target: `${localAddress}dms-repair-service`,
-  },
-  {
-    name: '/dmsPart',
-    target: `${localAddress}dms-part-service`,
-  },
-  {
-    name: '/dmsInterface',
-    target: `${localAddress}dms-interface-service`,
-  },
-  {
-    name: '/media',
-    target: 'https://media.evscrm.ford.com.cn',
-  },
-];
 
-const proxy = {};
-proxyOrigibTargets.map((item) => {
-  proxy[item.name] = {
-    target: item.target,
-    changeOrigin: true,
-    rewrite: (path) => path.replace(item.name, ''),
-  };
-});
+type MyObject = {
+  [key: string]: any;
+}
 
-const loadEnv = (mode) => {
-  
-  const env = require(`./env/.env.${mode}.js`);
-  
-  const ret = {};
+const loadEnv = (mode: string) => {
+  const env: [string] = require(`./env/.env.${mode}.js`);
+  const ret:MyObject = {};
   for (const key in env) {
-    ret[key] = JSON.stringify(env[key]);
+      ret[key] = JSON.stringify(env[key]);
   }
+  console.log(ret);
+
   return ret;
 };
 
-
-
 export default defineConfig(({ command, mode, ssrBuild }) => {
-console.log(command,loadEnv(mode),ssrBuild,);
-  return{
+  console.log(command, loadEnv(mode), ssrBuild);
+  return {
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
@@ -90,9 +43,8 @@ console.log(command,loadEnv(mode),ssrBuild,);
     },
     server: {
       open: true,
-      proxy: proxy,
     },
-  
+
     build: {
       // 生产环境下，去掉console.log语句
       terserOptions: {
@@ -122,5 +74,5 @@ console.log(command,loadEnv(mode),ssrBuild,);
         dts: 'src/components.d.ts',
       }),
     ],
-  }
+  };
 });
