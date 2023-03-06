@@ -6,11 +6,10 @@
             <span></span>
             <span></span>
             <ul id="menu">
-                <li v-for="item in routes" :key="item.path" @click="routeClick(item)">{{ item.name }}</li>
-                <li v-for="item in routes" :key="item.path" @click="routeClick(item)">{{ item.name }}</li>
-                <li v-for="item in routes" :key="item.path" @click="routeClick(item)">{{ item.name }}</li>
-                <li v-for="item in routes" :key="item.path" @click="routeClick(item)">{{ item.name }}</li>
-                <li v-for="item in routes" :key="item.path" @click="routeClick(item)">{{ item.name }}</li>
+                <li v-for="item in routes" :class="item.name === route.name ? 'active' : ''" :key="item.path"
+                    @click="routeClick(item)">
+                    {{ item.name }}
+                </li>
             </ul>
         </div>
     </nav>
@@ -18,11 +17,12 @@
 
 <script lang="ts" setup>
 import { endRoutes } from '@/router';
-import { reactive ,ref, type Ref} from 'vue';
-import { useRouter } from 'vue-router';
+import { reactive, ref, type Ref } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 const routes = reactive(endRoutes);
 const router = useRouter();
-const checkbox:Ref<HTMLInputElement| undefined> = ref();
+const route = useRoute();
+const checkbox: Ref<HTMLInputElement | undefined> = ref();
 
 const routeClick = (route: endRoutes) => {
     router.push({
@@ -51,6 +51,7 @@ nav {
             color: #232323;
             transition: color 0.3s ease;
 
+            &.active,
             &:hover {
                 color: tomato;
             }

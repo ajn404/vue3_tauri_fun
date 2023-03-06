@@ -1,5 +1,3 @@
 <template>
-    <div>
-        three
-    </div>
+    <div></div>
 </template>
