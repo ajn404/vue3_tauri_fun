@@ -1,11 +1,8 @@
 <script setup lang="ts" name="App">
 import { RouterView } from 'vue-router';
 import { endRoutes } from './router';
-import Menu from './views/menu.vue';
+import Menu from './views/menu/index.vue';
 console.log(endRoutes);
-
-
-
 </script>
 
 <template>
@@ -23,8 +20,11 @@ console.log(endRoutes);
   </div>
 </template>
 
-<style>
+<style lang="scss">
 .App{
-  display: flex;
+  display: grid;
+  grid-template-columns: 10% 1fr;
+  width: 100vw;
+  height: 100vh;
 }
 </style>

@@ -40,6 +40,10 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
     css: {
       postcss: './postcss.config.js',
       devSourcemap: true,
+      preprocessorOptions: {
+        scss: {
+        }
+      }
     },
     server: {
       open: true,
