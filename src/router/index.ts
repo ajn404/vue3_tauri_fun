@@ -2,23 +2,52 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 
 //vite路由自动化
 const routes = import.meta.glob('@/views/routes/**/*.vue');
-export const endRoutes = Object.keys(routes).map((path) => {
-  const nameList = path.match(/\/views\/routes\/(.*)\.vue$/);
-    const name = nameList?nameList[1]:"";
-    const indexName = path.match(/\/views\/routes\/(.*)index\.vue$/);
-    const endPath = indexName ? indexName[1] : name;
-    return {
-      path: `/${endPath}`,
-      name: endPath,
-      component: routes[path],
-    };
+export type endRoutes = {
+  path: string,
+  name:string,
+  rank:number,
+  parent:string,
+  component: any,
+}
+
+export const endRoutes = Object.keys(routes).map((paths):endRoutes => {
+  const nameList = paths.match(/\/views\/routes\/(.*)\.vue$/);
+
+  const matchNameList = (nameList ? nameList[1] : '').split('/');
+
+  const name =
+    matchNameList.length > 1 &&
+    matchNameList[matchNameList.length - 1] === 'index'
+      ? matchNameList[matchNameList.length - 2]
+      : matchNameList[matchNameList.length - 1];
+  const indexName = paths.match(/\/views\/routes\/(.*)\/index\.vue$/);
+  const path = indexName ? indexName[1] : nameList ? nameList[1] : '';
+  const backSlash = path.match(/\//g);
+  const rank = backSlash?.length || 0;
+
+  let parent = '';
+  if (rank > 0) {    
+    parent =
+      matchNameList.length > 1 &&
+      matchNameList[matchNameList.length - 1] === 'index'
+        ? matchNameList[matchNameList.length - 3]
+        : matchNameList[matchNameList.length - 2];
+  }
+
+  
+  return {
+    path: `/${path}`,
+    name,
+    rank,
+    parent,
+    component: routes[paths],
+  };
 });
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: endRoutes,
 });
-console.log(endRoutes);
 
 //this code is providing error
 //handling for the replace method
