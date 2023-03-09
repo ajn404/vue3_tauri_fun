@@ -1,30 +1,40 @@
 <script setup lang="ts" name="App">
 import { RouterView } from 'vue-router';
-import { endRoutes } from './router';
 import Menu from './views/menu/index.vue';
-console.log(endRoutes);
+
 </script>
 
 <template>
   <div class="App">
-    <transition>
-      <keep-alive>
-        <Menu />
-      </keep-alive>
-    </transition>
-    <transition>
-      <keep-alive>
-        <RouterView />
-      </keep-alive>
-    </transition>
+    <div class="menu">
+      <transition>
+        <keep-alive>
+          <Menu />
+        </keep-alive>
+      </transition>
+    </div>
+    <div class="view">
+      <transition>
+        <keep-alive>
+          <RouterView />
+        </keep-alive>
+      </transition>
+    </div>
   </div>
 </template>
 
 <style lang="scss">
-.App{
-  display: grid;
-  grid-template-columns: 10% 1fr;
+.App {
   width: 100vw;
   height: 100vh;
+  position: relative;
+  .view{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
+
 </style>

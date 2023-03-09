@@ -6,10 +6,16 @@
             <span></span>
             <span></span>
             <ul id="menu">
-                <li v-for="item in routes" :class="item.name === route.name ? 'active' : ''" :key="item.path"
+
+                <li v-for="item in routes" :key="item.path"
+                    :class="[(item.name === route.name ? 'active' : ''), `level-${item.rank + 1}`]"
                     @click="routeClick(item)">
                     {{ item.name }}
+                    <span>
+                        ({{ item.path }})
+                    </span>
                 </li>
+
             </ul>
         </div>
     </nav>
@@ -29,33 +35,26 @@ const routeClick = (route: endRoutes) => {
         name: route.name,
         path: route.path,
     })
-    checkbox.value?.click();
+    if (route.rank !== 0) checkbox.value?.click();
 }
 
 </script>
 
 
 <style lang="scss">
+$li-font-size: 22px;
+
 nav {
+    position: relative;
+
     #menuToggle {
         display: block;
-        position: relative;
+        position: fixed;
         top: 50px;
         left: 50px;
         z-index: 1;
         -webkit-user-select: none;
         user-select: none;
-
-        li {
-            text-decoration: none;
-            color: #232323;
-            transition: color 0.3s ease;
-
-            &.active,
-            &:hover {
-                color: tomato;
-            }
-        }
 
         input {
             display: block;
@@ -70,7 +69,7 @@ nav {
             -webkit-touch-callout: none;
         }
 
-        span {
+        &>span {
             display: block;
             width: 33px;
             height: 4px;
@@ -98,15 +97,16 @@ nav {
             opacity: 1;
             transform: rotate(45deg) translate(-2px, -1px);
             background: #232323;
-        }
 
-        input:checked~span:nth-last-child(3) {
-            opacity: 0;
-            transform: rotate(0deg) scale(0.2, 0.2);
-        }
+            &:nth-last-child(3) {
+                opacity: 0;
+                transform: rotate(0deg) scale(0.2, 0.2);
+            }
 
-        input:checked~span:nth-last-child(2) {
-            transform: rotate(-45deg) translate(0, -1px);
+            &:nth-last-child(2) {
+                transform: rotate(-45deg) translate(0, -1px);
+            }
+
         }
 
         input:checked~ul {
@@ -117,11 +117,14 @@ nav {
 
     #menu {
         position: absolute;
-        min-width: 100%;
+        min-width: 30%;
         min-height: 100vh;
+        max-height: 100vh;
+        overflow: scroll;
         margin: -100px 0 0 -50px;
         padding: 50px;
-        padding-top: 125px;
+        top: 0;
+        padding-top: 225px;
         background: #ededed;
         list-style-type: none;
         -webkit-font-smoothing: antialiased;
@@ -131,7 +134,38 @@ nav {
 
         li {
             padding: 10px 0;
-            font-size: 22px;
+            text-decoration: none;
+            color: #232323;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+                font-weight: 100;
+            }
+
+            &.active,
+            &:hover {
+                color: tomato;
+            }
+
+            @for $i from 1 through 4 {
+                $fontsize: calc(44px / $i);
+                $font-weight: calc(400 / $i );
+                $margin-left-right: calc($i*20px);
+
+                &.level-#{$i} {
+                    font-size: $fontsize;
+                    margin: 0 $margin-left-right;
+                    font-weight: $font-weight;
+                    line-height: $fontsize;
+
+                    span {
+                        font-size: calc($fontsize /2);
+                    }
+                }
+            }
         }
     }
 }

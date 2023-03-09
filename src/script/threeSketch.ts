@@ -2,10 +2,9 @@ import * as THREE from "three";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 interface optionsConfig {
-    container: HTMLElement
+    container: HTMLElement|null
 }
 export default class Sketch {
-    time: number;
     geometry: any;
     material: any;
     mesh: any;
@@ -16,6 +15,8 @@ export default class Sketch {
     width: any;
     height: any;
     control: any;
+    time: any;
+
 
     init(options: optionsConfig) {
         this.time = 10;
@@ -38,9 +39,7 @@ export default class Sketch {
         });
         this.renderer.setSize(this.width, this.height);
         this.container.appendChild(this.renderer.domElement);
-
         this.control = new OrbitControls(this.camera, this.renderer.domElement);
-
         this.resize()
         addEventListener("resize", this.resize.bind(this), false)
         this.addObject();
