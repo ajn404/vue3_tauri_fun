@@ -1,6 +1,19 @@
 <script setup lang="ts" name="App">
-import { RouterView } from 'vue-router';
+import { RouterView, useRoute } from 'vue-router';
 import Menu from './views/menu/index.vue';
+import { watch } from 'vue';
+
+const route = useRoute();
+watch(
+  () => route.path,
+  (newPath, oldPath) => {
+    console.log(`路由从 ${oldPath} 切换到了 ${newPath}`);
+    // const newPathLevel = newPath.split("/").length;
+    // const oldPathLevel = oldPath.split("/").length;
+
+
+  }
+)
 
 </script>
 
@@ -13,13 +26,15 @@ import Menu from './views/menu/index.vue';
         </keep-alive>
       </transition>
     </div>
-    <div class="view">
-      <transition>
-        <keep-alive>
-          <RouterView />
-        </keep-alive>
-      </transition>
-    </div>
+    <KeepAlive>
+      <router-view v-slot="{ Component }">
+        <XyzTransition appear :xyz="`fade stagger-2`" mode="in-out">
+          <component :is="Component" />
+        </XyzTransition>
+      </router-view>
+    </KeepAlive>
+
+
   </div>
 </template>
 
@@ -28,13 +43,7 @@ import Menu from './views/menu/index.vue';
   width: 100vw;
   height: 100vh;
   position: relative;
-  .view{
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-  }
-}
 
+
+}
 </style>

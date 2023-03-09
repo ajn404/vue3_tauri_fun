@@ -35,7 +35,7 @@ const routeClick = (route: endRoutes) => {
         name: route.name,
         path: route.path,
     })
-    if (route.rank !== 0) checkbox.value?.click();
+    // if (route.rank !== 0) checkbox.value?.click();
 }
 
 </script>
@@ -125,7 +125,8 @@ nav {
         padding: 50px;
         top: 0;
         padding-top: 225px;
-        background: #ededed;
+        background-color: rgba($color: #ededed, $alpha: 0.5);
+        background-clip: content-box;
         list-style-type: none;
         -webkit-font-smoothing: antialiased;
         transform-origin: 0% 0%;
@@ -135,7 +136,7 @@ nav {
         li {
             padding: 10px 0;
             text-decoration: none;
-            color: #232323;
+            color: #887723;
             transition: color 0.3s ease;
             display: flex;
             align-items: center;
@@ -147,7 +148,7 @@ nav {
 
             &.active,
             &:hover {
-                color: tomato;
+                color: #000000;
             }
 
             @for $i from 1 through 4 {
