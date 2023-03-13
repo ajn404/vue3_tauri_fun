@@ -1,7 +1,15 @@
 <script setup lang="ts" name="App">
 import { RouterView, useRoute } from 'vue-router';
 import Menu from './views/menu/index.vue';
-import { watch } from 'vue';
+import { watch, ref, reactive, type StyleValue } from 'vue';
+import { useStore } from './stores';
+import { invoke } from '@tauri-apps/api';
+import { handleIsTauri } from '@/script/utils';
+
+if (handleIsTauri())
+  invoke('greet', { name: 'World' })
+    // `invoke` returns a Promise
+    .then((response) => console.log(response));
 
 const route = useRoute();
 watch(
@@ -10,16 +18,37 @@ watch(
     console.log(`路由从 ${oldPath} 切换到了 ${newPath}`);
     // const newPathLevel = newPath.split("/").length;
     // const oldPathLevel = oldPath.split("/").length;
-
-
   }
-)
+);
 
+const store = useStore();
+const menu = ref(store.menu);
+const viewStyle: StyleValue = reactive({});
+const component = ref(null);
+const handleOpenMenu = () => {
+  if (store.menu) {
+    cancelAnimationFrame(store.animationIds);
+  } else {
+    console.log(component.value);
+  }
+};
+
+watch(
+  () => store.menu,
+  (val) => {
+    menu.value = val;
+    viewStyle.transform = menu.value
+      ? `translate(${document.querySelector('#menu')?.clientWidth}px,0)`
+      : '';
+
+    handleOpenMenu();
+  }
+);
 </script>
 
 <template>
   <div class="App">
-    <div class="menu">
+    <div class="menu" ref="menu">
       <transition>
         <keep-alive>
           <Menu />
@@ -29,21 +58,25 @@ watch(
     <KeepAlive>
       <router-view v-slot="{ Component }">
         <XyzTransition appear :xyz="`fade stagger-2`" mode="in-out">
-          <component :is="Component" />
+          <component
+            class="component"
+            ref="component"
+            :style="viewStyle"
+            :is="Component"
+          />
         </XyzTransition>
       </router-view>
     </KeepAlive>
-
-
   </div>
 </template>
 
 <style lang="scss">
 .App {
-  width: 100vw;
   height: 100vh;
   position: relative;
 
-
+  & > * {
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  }
 }
 </style>
