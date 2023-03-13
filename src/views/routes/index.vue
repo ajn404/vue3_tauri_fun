@@ -18,9 +18,10 @@ const store = useStore();
 watch(
   () => store.menu,
   (val) => {
-    console.log(val);
     if (!val) {
       main();
+    } else {
+      cancelAnimationFrame(store.animationIds);
     }
   }
 );

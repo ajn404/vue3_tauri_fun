@@ -62,16 +62,16 @@ nav {
   #menuToggle {
     display: block;
     position: fixed;
-    top: 50px;
-    left: 50px;
+    top: 10px;
+    left: 10px;
     z-index: 1;
     -webkit-user-select: none;
     user-select: none;
 
     input {
       display: block;
-      width: 40px;
-      height: 32px;
+      width: 100px;
+      height: 100px;
       cursor: none;
       position: absolute;
       top: -7px;
@@ -129,17 +129,17 @@ nav {
     min-height: 100vh;
     max-height: 100vh;
     overflow: scroll;
-    margin: -100px 0 0 -50px;
-    padding: 50px;
+    margin: -100px 0 0 -10px;
+    padding: 125px 50px 50px 100px;
+    box-sizing: border-box;
     top: 0;
-    padding-top: 225px;
     background-color: rgba($color: #ededed, $alpha: 0.5);
     background-clip: content-box;
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
     transform-origin: 0% 0%;
     transform: translate(-100%, 0);
-
+    padding-inline-start: 40px;
     li {
       padding: 10px 0;
       text-decoration: none;

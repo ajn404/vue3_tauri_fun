@@ -25,13 +25,6 @@ const store = useStore();
 const menu = ref(store.menu);
 const viewStyle: StyleValue = reactive({});
 const component = ref(null);
-const handleOpenMenu = () => {
-  if (store.menu) {
-    cancelAnimationFrame(store.animationIds);
-  } else {
-    console.log(component.value);
-  }
-};
 
 watch(
   () => store.menu,
@@ -40,8 +33,6 @@ watch(
     viewStyle.transform = menu.value
       ? `translate(${document.querySelector('#menu')?.clientWidth}px,0)`
       : '';
-
-    handleOpenMenu();
   }
 );
 </script>
@@ -55,8 +46,8 @@ watch(
         </keep-alive>
       </transition>
     </div>
-    <KeepAlive>
-      <router-view v-slot="{ Component }">
+    <router-view v-slot="{ Component }">
+      <KeepAlive>
         <XyzTransition appear :xyz="`fade stagger-2`" mode="in-out">
           <component
             class="component"
@@ -65,8 +56,8 @@ watch(
             :is="Component"
           />
         </XyzTransition>
-      </router-view>
-    </KeepAlive>
+      </KeepAlive>
+    </router-view>
   </div>
 </template>
 
