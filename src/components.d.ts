@@ -10,7 +10,10 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Appeal: typeof import('./components/layout/appeal.vue')['default']
+    Codemirror: typeof import('./components/editor/codemirror.vue')['default']
+    ElButton: typeof import('element-plus/es')['ElButton']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    RustEditor: typeof import('./components/editor/rustEditor.vue')['default']
   }
 }
