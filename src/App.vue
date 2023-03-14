@@ -5,6 +5,7 @@ import { watch, ref, reactive, type StyleValue } from 'vue';
 import { useStore } from './stores';
 import { invoke } from '@tauri-apps/api';
 import { handleIsTauri } from '@/script/utils';
+import router from './router';
 
 if (handleIsTauri())
   invoke('greet', { name: 'World' })
@@ -16,6 +17,10 @@ watch(
   () => route.path,
   (newPath, oldPath) => {
     console.log(`路由从 ${oldPath} 切换到了 ${newPath}`);
+    //自动跳转index吧
+    if (oldPath === '/') {
+      router.push('/index');
+    }
     // const newPathLevel = newPath.split("/").length;
     // const oldPathLevel = oldPath.split("/").length;
   }
@@ -33,6 +38,9 @@ watch(
     viewStyle.transform = menu.value
       ? `translate(${document.querySelector('#menu')?.clientWidth}px,0)`
       : '';
+    if (!viewStyle.transform && menu.value) {
+      menu.value = false;
+    }
   }
 );
 </script>

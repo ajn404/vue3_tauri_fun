@@ -278,14 +278,6 @@
         just tell the one animation what to do. Here is a simplified version of
         whats going on behind the scenes:
       </p>
-
-      <RustEditor
-        :async="true"
-        :code="`fn main() {
-    println!(&quot;Hello, world!&quot;);
-}
-`"
-      />
     </article>
 
     <footer></footer>

@@ -1,5 +1,6 @@
 <template>
   <div class="view" ref="view">
+    通过 tauri读取assets目录下的tags.txt生成tags clound
     <div id="cursor"></div>
     <ul class="tags-cloud">
       <li class="tag" v-for="tag in tags" :key="tag">
@@ -13,8 +14,10 @@
 import { nextTick, ref, type Ref, watch } from 'vue';
 import TagsCloud from '@/script/tagsCloud';
 import { useStore } from '@/stores';
-const store = useStore();
+import { invoke } from '@tauri-apps/api';
+import { handleIsTauri } from '@/script/utils';
 
+const store = useStore();
 watch(
   () => store.menu,
   (val) => {
@@ -25,16 +28,20 @@ watch(
     }
   }
 );
-const tags = ref([
-  'Three',
-  'Three',
-  'Three',
-  'Three',
-  'Three',
-  'Three',
-  'Three',
-  'Three',
-]);
+const tags = ref(['Three', 'Vtk', 'Vue3', 'Ts', 'scss', 'git', 'tauri']);
+
+if (handleIsTauri())
+  invoke('read_tags')
+    // `invoke` returns a Promise
+    .then((response: any) => {
+      if (response?.length > 0) {
+        tags.value = response;
+        main();
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 
 const view: Ref<HTMLElement | null> = ref(null);
 const main = () => {
