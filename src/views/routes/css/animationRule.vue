@@ -1,6 +1,5 @@
 <template>
   <div class="view">
-    <h2>挤压和拉伸</h2>
     <h3>Squash and stretch</h3>
 
     <div class="rule-1">
@@ -10,7 +9,6 @@
       </article>
     </div>
 
-    <h2>预备动作</h2>
     <h3>Anticipation</h3>
 
     <div class="rule-2">
@@ -20,7 +18,6 @@
       </article>
     </div>
 
-    <h2>演出布局</h2>
     <h3>Staging</h3>
 
     <div class="rule-3">
@@ -31,23 +28,68 @@
       </article>
     </div>
 
-    <h2>连续运动和姿态对应</h2>
     <h3>Straight-Ahead Action and Pose-to-Pose</h3>
     <div class="rule-4">
       <article class="principle four">
-        <div class="shape a"></div>
-        <div class="shape b"></div>
+        <div class="shape a">连续运动和</div>
+        <div class="shape b">姿态对应</div>
       </article>
     </div>
 
-    <h2>跟随和重叠动作</h2>
     <h3>Follow Through and Overlapping Action</h3>
     <div class="rule-5">
       <article class="principle five">
         <div class="shape-container">
-          <div class="shape"></div>
+          <div class="shape">跟随和重叠动作</div>
         </div>
       </article>
+    </div>
+
+    <h3>Slow in and Slow out</h3>
+    <div class="rule-6">
+      <article class="principle six">
+        <div class="shape a">缓入缓出</div>
+      </article>
+    </div>
+
+    <h3>Arc</h3>
+
+    <div class="rule-7">
+      <article class="principle sevenb">
+        <div class="shape a">弧</div>
+        <div class="shape b">线</div>
+      </article>
+    </div>
+
+    <h3>Secondary Action</h3>
+    <div class="rule-8">
+      <article class="principle eight">
+        <div class="shape a">次要</div>
+        <div class="shape b">动</div>
+        <div class="shape c">作</div>
+      </article>
+    </div>
+
+    <h3>Timing</h3>
+    <div class="rule-9">
+      <article class="principle nine">
+        <div class="shape a">时间</div>
+        <div class="shape b">节奏</div>
+      </article>
+    </div>
+
+    <h3>Exaggeration</h3>
+    <div class="rule-10">
+      <article class="principle ten">
+        <div class="shape">夸张手法</div>
+      </article>
+    </div>
+
+    <h4>Appeal</h4>
+    <div class="rule-12">
+      <Appeal>
+        <template v-slot:four> 吸引力 </template>
+      </Appeal>
     </div>
   </div>
 </template>
@@ -58,11 +100,12 @@
 .view {
   background-color: #998877;
   padding: 5em;
-  height: fit-content;
+  height: max-content;
+  padding-bottom: 20em;
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: 30% 30% 40%;
-  grid-row-gap: 200px;
+  grid-template-columns: 40% 60%;
+  grid-row-gap: 300px;
   .shape {
     display: flex;
     align-items: center;
@@ -137,7 +180,7 @@
   .rule-2 {
     .two .shape {
       animation: two 5s infinite ease-out;
-      transform-origin: 20% 7em;
+      transform-origin: 50% 7em;
     }
 
     .two .surface {
@@ -389,8 +432,6 @@
       }
     }
     .principle {
-      width: 100%;
-      height: 100vh;
       position: relative;
     }
 
@@ -403,6 +444,249 @@
       top: calc(20% - 2em);
       left: calc(20% - 2em);
     }
+  }
+
+  .rule-6 {
+    .shape {
+      //   animation: six 3s infinite cubic-bezier(0.5, 0, 0.5, 1);
+      animation: six 3s infinite cubic-bezier(0.7, 0, 0.7, 1);
+    }
+
+    @keyframes six {
+      0%,
+      5% {
+        transform: translate(-12em);
+      }
+      45%,
+      55% {
+        transform: translate(12em);
+      }
+      95%,
+      100% {
+        transform: translate(-12em);
+      }
+    }
+
+    .principle {
+      position: relative;
+    }
+
+    .shape {
+      background-color: hsla(random(365), 60%, 60%, 1);
+      border: 1em solid #fff;
+      width: 4em;
+      height: 4em;
+      position: absolute;
+      top: calc(20% - 2em);
+      left: calc(20% - 2em);
+    }
+  }
+
+  .rule-7 {
+    .sevenb .shape.a {
+      animation: sevenb 3s infinite linear;
+      top: calc(50% - 2em);
+      left: calc(50% - 9em);
+      transform-origin: 10em 50%;
+    }
+    .sevenb .shape.b {
+      animation: sevenb 6s infinite linear reverse;
+      background-color: hsla(random(365), 60%, 60%, 1);
+      width: 2em;
+      height: 2em;
+      left: calc(50% - 1em);
+      top: calc(50% - 1em);
+    }
+
+    @keyframes sevenb {
+      100% {
+        transform: rotateZ(360deg);
+      }
+    }
+
+    .principle {
+      position: relative;
+    }
+
+    .shape {
+      background-color: hsla(random(365), 60%, 60%, 1);
+      border: 1em solid #fff;
+      width: 4em;
+      height: 4em;
+      position: absolute;
+      top: calc(50% - 2em);
+      left: calc(50% - 2em);
+    }
+  }
+
+  .rule-8 {
+    .eight .shape.a {
+      transform: translateX(-6em);
+      animation: eight-shape-a 4s cubic-bezier(0.57, -0.5, 0.43, 1.53) infinite;
+    }
+    .eight .shape.b {
+      top: calc(50% + 6em);
+      opacity: 0;
+      animation: eight-shape-b 4s linear infinite;
+    }
+    .eight .shape.c {
+      transform: translateX(6em);
+      animation: eight-shape-c 4s cubic-bezier(0.57, -0.5, 0.43, 1.53) infinite;
+    }
+
+    @keyframes eight-shape-a {
+      0%,
+      50% {
+        transform: translateX(-5.5em);
+      }
+      70%,
+      100% {
+        transform: translateX(-10em);
+      }
+    }
+
+    @keyframes eight-shape-b {
+      0% {
+        transform: none;
+      }
+      20%,
+      30% {
+        transform: translateY(-1.5em);
+        opacity: 1;
+        animation-timing-function: cubic-bezier(0.57, -0.5, 0.43, 1.53);
+      }
+      32% {
+        transform: translateY(-1.25em);
+        opacity: 1;
+      }
+      34% {
+        transform: translateY(-1.75em);
+        opacity: 1;
+      }
+      36%,
+      38% {
+        transform: translateY(-1.25em);
+        opacity: 1;
+      }
+      42%,
+      60% {
+        transform: translateY(-1.5em);
+        opacity: 1;
+      }
+      75%,
+      100% {
+        transform: translateY(-8em) rotate(180deg);
+        opacity: 1;
+      }
+    }
+
+    @keyframes eight-shape-c {
+      0%,
+      50% {
+        transform: translateX(5.5em);
+      }
+      70%,
+      100% {
+        transform: translateX(10em);
+      }
+    }
+
+    .principle {
+      position: relative;
+    }
+
+    .shape {
+      background-color: hsla(random(365), 60%, 60%, 1);
+      border: 1em solid #fff;
+      width: 4em;
+      height: 4em;
+      position: absolute;
+      top: calc(50% - 2em);
+      left: calc(50% - 2em);
+    }
+  }
+
+  .rule-9 {
+    .nine .shape.a {
+      animation: nine 4s infinite cubic-bezier(1, 0, 0.67, 1.21);
+      left: calc(50% - 12em);
+      transform-origin: 100% 6em;
+    }
+    .nine .shape.b {
+      animation: nine 2s infinite cubic-bezier(1, -1, 0, 2);
+      left: calc(50% + 2em);
+      transform-origin: 100% 100%;
+    }
+
+    @keyframes nine {
+      0%,
+      10% {
+        transform: translateX(0);
+      }
+      40%,
+      60% {
+        transform: rotateZ(90deg);
+      }
+      90%,
+      100% {
+        transform: translateX(0);
+      }
+    }
+    .principle {
+      position: relative;
+    }
+
+    .shape {
+      background-color: hsla(random(365), 60%, 60%, 1);
+      border: 1em solid #fff;
+      width: 4em;
+      height: 4em;
+      position: absolute;
+      top: calc(50% - 2em);
+      left: calc(50% - 2em);
+    }
+  }
+
+  .rule-10 {
+    .ten .shape {
+      animation: ten 4s infinite linear;
+      transform-origin: 50% 8em;
+      top: calc(50% - 6em);
+    }
+
+    @keyframes ten {
+      0%,
+      10% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0.87, -1.05, 0.66, 1.31);
+      }
+      40% {
+        transform: rotateZ(-45deg) scale(2);
+        animation-timing-function: cubic-bezier(0.16, 0.54, 0, 1.38);
+      }
+      70%,
+      100% {
+        transform: rotateZ(360deg) scale(1);
+      }
+    }
+
+    .principle {
+      position: relative;
+    }
+
+    .shape {
+      background-color: hsla(random(365), 60%, 60%, 1);
+      border: 1em solid #fff;
+      width: 4em;
+      height: 4em;
+      position: absolute;
+      top: calc(50% - 2em);
+      left: calc(50% - 2em);
+    }
+  }
+
+  .rule-12 {
+    height: fit-content;
   }
 }
 </style>

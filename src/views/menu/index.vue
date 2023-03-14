@@ -72,7 +72,7 @@ nav {
       display: block;
       width: 100px;
       height: 100px;
-      cursor: none;
+      cursor: pointer;
       position: absolute;
       top: -7px;
       left: -5px;
@@ -155,13 +155,14 @@ nav {
 
       &.active,
       &:hover {
-        color: #000000;
+        color: #f60000;
       }
 
       @for $i from 1 through 4 {
         $fontsize: calc(44px / $i);
         $font-weight: calc(400 / $i);
         $margin-left-right: calc($i * 20px);
+        cursor: pointer;
 
         &.level-#{$i} {
           font-size: $fontsize;
