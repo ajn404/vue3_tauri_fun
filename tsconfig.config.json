@@ -8,6 +8,20 @@
   ],
   "compilerOptions": {
     "composite": true,
-    "types": ["node"]
+    "types": ["node"],
+    "ignoreDeprecations": "5.0",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "esnext",
+    "jsx": "preserve",
+    "allowJs": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "verbatimModuleSyntax": true
   }
 }

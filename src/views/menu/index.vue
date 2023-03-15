@@ -37,7 +37,6 @@ import { reactive, ref, type Ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useStore } from '@/stores';
 const store = useStore();
-
 const routes = reactive(endRoutes);
 const router = useRouter();
 const route = useRoute();

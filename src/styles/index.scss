@@ -8,6 +8,19 @@ body {
   width: 0;
 }
 
+.App {
+  height: 100vh;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  & > * {
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  }
+}
+
 .view {
   position: absolute;
   left: 0;
@@ -20,11 +33,11 @@ body {
 }
 
 @keyframes rotation {
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
   }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,11 +1,17 @@
 <script setup lang="ts" name="App">
 import { RouterView, useRoute } from 'vue-router';
 import Menu from './views/menu/index.vue';
-import { watch, ref, reactive, type StyleValue } from 'vue';
+import {
+  watch,
+  ref,
+  reactive,
+  type StyleValue,
+  onMounted,
+  nextTick,
+} from 'vue';
 import { useStore } from './stores';
 import { invoke } from '@tauri-apps/api';
 import { handleIsTauri } from '@/script/utils';
-import router from './router';
 
 if (handleIsTauri())
   invoke('greet', { name: 'World' })
@@ -17,10 +23,6 @@ watch(
   () => route.path,
   (newPath, oldPath) => {
     console.log(`路由从 ${oldPath} 切换到了 ${newPath}`);
-    //自动跳转index吧
-    if (oldPath === '/') {
-      router.push('/index');
-    }
     // const newPathLevel = newPath.split("/").length;
     // const oldPathLevel = oldPath.split("/").length;
   }
@@ -31,15 +33,31 @@ const menu = ref(store.menu);
 const viewStyle: StyleValue = reactive({});
 const component = ref(null);
 
+const computeStyle = () => {
+  viewStyle.transform = menu.value
+    ? `translate(${document.querySelector('#menu')?.clientWidth}px,0)`
+    : '';
+};
+
+onMounted(() => {
+  nextTick(() => {
+    computeStyle();
+  });
+});
+
 watch(
   () => store.menu,
   (val) => {
     menu.value = val;
-    viewStyle.transform = menu.value
-      ? `translate(${document.querySelector('#menu')?.clientWidth}px,0)`
-      : '';
+
+    computeStyle();
+
     if (!viewStyle.transform && menu.value) {
       menu.value = false;
+    }
+
+    if (viewStyle.transform && !menu.value) {
+      menu.value = true;
     }
   }
 );
@@ -47,7 +65,7 @@ watch(
 
 <template>
   <div class="App">
-    <div class="menu" ref="menu">
+    <div class="menu">
       <transition>
         <keep-alive>
           <Menu />
@@ -68,14 +86,3 @@ watch(
     </router-view>
   </div>
 </template>
-
-<style lang="scss">
-.App {
-  height: 100vh;
-  position: relative;
-
-  & > * {
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-  }
-}
-</style>

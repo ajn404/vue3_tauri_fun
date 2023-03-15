@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import Sketch from '@/script/threeSketch';
-import { ref, watch } from 'vue';
+import { onUnmounted, ref, watch } from 'vue';
 const container = ref(null);
 let sketch = new Sketch();
 watch(
@@ -18,8 +18,10 @@ watch(
     if (options.container) sketch.init(options);
   }
 );
+
+onUnmounted(() => {
+  sketch.beforeDestroy();
+});
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

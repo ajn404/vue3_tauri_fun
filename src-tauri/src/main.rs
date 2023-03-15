@@ -19,7 +19,6 @@ use tokio::fs::File;
 use tokio::io::{AsyncBufReadExt, BufReader};
 #[tauri::command]
 
-///
 async fn read_tags() -> Vec<String> {
     let file = File::open("assets/tags.txt").await.unwrap();
     let mut reader = BufReader::new(file).lines();
@@ -34,6 +33,6 @@ async fn read_tags() -> Vec<String> {
     }
 
     // 打印vector中的数据
-    println!("{:?}", data);
+    // println!("{:?}", data);
     data
 }
