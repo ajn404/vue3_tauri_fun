@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 
 //vite路由自动化
 const routes = import.meta.glob('@/views/routes/**/*.vue');
+
 export type endRoutes = {
   path: string;
   name: string;
@@ -43,16 +44,19 @@ export const endRoutes = Object.keys(routes).map((paths): endRoutes => {
     component: routes[paths],
   };
 
-  if (resRoute.path === '/') {
-    resRoute.redirect = { name: 'index' };
-  }
-
   return resRoute;
 });
 
+const homeRoute = {
+  path: '/',
+  redirect: {
+    name: 'index',
+  },
+};
+
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
-  routes: endRoutes,
+  routes: [...endRoutes, homeRoute],
 });
 
 //this code is providing error

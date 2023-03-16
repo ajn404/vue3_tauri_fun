@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-import { nextTick, onUnmounted, ref, watch } from 'vue';
+import { nextTick, onUnmounted, ref } from 'vue';
 import {
   BoxGeometry,
   Color,
@@ -31,7 +31,6 @@ const initSketch = () => {
     camera.position.set(0, 0, 10);
 
     const geometry = new BoxGeometry(2, 2, 2);
-
     // create a default (white) Basic material
     const material = new MeshBasicMaterial();
 

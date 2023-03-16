@@ -55,7 +55,6 @@ watch(
     if (!viewStyle.transform && menu.value) {
       menu.value = false;
     }
-
     if (viewStyle.transform && !menu.value) {
       menu.value = true;
     }
