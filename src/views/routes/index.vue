@@ -1,6 +1,5 @@
 <template>
   <div class="view" ref="view">
-    通过 tauri读取assets目录下的tags.txt生成tags clound
     <div id="cursor"></div>
     <ul class="tags-cloud">
       <li class="tag" v-for="tag in tags" :key="tag">
@@ -11,7 +10,7 @@
 </template>
 
 <script lang="ts" setup>
-import { nextTick, ref, type Ref, watch } from 'vue';
+import { onMounted, onUpdated, ref, type Ref, watch, reactive } from 'vue';
 import TagsCloud from '@/script/tagsCloud';
 import { useStore } from '@/stores';
 import { invoke } from '@tauri-apps/api';
@@ -21,36 +20,23 @@ const store = useStore();
 watch(
   () => store.menu,
   (val) => {
-    if (!val) {
-      main();
-    } else {
-      cancelAnimationFrame(store.animationIds);
+    if (val) {
+      cloud?.stop();
     }
   }
 );
 const tags = ref(['Three', 'Vtk', 'Vue3', 'Ts', 'scss', 'git', 'tauri']);
 
-if (handleIsTauri())
-  invoke('read_tags')
-    // `invoke` returns a Promise
-    .then((response: any) => {
-      if (response?.length > 0) {
-        tags.value = response;
-        main();
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-
 const view: Ref<HTMLElement | null> = ref(null);
+let cloud: any = reactive({});
+
 const main = () => {
   {
     const root: HTMLElement | null = document.querySelector('.tags-cloud');
-    if (root) {
-      const cloud = new TagsCloud(root);
 
-      cloud.start();
+    if (root) {
+      cloud = new TagsCloud(root);
+      cloud?.start();
     }
   }
 
@@ -70,8 +56,18 @@ const main = () => {
   }
 };
 
-nextTick(() => {
-  main();
+onMounted(async () => {
+  if (handleIsTauri()) {
+    const response: string[] = await invoke('read_tags');
+    if (response?.length > 0) {
+      tags.value = response;
+    }
+  }
+  if (!store.menu) main();
+});
+
+onUpdated(() => {
+  if (!store.menu) main();
 });
 </script>
 
@@ -87,7 +83,7 @@ nextTick(() => {
 }
 
 .view {
-  background-color: #1b263b;
+  background-image: linear-gradient(to bottom, #000, #555);
   color: #778da9;
   cursor: none;
   width: 100%;

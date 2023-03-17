@@ -1,15 +1,7 @@
 <template>
   <nav role="navigation">
     <div id="menuToggle">
-      <input
-        type="checkbox"
-        ref="checkbox"
-        @click="
-          () => {
-            store.increment();
-          }
-        "
-      />
+      <input type="checkbox" ref="checkbox" @click="menuClick" />
       <span></span>
       <span></span>
       <span></span>
@@ -36,11 +28,17 @@ import { endRoutes } from '@/router';
 import { reactive, ref, type Ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useStore } from '@/stores';
+
 const store = useStore();
+
 const routes = reactive(endRoutes);
 const router = useRouter();
 const route = useRoute();
 const checkbox: Ref<HTMLInputElement | undefined> = ref();
+
+const menuClick = (pe: MouseEvent) => {
+  store.menu = (pe.target as HTMLInputElement)?.checked;
+};
 
 const routeClick = (route: endRoutes) => {
   router.push({

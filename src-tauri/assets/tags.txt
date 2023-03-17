@@ -6,4 +6,4 @@ javascript
 rust
 animation
 js-component
-tauri
+tauri-app

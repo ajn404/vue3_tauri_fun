@@ -1,4 +1,5 @@
 import { useStore } from '@/stores';
+const store = useStore();
 
 class FibonacciSphere {
   #points;
@@ -138,10 +139,7 @@ export default class TagsCloud {
 
     this.#frameRequestId = requestAnimationFrame(this.start.bind(this));
 
-    const store = useStore();
-    if (!store.menu) {
-      store.animationIds = this.#frameRequestId;
-    }
+    store.animationIds = this.#frameRequestId;
   }
 
   stop() {

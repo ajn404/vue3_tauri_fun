@@ -278,6 +278,8 @@
         just tell the one animation what to do. Here is a simplified version of
         whats going on behind the scenes:
       </p>
+
+      <a href="https://animxyz.com/">animxyz</a>
     </article>
 
     <footer></footer>
