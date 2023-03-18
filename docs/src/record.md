@@ -1,5 +1,3 @@
-
-
 npm init vue@latest
 
 
@@ -13,3 +11,11 @@ npm install element-plus --save
 
  - postcss
  - postcss添加cssnano插件
+
+ #2023/03/17
+
+ tailwindcss
+ ```
+ npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+ npx tailwindcss init -p
+ ```

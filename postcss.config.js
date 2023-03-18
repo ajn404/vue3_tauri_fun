@@ -8,7 +8,7 @@ module.export = {
     'postcss-px-to-viewport': {
       unitToConvert: 'px',
       viewportWidth: 1920,
-      viewportHeight: 1200,
+      viewportHeight: 1080,
       unitPrecision: 3,
       viewportUnit: 'vw',
       fontViewportUnit: 'vw',
@@ -27,5 +27,7 @@ module.export = {
     cssnano: {
       preset: 'default',
     },
+    tailwindcss: {},
+    autoprefixer: {},
   },
 };

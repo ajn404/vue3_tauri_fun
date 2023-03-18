@@ -15,13 +15,13 @@ import {
 
 type MyObject = {
   [key: string]: any;
-}
+};
 
 const loadEnv = (mode: string) => {
   const env: [string] = require(`./env/.env.${mode}.js`);
-  const ret:MyObject = {};
+  const ret: MyObject = {};
   for (const key in env) {
-      ret[key] = JSON.stringify(env[key]);
+    ret[key] = JSON.stringify(env[key]);
   }
   console.log(ret);
 
@@ -41,23 +41,14 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
       postcss: './postcss.config.js',
       devSourcemap: true,
       preprocessorOptions: {
-        scss: {
-        }
-      }
+        scss: {},
+      },
     },
     server: {
       open: true,
     },
 
-    build: {
-      // 生产环境下，去掉console.log语句
-      terserOptions: {
-        compress: {
-          drop_console: true,
-          drop_debugger: true,
-        },
-      },
-    },
+    build: {},
     plugins: [
       vue(),
       vueJsx(),

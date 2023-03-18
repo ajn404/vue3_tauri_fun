@@ -2,15 +2,17 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 
 //vite路由自动化
 const routes = import.meta.glob('@/views/routes/**/*.vue');
-export type endRoutes = {
-  path: string,
-  name:string,
-  rank:number,
-  parent:string,
-  component: any,
-}
 
-export const endRoutes = Object.keys(routes).map((paths):endRoutes => {
+export type endRoutes = {
+  path: string;
+  name: string;
+  rank: number;
+  parent: string;
+  component: any;
+  redirect?: any;
+};
+
+export const endRoutes = Object.keys(routes).map((paths): endRoutes => {
   const nameList = paths.match(/\/views\/routes\/(.*)\.vue$/);
 
   const matchNameList = (nameList ? nameList[1] : '').split('/');
@@ -26,7 +28,7 @@ export const endRoutes = Object.keys(routes).map((paths):endRoutes => {
   const rank = backSlash?.length || 0;
 
   let parent = '';
-  if (rank > 0) {    
+  if (rank > 0) {
     parent =
       matchNameList.length > 1 &&
       matchNameList[matchNameList.length - 1] === 'index'
@@ -34,19 +36,27 @@ export const endRoutes = Object.keys(routes).map((paths):endRoutes => {
         : matchNameList[matchNameList.length - 2];
   }
 
-  
-  return {
+  const resRoute: endRoutes = {
     path: `/${path}`,
     name,
     rank,
     parent,
     component: routes[paths],
   };
+
+  return resRoute;
 });
+
+const homeRoute = {
+  path: '/',
+  redirect: {
+    name: 'index',
+  },
+};
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
-  routes: endRoutes,
+  routes: [...endRoutes, homeRoute],
 });
 
 //this code is providing error
