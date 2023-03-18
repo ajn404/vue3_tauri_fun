@@ -124,7 +124,7 @@ nav {
         margin: -100px 0 0 -50px;
         padding: 50px;
         top: 0;
-        padding-top: 225px;
+        padding-top: 175px;
         background-color: rgba($color: #ededed, $alpha: 0.5);
         background-clip: content-box;
         list-style-type: none;
