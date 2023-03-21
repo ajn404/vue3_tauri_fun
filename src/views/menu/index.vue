@@ -78,22 +78,6 @@ nav {
       -webkit-touch-callout: none;
     }
 
-<<<<<<< HEAD
-    #menu {
-        position: absolute;
-        min-width: 30%;
-        min-height: 100vh;
-        max-height: 100vh;
-        overflow: scroll;
-        margin: -100px 0 0 -50px;
-        padding: 50px;
-        top: 0;
-        padding-top: 175px;
-        background-color: rgba($color: #ededed, $alpha: 0.5);
-        background-clip: content-box;
-        list-style-type: none;
-        -webkit-font-smoothing: antialiased;
-=======
     & > span {
       display: block;
       width: 33px;
@@ -112,7 +96,6 @@ nav {
       }
 
       &:first-child {
->>>>>>> 3513ead5f329361f9b38dff8104606c99e875969
         transform-origin: 0% 0%;
       }
     }
