@@ -1,16 +1,16 @@
 import {
-  BoxGeometry,
   Mesh,
-  MeshBasicMaterial,
   PerspectiveCamera,
   WebGLRenderer,
   Group,
   Object3D,
   Cache,
 } from 'three';
-import { createRenderer } from './renderer';
-import { createPerspectiveCamera } from './camera';
-import { createScene } from './scene';
+import { createPerspectiveCamera } from '../basic/camera';
+import { createCube } from '../basic/cube';
+import { createScene } from '../basic/scene';
+import { createRenderer } from '../basic/renderer';
+import { resize } from '../basic/resize';
 //World
 
 class World {
@@ -32,7 +32,8 @@ class World {
     container.append(this.renderer.domElement);
   }
 
-  render() {
+  render(container: HTMLElement) {
+    resize(this, container);
     this.renderer.render(this.scene, this.camera);
   }
 
@@ -46,14 +47,6 @@ class World {
     this.renderer.forceContextLoss();
   }
 }
-
-const createCube = () => {
-  const geometry = new BoxGeometry(2, 2, 2);
-  const material = new MeshBasicMaterial();
-  const cube = new Mesh(geometry, material);
-
-  return cube;
-};
 
 const disposeChild = (mesh: any) => {
   if (mesh instanceof Mesh) {
@@ -75,4 +68,4 @@ const disposeChild = (mesh: any) => {
   }
 };
 
-export { World, createCube, createPerspectiveCamera, createScene };
+export { World };

@@ -9,29 +9,15 @@
 
 <script lang="ts" setup>
 import { nextTick, onUnmounted, reactive, ref } from 'vue';
-import { World } from './basic/world';
+import { World } from './instances/world';
 
 const container = ref();
 let world: World | Object = reactive({});
 const showButton = ref(true);
 
-const resizer = (world: World) => {
-  const width = container.value.clientWidth;
-  const height = container.value.clientHeight;
-
-  world.renderer.setSize(width, height);
-
-  world.camera.aspect = width / height;
-  world.camera.updateProjectionMatrix();
-
-  world.renderer.setPixelRatio(window.devicePixelRatio);
-};
-
 const toggleRender = () => {
   if (world instanceof World) {
-    resizer(world);
-    world.render();
-
+    world.render(container.value);
     showButton.value = false;
   }
 };
