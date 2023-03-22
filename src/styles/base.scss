@@ -1,10 +1,35 @@
+::-webkit-scrollbar {
+  width: 0;
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-face-color: #f0f0f0;
+  scrollbar-arrow-color: #000000;
+  scrollbar-track-color: #f0f0f0;
+  scrollbar-shadow-color: #f0f0f0;
+  scrollbar-highlight-color: #f0f0f0;
+  scrollbar-3dlight-color: #f0f0f0;
+  scrollbar-darkshadow-color: #f0f0f0;
+  scrollbar-base-color: #f0f0f0;
+  scrollbar-track-color: #f0f0f0;
+  scrollbar-width: 0px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: relative;
 }
 
-::-webkit-scrollbar {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scrollbar-width: 0; /* "thin" 或者 "auto" 或者 "none" */
+  scrollbar-color: #a1a1a1 #eaeaea; /* 颜色值 */
+}
+
+*::-webkit-scrollbar {
   width: 0;
 }
 
@@ -15,10 +40,6 @@ body {
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-
-  & > * {
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-  }
 }
 
 .view {
@@ -30,9 +51,12 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  display: grid;
+  place-items: center;
+  background-color: #eee;
+}
 
-  .container {
-    width: 100%;
-    height: 100%;
-  }
+.container {
+  width: 100%;
+  height: 100%;
 }

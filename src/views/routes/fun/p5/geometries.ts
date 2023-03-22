@@ -14,11 +14,11 @@ export const geometries = (_: any, container: HTMLElement | null) => {
 
     _.push();
 
-    _.rotateZ(_.frameCount * 0.01);
-    _.rotateX(_.frameCount * 0.01);
-    _.rotateY(_.frameCount * 0.01);
+    _.rotateZ(_.frameCount * 0.1);
+    _.rotateX(_.frameCount * 0.1);
+    _.rotateY(_.frameCount * 0.1);
 
-    _.plane(70);
+    _.plane(200);
     _.pop();
 
     _.translate(200, 0, 0);

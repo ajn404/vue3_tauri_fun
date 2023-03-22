@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-import Sketch from '@/script/threeSketch';
+import Sketch from './sketch';
 import { onUnmounted, ref, watch } from 'vue';
 const container = ref(null);
 let sketch = new Sketch();

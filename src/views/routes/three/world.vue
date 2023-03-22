@@ -8,12 +8,12 @@
 </template>
 
 <script lang="ts" setup>
-import { nextTick, reactive, ref } from 'vue';
-import { World } from '@/script/world';
+import { nextTick, onUnmounted, reactive, ref } from 'vue';
+import { World } from './basic/world';
 
 const container = ref();
-
 let world: World | Object = reactive({});
+const showButton = ref(true);
 
 const resizer = (world: World) => {
   const width = container.value.clientWidth;
@@ -26,13 +26,6 @@ const resizer = (world: World) => {
 
   world.renderer.setPixelRatio(window.devicePixelRatio);
 };
-nextTick(() => {
-  if (container.value) {
-    world = new World(container.value);
-  }
-});
-
-const showButton = ref(true);
 
 const toggleRender = () => {
   if (world instanceof World) {
@@ -42,6 +35,18 @@ const toggleRender = () => {
     showButton.value = false;
   }
 };
+
+nextTick(() => {
+  if (container.value) {
+    world = new World(container.value);
+  }
+});
+
+onUnmounted(() => {
+  if (world instanceof World) {
+    world.beforeDestroy();
+  }
+});
 </script>
 
 <style lang="scss" scoped>

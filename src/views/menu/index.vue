@@ -84,7 +84,8 @@ nav {
       height: 4px;
       margin-bottom: 5px;
       position: relative;
-      background: #cdcdcd;
+      background: transparent;
+      border: 0.5px solid #e0e0e0;
       border-radius: 3px;
       z-index: 1;
       transform-origin: 4px 0px;
@@ -130,8 +131,8 @@ nav {
     padding: 125px 50px 50px 100px;
     box-sizing: border-box;
     top: 0;
-    background-color: rgba($color: #ededed, $alpha: 0.5);
-    background-clip: content-box;
+    // background-color: rgba($color: #ededed, $alpha: 0.5);
+    // background-clip: content-box;
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
     transform-origin: 0% 0%;

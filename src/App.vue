@@ -37,6 +37,9 @@ const computeStyle = () => {
   viewStyle.transform = menu.value
     ? `translate(${document.querySelector('#menu')?.clientWidth}px,0)`
     : '';
+  viewStyle.width = menu.value
+    ? `calc(100% - ${document.querySelector('#menu')?.clientWidth}px)`
+    : '100vw';
 };
 
 onMounted(() => {
@@ -71,7 +74,7 @@ watch(
         </keep-alive>
       </transition>
     </div>
-    <router-view v-slot="{ Component }">
+    <!-- <router-view v-slot="{ Component }">
       <KeepAlive>
         <XyzTransition appear :xyz="`fade stagger-2`" mode="in-out">
           <component
@@ -82,6 +85,15 @@ watch(
           />
         </XyzTransition>
       </KeepAlive>
+    </router-view> -->
+
+    <router-view v-slot="{ Component }">
+      <component
+        class="component"
+        ref="component"
+        :style="viewStyle"
+        :is="Component"
+      />
     </router-view>
   </div>
 </template>
