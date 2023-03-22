@@ -38,7 +38,7 @@ onUnmounted(() => {
 <style lang="scss" scoped>
 .view {
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   padding: 0;
   margin: 0;

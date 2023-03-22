@@ -23,5 +23,3 @@ onUnmounted(() => {
   sketch.beforeDestroy();
 });
 </script>
-
-<style lang="scss"></style>

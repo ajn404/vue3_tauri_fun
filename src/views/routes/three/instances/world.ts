@@ -34,7 +34,13 @@ class World {
 
   render(container: HTMLElement) {
     resize(this, container);
-    this.renderer.render(this.scene, this.camera);
+    addEventListener(
+      'resize',
+      () => {
+        resize(this, container);
+      },
+      false
+    );
   }
 
   beforeDestroy() {

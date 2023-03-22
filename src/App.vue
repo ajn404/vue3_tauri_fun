@@ -39,7 +39,7 @@ const computeStyle = () => {
     : '';
   viewStyle.width = menu.value
     ? `calc(100% - ${document.querySelector('#menu')?.clientWidth}px)`
-    : '100vw';
+    : '100%';
 };
 
 onMounted(() => {

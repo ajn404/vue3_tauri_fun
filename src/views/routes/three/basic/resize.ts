@@ -1,4 +1,4 @@
-import type { World } from './world';
+import type { World } from '../instances/world';
 export const resize = (world: World, container: HTMLElement) => {
   const width = container.clientWidth;
   const height = container.clientHeight;
@@ -9,4 +9,6 @@ export const resize = (world: World, container: HTMLElement) => {
   world.camera.updateProjectionMatrix();
 
   world.renderer.setPixelRatio(window.devicePixelRatio);
+
+  world.renderer.render(world.scene, world.camera);
 };
