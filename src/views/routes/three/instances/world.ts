@@ -17,7 +17,7 @@ class World {
   camera: PerspectiveCamera;
   scene: Object3D;
   renderer: WebGLRenderer;
-  cube: Object3D;
+  cube?: Object3D;
 
   constructor(container: HTMLElement) {
     this.camera = createPerspectiveCamera();
@@ -27,9 +27,14 @@ class World {
       container.clientHeight
     );
 
-    this.cube = createCube();
-    this.scene.add(this.cube);
+    this.addProject();
+
     container.append(this.renderer.domElement);
+  }
+
+  addProject() {
+    this.cube = createCube({ material: 'MeshBasicMaterial' });
+    this.scene.add(this.cube);
   }
 
   render(container: HTMLElement) {

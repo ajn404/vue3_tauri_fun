@@ -6,14 +6,14 @@
 
 <script lang="ts" setup>
 import { nextTick, onUnmounted, reactive, ref } from 'vue';
-import { World } from './instances/world';
+import { pbrWorld } from './instances/pbrWorld';
 
 const container = ref();
-let world: World | Object = reactive({});
+let world: pbrWorld | Object = reactive({});
 const showButton = ref(true);
 
 const toggleRender = () => {
-  if (world instanceof World) {
+  if (world instanceof pbrWorld) {
     world.render(container.value);
     showButton.value = false;
   }
@@ -21,13 +21,13 @@ const toggleRender = () => {
 
 nextTick(() => {
   if (container.value) {
-    world = new World(container.value);
+    world = new pbrWorld(container.value);
     toggleRender();
   }
 });
 
 onUnmounted(() => {
-  if (world instanceof World) {
+  if (world instanceof pbrWorld) {
     world.beforeDestroy();
   }
 });
