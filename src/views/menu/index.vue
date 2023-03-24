@@ -30,7 +30,7 @@
   </nav>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts" setup name="menu">
 import { endRoutes } from '@/router';
 import { reactive, ref, type Ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
@@ -111,6 +111,12 @@ nav {
       -webkit-touch-callout: none;
     }
 
+    &:hover {
+      & > span {
+        border-color: skyblue;
+      }
+    }
+
     & > span {
       display: block;
       width: 33px;
@@ -119,6 +125,7 @@ nav {
       position: relative;
       background: transparent;
       border: 0.5px solid #e0e0e0;
+
       border-radius: 3px;
       z-index: 1;
       transform-origin: 4px 0px;
@@ -162,7 +169,7 @@ nav {
     overflow-y: hidden;
     overflow-x: auto;
     margin: -100px 0 0 -10px;
-    padding: 125px 50px 50px 100px;
+    padding: 175px 50px 50px 100px;
     box-sizing: border-box;
     top: 0;
     background-image: radial-gradient(#999, #fff);
@@ -175,12 +182,14 @@ nav {
       display: inline-block;
       width: 4px;
       height: 100%;
-      background-image: linear-gradient(to bottom, #000, #fff);
       position: absolute;
       top: 0;
       right: 0;
-      cursor: move;
-      cursor: col-resize;
+      &:hover {
+        background-image: linear-gradient(to bottom, #000, #fff);
+        cursor: move;
+        cursor: col-resize;
+      }
       &.dragging {
         background-image: linear-gradient(to top, #000, #fff);
         opacity: 0.4;

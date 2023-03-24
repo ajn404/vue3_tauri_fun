@@ -1,5 +1,5 @@
 <script setup lang="ts" name="App">
-import { RouterView, useRoute } from 'vue-router';
+import { RouterView, useRoute, useRouter } from 'vue-router';
 import Menu from './views/menu/index.vue';
 import { watch, ref } from 'vue';
 import { useStore } from './stores';
@@ -12,6 +12,15 @@ if (handleIsTauri())
     .then((response) => console.log(response));
 
 const route = useRoute();
+const router = useRouter();
+
+router.beforeEach((to, from, next) => {
+  to.matched.forEach((record) => {
+    console?.table(record);
+  });
+
+  next();
+});
 watch(
   () => route.path,
   (newPath, oldPath) => {
