@@ -9,7 +9,7 @@
 
 <script lang="ts" setup>
 import { nextTick, reactive, ref } from 'vue';
-import { World } from '@/script/world';
+import { World } from '@/script/three/world';
 
 const container = ref();
 
