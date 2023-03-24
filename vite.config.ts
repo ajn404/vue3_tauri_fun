@@ -61,6 +61,12 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
           HeadlessUiResolver(),
           ElementUiResolver(),
         ],
+        types: [
+          {
+            from: 'vue-codemirror',
+            names: ['Codemirror'],
+          },
+        ],
         dirs: ['src/components'],
         // ui库解析器
         // resolvers: [ElementPlusResolver()],

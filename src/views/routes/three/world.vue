@@ -8,46 +8,37 @@
 </template>
 
 <script lang="ts" setup>
-import { nextTick, reactive, ref } from 'vue';
-import { World } from '@/script/three/world';
+import { nextTick, onUnmounted, reactive, ref } from 'vue';
+import { World } from './instances/world';
 
 const container = ref();
-
 let world: World | Object = reactive({});
+const showButton = ref(true);
 
-const resizer = (world: World) => {
-  const width = container.value.clientWidth;
-  const height = container.value.clientHeight;
-
-  world.renderer.setSize(width, height);
-
-  world.camera.aspect = width / height;
-  world.camera.updateProjectionMatrix();
-
-  world.renderer.setPixelRatio(window.devicePixelRatio);
+const toggleRender = () => {
+  if (world instanceof World) {
+    world.render(container.value);
+    showButton.value = false;
+  }
 };
+
 nextTick(() => {
   if (container.value) {
     world = new World(container.value);
   }
 });
 
-const showButton = ref(true);
-
-const toggleRender = () => {
+onUnmounted(() => {
   if (world instanceof World) {
-    resizer(world);
-    world.render();
-
-    showButton.value = false;
+    world.beforeDestroy();
   }
-};
+});
 </script>
 
 <style lang="scss" scoped>
 .view {
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   padding: 0;
   margin: 0;

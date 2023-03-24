@@ -5,7 +5,7 @@
       <span></span>
       <span></span>
       <span></span>
-      <ul id="menu">
+      <ul id="menu" ref="menu">
         <li
           v-for="item in routes"
           :key="item.path"
@@ -18,12 +18,19 @@
           {{ item.name }}
           <span> ({{ item.path }}) </span>
         </li>
+        <div
+          class="after"
+          ref="drag"
+          draggable="true"
+          @drag="dragMenu"
+          @dragover.prevent="dragMenu"
+        ></div>
       </ul>
     </div>
   </nav>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts" setup name="menu">
 import { endRoutes } from '@/router';
 import { reactive, ref, type Ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
@@ -35,9 +42,20 @@ const routes = reactive(endRoutes);
 const router = useRouter();
 const route = useRoute();
 const checkbox: Ref<HTMLInputElement | undefined> = ref();
+const menu: Ref<HTMLInputElement | undefined> = ref();
+const drag: Ref<HTMLInputElement | undefined> = ref();
 
 const menuClick = (pe: MouseEvent) => {
   store.menu = (pe.target as HTMLInputElement)?.checked;
+
+  store.viewStyle = {
+    transform: store.menu
+      ? `translate(${document.querySelector('#menu')?.clientWidth}px,0)`
+      : 'none',
+    width: store.menu
+      ? `calc(100% - ${document.querySelector('#menu')?.clientWidth}px)`
+      : '100%',
+  };
 };
 
 const routeClick = (route: endRoutes) => {
@@ -47,6 +65,21 @@ const routeClick = (route: endRoutes) => {
   });
 
   // if (route.rank !== 0) checkbox.value?.click();
+};
+
+const dragMenu = (e: Event) => {
+  e.preventDefault();
+  const { x } = e as DragEvent;
+
+  if (x > 0) {
+    store.viewStyle = {
+      transform: store.menu ? `translate(${x}px,0)` : 'none',
+      width: store.menu ? `calc(100% - ${x}px)` : '100%',
+    };
+
+    if (menu.value) menu.value.style.width = `${x}px`;
+    drag.value?.classList.add('dragging');
+  } else drag.value?.classList.remove('dragging');
 };
 </script>
 
@@ -78,13 +111,21 @@ nav {
       -webkit-touch-callout: none;
     }
 
+    &:hover {
+      & > span {
+        border-color: skyblue;
+      }
+    }
+
     & > span {
       display: block;
       width: 33px;
       height: 4px;
       margin-bottom: 5px;
       position: relative;
-      background: #cdcdcd;
+      background: transparent;
+      border: 0.5px solid #e0e0e0;
+
       border-radius: 3px;
       z-index: 1;
       transform-origin: 4px 0px;
@@ -122,21 +163,38 @@ nav {
 
   #menu {
     position: absolute;
-    min-width: 30%;
-    min-height: 100vh;
-    max-height: 100vh;
-    overflow: scroll;
+    width: 30%;
+    width: 30vw;
+    min-height: calc(100vh + 100px);
+    overflow-y: hidden;
+    overflow-x: auto;
     margin: -100px 0 0 -10px;
-    padding: 125px 50px 50px 100px;
+    padding: 175px 50px 50px 100px;
     box-sizing: border-box;
     top: 0;
-    background-color: rgba($color: #ededed, $alpha: 0.5);
-    background-clip: content-box;
+    background-image: radial-gradient(#999, #fff);
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
     transform-origin: 0% 0%;
     transform: translate(-100%, 0);
     padding-inline-start: 40px;
+    .after {
+      display: inline-block;
+      width: 4px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      &:hover {
+        background-image: linear-gradient(to bottom, #000, #fff);
+        cursor: move;
+        cursor: col-resize;
+      }
+      &.dragging {
+        background-image: linear-gradient(to top, #000, #fff);
+        opacity: 0.4;
+      }
+    }
     li {
       padding: 10px 0;
       text-decoration: none;

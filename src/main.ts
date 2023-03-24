@@ -11,7 +11,13 @@ import { CSSPlugin } from 'gsap/CSSPlugin';
 gsap.registerPlugin(CSSPlugin);
 // console.log('应用的环境变量', import.meta.env);
 const app = createApp(App);
+// router.beforeEach((to, from, next) => {
+//   to.matched.forEach((record) => {
+//     console.log(record);
+//   });
 
+//   console.log(from, next);
+// });
 app.use(createPinia());
 app.use(router);
 app.use(VueAnimXyz);

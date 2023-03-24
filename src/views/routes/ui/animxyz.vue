@@ -287,7 +287,7 @@
 </template>
 
 <script lang="ts" setup></script>
-<style lang="scss">
+<style lang="scss" scoped>
 svg {
   animation: rotation 500s linear infinite;
   font-size: 1.5rem;
@@ -299,7 +299,7 @@ svg {
 
 .view {
   background-color: #fff;
-  display: grid;
-  grid-template-columns: 50% 50%;
+  display: flex;
+  flex-wrap: wrap;
 }
 </style>
