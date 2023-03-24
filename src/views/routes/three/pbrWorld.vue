@@ -10,12 +10,10 @@ import { pbrWorld } from './instances/pbrWorld';
 
 const container = ref();
 let world: pbrWorld | Object = reactive({});
-const showButton = ref(true);
 
 const toggleRender = () => {
   if (world instanceof pbrWorld) {
     world.render(container.value);
-    showButton.value = false;
   }
 };
 
@@ -45,12 +43,6 @@ onUnmounted(() => {
   .container {
     width: 100%;
     height: 100%;
-  }
-
-  .btn {
-    position: fixed;
-    left: 50vw;
-    top: 100px;
   }
 }
 </style>

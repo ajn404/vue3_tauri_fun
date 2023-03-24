@@ -1,14 +1,7 @@
 <script setup lang="ts" name="App">
 import { RouterView, useRoute } from 'vue-router';
 import Menu from './views/menu/index.vue';
-import {
-  watch,
-  ref,
-  reactive,
-  type StyleValue,
-  onMounted,
-  nextTick,
-} from 'vue';
+import { watch, ref } from 'vue';
 import { useStore } from './stores';
 import { invoke } from '@tauri-apps/api';
 import { handleIsTauri } from '@/script/utils';
@@ -29,40 +22,7 @@ watch(
 );
 
 const store = useStore();
-const menu = ref(store.menu);
-const viewStyle: StyleValue = reactive({});
 const component = ref(null);
-
-const computeStyle = () => {
-  viewStyle.transform = menu.value
-    ? `translate(${document.querySelector('#menu')?.clientWidth}px,0)`
-    : '';
-  viewStyle.width = menu.value
-    ? `calc(100% - ${document.querySelector('#menu')?.clientWidth}px)`
-    : '100%';
-};
-
-onMounted(() => {
-  nextTick(() => {
-    computeStyle();
-  });
-});
-
-watch(
-  () => store.menu,
-  (val) => {
-    menu.value = val;
-
-    computeStyle();
-
-    if (!viewStyle.transform && menu.value) {
-      menu.value = false;
-    }
-    if (viewStyle.transform && !menu.value) {
-      menu.value = true;
-    }
-  }
-);
 </script>
 
 <template>
@@ -74,24 +34,11 @@ watch(
         </keep-alive>
       </transition>
     </div>
-    <!-- <router-view v-slot="{ Component }">
-      <KeepAlive>
-        <XyzTransition appear :xyz="`fade stagger-2`" mode="in-out">
-          <component
-            class="component"
-            ref="component"
-            :style="viewStyle"
-            :is="Component"
-          />
-        </XyzTransition>
-      </KeepAlive>
-    </router-view> -->
-
     <router-view v-slot="{ Component }">
       <component
         class="component"
         ref="component"
-        :style="viewStyle"
+        :style="store.viewStyle"
         :is="Component"
       />
     </router-view>

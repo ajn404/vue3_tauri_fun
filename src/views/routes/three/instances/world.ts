@@ -11,6 +11,10 @@ import { createCube } from '../basic/cube';
 import { createScene } from '../basic/scene';
 import { createRenderer } from '../basic/renderer';
 import { resize } from '../basic/resize';
+
+import { useStore } from '@/stores';
+import { watch, nextTick } from 'vue';
+const store = useStore();
 //World
 
 class World {
@@ -26,9 +30,11 @@ class World {
       container.clientWidth,
       container.clientHeight
     );
-
+    this.appendRender(container);
     this.addProject();
+  }
 
+  appendRender(container: HTMLElement): void {
     container.append(this.renderer.domElement);
   }
 
@@ -45,6 +51,15 @@ class World {
         resize(this, container);
       },
       false
+    );
+
+    watch(
+      () => store.menu,
+      () => {
+        nextTick(() => {
+          resize(this, container);
+        });
+      }
     );
   }
 

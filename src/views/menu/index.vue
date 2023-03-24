@@ -5,7 +5,7 @@
       <span></span>
       <span></span>
       <span></span>
-      <ul id="menu">
+      <ul id="menu" ref="menu">
         <li
           v-for="item in routes"
           :key="item.path"
@@ -18,6 +18,7 @@
           {{ item.name }}
           <span> ({{ item.path }}) </span>
         </li>
+        <div class="after" @mousedown="dragMenu" @touchstart="dragMenu"></div>
       </ul>
     </div>
   </nav>
@@ -35,9 +36,19 @@ const routes = reactive(endRoutes);
 const router = useRouter();
 const route = useRoute();
 const checkbox: Ref<HTMLInputElement | undefined> = ref();
+const menu: Ref<HTMLInputElement | undefined> = ref();
 
 const menuClick = (pe: MouseEvent) => {
   store.menu = (pe.target as HTMLInputElement)?.checked;
+
+  store.viewStyle = {
+    transform: store.menu
+      ? `translate(${document.querySelector('#menu')?.clientWidth}px,0)`
+      : 'none',
+    width: store.menu
+      ? `calc(100% - ${document.querySelector('#menu')?.clientWidth}px)`
+      : '100%',
+  };
 };
 
 const routeClick = (route: endRoutes) => {
@@ -47,6 +58,14 @@ const routeClick = (route: endRoutes) => {
   });
 
   // if (route.rank !== 0) checkbox.value?.click();
+};
+
+const dragMenu = (e: Event) => {
+  const { pageX, pageY } = e as MouseEvent;
+  console.log({
+    pageX,
+    pageY,
+  });
 };
 </script>
 
@@ -124,20 +143,28 @@ nav {
   #menu {
     position: absolute;
     min-width: 30%;
-    min-height: 100vh;
-    max-height: 100vh;
-    overflow: scroll;
+    min-height: calc(100vh + 100px);
+    overflow: auto;
     margin: -100px 0 0 -10px;
     padding: 125px 50px 50px 100px;
     box-sizing: border-box;
     top: 0;
-    // background-color: rgba($color: #ededed, $alpha: 0.5);
-    // background-clip: content-box;
+    background-image: radial-gradient(#999, #fff);
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
     transform-origin: 0% 0%;
     transform: translate(-100%, 0);
     padding-inline-start: 40px;
+    .after {
+      display: inline-block;
+      width: 2px;
+      height: 100%;
+      background-image: linear-gradient(to bottom, #000, #777);
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: move;
+    }
     li {
       padding: 10px 0;
       text-decoration: none;
