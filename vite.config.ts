@@ -3,7 +3,7 @@ import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
-
+import { visualizer } from 'rollup-plugin-visualizer'
 import Components from 'unplugin-vue-components/vite';
 import {
   ElementPlusResolver,
@@ -49,12 +49,24 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
     },
 
     build: {
-      
+      rollupOptions: {
+        output: {
+          sanitizeFileName:(filename:string):string=>{
+            if(filename.includes("plugin-vue")){
+              return filename.replace('\0','')
+            }
+            else{
+              return filename
+            }
+          }
+        }
+      }
     },
-    base:"/vue3_tauri_fun",
+    base: "/vue3_tauri_fun/",
     plugins: [
       vue(),
       vueJsx(),
+      visualizer(),
       Components({
         // ui库解析器，也可以自定义
         resolvers: [
