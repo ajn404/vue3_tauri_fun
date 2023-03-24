@@ -61,5 +61,5 @@ npm run tauri
 
 ### web site
 
-[gitpage](ajn404.github.io/vue3_tauri_fun/)
-[stats](ajn404.github.io/vue3_tauri_fun/stats)
+[gitpage](https://ajn404.github.io/vue3_tauri_fun/)
+[stats](https://ajn404.github.io/vue3_tauri_fun/stats)
