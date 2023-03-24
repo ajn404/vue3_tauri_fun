@@ -18,7 +18,13 @@
           {{ item.name }}
           <span> ({{ item.path }}) </span>
         </li>
-        <div class="after" @mousedown="dragMenu" @touchstart="dragMenu"></div>
+        <div
+          class="after"
+          ref="drag"
+          draggable="true"
+          @drag="dragMenu"
+          @dragover.prevent="dragMenu"
+        ></div>
       </ul>
     </div>
   </nav>
@@ -37,6 +43,7 @@ const router = useRouter();
 const route = useRoute();
 const checkbox: Ref<HTMLInputElement | undefined> = ref();
 const menu: Ref<HTMLInputElement | undefined> = ref();
+const drag: Ref<HTMLInputElement | undefined> = ref();
 
 const menuClick = (pe: MouseEvent) => {
   store.menu = (pe.target as HTMLInputElement)?.checked;
@@ -61,11 +68,18 @@ const routeClick = (route: endRoutes) => {
 };
 
 const dragMenu = (e: Event) => {
-  const { pageX, pageY } = e as MouseEvent;
-  console.log({
-    pageX,
-    pageY,
-  });
+  e.preventDefault();
+  const { x } = e as DragEvent;
+
+  if (x > 0) {
+    store.viewStyle = {
+      transform: store.menu ? `translate(${x}px,0)` : 'none',
+      width: store.menu ? `calc(100% - ${x}px)` : '100%',
+    };
+
+    if (menu.value) menu.value.style.width = `${x}px`;
+    drag.value?.classList.add('dragging');
+  } else drag.value?.classList.remove('dragging');
 };
 </script>
 
@@ -142,9 +156,11 @@ nav {
 
   #menu {
     position: absolute;
-    min-width: 30%;
+    width: 30%;
+    width: 30vw;
     min-height: calc(100vh + 100px);
-    overflow: auto;
+    overflow-y: hidden;
+    overflow-x: auto;
     margin: -100px 0 0 -10px;
     padding: 125px 50px 50px 100px;
     box-sizing: border-box;
@@ -157,13 +173,18 @@ nav {
     padding-inline-start: 40px;
     .after {
       display: inline-block;
-      width: 2px;
+      width: 4px;
       height: 100%;
-      background-image: linear-gradient(to bottom, #000, #777);
+      background-image: linear-gradient(to bottom, #000, #fff);
       position: absolute;
       top: 0;
       right: 0;
       cursor: move;
+      cursor: col-resize;
+      &.dragging {
+        background-image: linear-gradient(to top, #000, #fff);
+        opacity: 0.4;
+      }
     }
     li {
       padding: 10px 0;
