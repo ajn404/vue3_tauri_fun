@@ -13,9 +13,6 @@ declare module '@vue/runtime-core' {
     Codemirror: typeof import('vue-codemirror')['Codemirror']
     DefaultEditor: typeof import('./components/editor/defaultEditor.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
-    ElInput: typeof import('element-plus/es')['ElInput']
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
     RustEditor: typeof import('./components/editor/rustEditor.vue')['default']
   }
 }

@@ -6,7 +6,7 @@ const mute = ref(limit_time);
 const video: Ref<HTMLVideoElement | null> = ref(null);
 
 const code = ref('');
-let timer: number | undefined;
+let timer: ReturnType<typeof setInterval> | undefined;
 
 const document_isReady = () => {
   return document.hasFocus() && document.readyState === 'complete';
@@ -14,7 +14,6 @@ const document_isReady = () => {
 
 const setTimer = () => {
   timer = setInterval(() => {
-    console.log(timer);
     if (document_isReady()) mute.value--;
 
     if (mute.value <= 0 && video.value?.paused) {
