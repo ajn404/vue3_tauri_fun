@@ -22,6 +22,6 @@
     "resolveJsonModule": true,
     "noEmit": true,
     "tsBuildInfoFile": ".tsbuildinfo",
-    "verbatimModuleSyntax": true
+    // "verbatimModuleSyntax": true
   }
 }

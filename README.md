@@ -1,4 +1,4 @@
-# vue3_pad
+# vue3 tauri app template
 
 This template should help get you started developing with Vue 3 in Vite.
 
@@ -50,3 +50,16 @@ npm run test:unit
 ```sh
 npm run lint
 ```
+
+
+### run tauri
+
+```sh
+npm run tauri
+```
+
+
+### web site
+
+[gitpage](ajn404.github.io/vue3_tauri_fun/)
+[stats](ajn404.github.io/vue3_tauri_fun/stats)

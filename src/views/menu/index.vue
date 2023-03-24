@@ -164,7 +164,7 @@ nav {
   #menu {
     position: absolute;
     width: 30%;
-    width: 30vw;
+    width: 300px;
     min-height: calc(100vh + 100px);
     overflow-y: hidden;
     overflow-x: auto;

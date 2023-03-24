@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import { onMounted, onUnmounted, ref, type Ref } from 'vue';
-// import { Codemirror } from 'vue-codemirror';
 const limit_time = 20;
 const mute = ref(limit_time);
 const video: Ref<HTMLVideoElement | null> = ref(null);
 
 const code = ref('');
+//not just number | undifined
 let timer: ReturnType<typeof setInterval> | undefined;
 
 const document_isReady = () => {
