@@ -7,5 +7,5 @@ declare module '*.vue' {
 }
 
 // vite-env.d.ts
-declare const NODE_ENV: string
-declare const VUE_APP_MODE: string
+declare const NODE_ENV: string;
+declare const VUE_APP_MODE: string;
