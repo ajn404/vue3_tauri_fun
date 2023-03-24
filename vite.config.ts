@@ -48,7 +48,10 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
       open: true,
     },
 
-    build: {},
+    build: {
+      
+    },
+    base:"/vue3_tauri_fun",
     plugins: [
       vue(),
       vueJsx(),
