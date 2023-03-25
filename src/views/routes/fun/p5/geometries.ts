@@ -1,68 +1,70 @@
-//coding is art
-export const geometries = (_: any, container: HTMLElement | null) => {
-  _.setup = () => {
-    _.createCanvas(
+import type p5 from 'p5';
+//coding is art\
+
+export const geometries = (sketch: p5, container: HTMLElement | null) => {
+  sketch.setup = () => {
+    sketch.createCanvas(
       container?.clientWidth || 400,
       container?.clientHeight || 400,
-      _.WEBGL
+      sketch.WEBGL
     );
   };
 
-  _.draw = () => {
-    _.background(255);
-    _.translate(-200, -100, 0);
-    _.normalMaterial();
+  sketch.draw = () => {
+    sketch.background(255);
+    sketch.translate(-200, -100, 0);
+    sketch.normalMaterial();
 
-    _.push();
+    sketch.push();
 
-    _.rotateZ(_.frameCount * 0.1);
-    _.rotateX(_.frameCount * 0.1);
-    _.rotateY(_.frameCount * 0.1);
+    sketch
+      .rotateZ(sketch.frameCount * 0.1)
+      .rotateX(sketch.frameCount * 0.1)
+      .rotateY(sketch.frameCount * 0.1);
 
-    _.plane(200);
-    _.pop();
+    sketch.plane(200).pop();
 
-    _.translate(200, 0, 0);
-    _.push();
-    _.rotateZ(_.frameCount * 0.01);
-    _.rotateX(_.frameCount * 0.01);
-    _.rotateY(_.frameCount * 0.01);
+    sketch.translate(200, 0, 0).push();
+    sketch
+      .rotateZ(sketch.frameCount * 0.01)
+      .rotateX(sketch.frameCount * 0.01)
+      .rotateY(sketch.frameCount * 0.01);
 
-    _.box(70, 70, 70);
-    _.pop();
+    sketch.box(70, 70, 70);
+    sketch.pop();
 
-    _.translate(200, 0, 0);
-    _.push();
-    _.rotateZ(_.frameCount * 0.01);
-    _.rotateX(_.frameCount * 0.01);
-    _.rotateY(_.frameCount * 0.01);
-    _.cylinder(30, 10);
-    _.pop();
+    sketch.translate(200, 0, 0).push();
+    sketch
+      .rotateZ(sketch.frameCount * 0.01)
+      .rotateX(sketch.frameCount * 0.01)
+      .rotateY(sketch.frameCount * 0.01);
+    sketch.cylinder(30, 10);
+    sketch.pop();
 
-    _.translate(-400, 200, 0);
-    _.push();
-    _.rotateZ(_.frameCount * 0.01);
-    _.rotateX(_.frameCount * 0.01);
-    _.rotateY(_.frameCount * 0.01);
+    sketch.translate(-400, 200, 0);
+    sketch.push();
+    sketch.rotateZ(sketch.frameCount * 0.01);
+    sketch.rotateX(sketch.frameCount * 0.01);
+    sketch.rotateY(sketch.frameCount * 0.01);
     // 底r和高
-    _.cone(30, 100);
-    _.pop();
+    sketch.cone(30, 100);
+    sketch.pop();
 
-    _.translate(200, 0, 0);
-    _.push();
-    _.rotateZ(_.frameCount * 0.02);
-    _.rotateX(_.frameCount * 0.01);
-    _.rotateY(_.frameCount * 0.01);
+    sketch.translate(200, 0, 0);
+    sketch.push();
+    sketch.rotateZ(sketch.frameCount * 0.02);
+    sketch.rotateX(sketch.frameCount * 0.01);
+    sketch.rotateY(sketch.frameCount * 0.01);
     // 圆环 半径和高
-    _.torus(60, 30);
-    _.pop();
+    sketch.torus(60, 30);
+    sketch.pop();
 
-    _.translate(200, 0, 0);
-    _.push();
-    _.rotateZ(_.frameCount * 0.01);
-    _.rotateX(_.frameCount * 0.01);
-    _.rotateY(_.frameCount * 0.01);
-    _.sphere(70);
-    _.pop();
+    sketch.translate(200, 0, 0);
+    sketch.push();
+    sketch.rotateZ(sketch.frameCount * 0.01);
+    sketch.rotateX(sketch.frameCount * 0.01);
+    sketch.rotateY(sketch.frameCount * 0.01);
+    sketch.sphere(70);
+    sketch.pop();
   };
 };

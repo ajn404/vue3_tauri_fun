@@ -14,7 +14,7 @@ const p5_instance: Ref<p5 | null> = ref(null);
 
 nextTick(() => {
   if (container.value) {
-    p5_instance.value = new p5((args) => {
+    p5_instance.value = new p5(function (args: p5) {
       geometries(args, container.value);
     }, container.value);
   }
