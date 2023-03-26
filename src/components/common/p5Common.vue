@@ -10,10 +10,9 @@ import { defineComponent, ref, type Ref } from 'vue';
 
 export default defineComponent({
     setup() {
-        const container: Ref<HTMLElement | null> = ref(null);
         const p5_instance: Ref<p5 | null> = ref(null);
+
         return {
-            container,
             p5_instance
         }
     },
