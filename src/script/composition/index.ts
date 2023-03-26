@@ -1,1 +1,1 @@
-export default function demo() {}
+export { useP5 } from './p5Common'

@@ -4,29 +4,24 @@
   </div>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import p5 from 'p5';
-import { nextTick, onUnmounted, ref, type Ref } from 'vue';
-import { geometries } from './geometries';
+import { geometries } from './instances/geometries';
+import P5Common from '@/components/common/p5Common.vue';
 
-const container: Ref<HTMLElement | null> = ref(null);
-const p5_instance: Ref<p5 | null> = ref(null);
-
-nextTick(() => {
-  if (container.value) {
-    p5_instance.value = new p5(function (args: p5) {
-      geometries(args, container.value);
-    }, container.value);
+export default defineComponent({
+  extends: P5Common,
+  mounted() {
+    this.$nextTick(() => {
+      if (this.container) {
+        const container = this.container
+        this.p5_instance = new p5(function (args: p5) {
+          geometries(args, container);
+        }, this.container);
+      }
+    });
   }
-});
-
-const drop_instance = () => {
-  if (p5_instance.value) {
-    p5_instance.value.remove();
-  }
-};
-
-onUnmounted(() => {
-  drop_instance();
-});
+})
 </script>
+

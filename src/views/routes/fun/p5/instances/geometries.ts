@@ -1,5 +1,6 @@
 import type p5 from 'p5';
 //coding is art\
+import { transform } from '../basic'
 
 export const geometries = (sketch: p5, container: HTMLElement | null) => {
   sketch.setup = () => {
@@ -17,53 +18,41 @@ export const geometries = (sketch: p5, container: HTMLElement | null) => {
 
     sketch.push();
 
-    sketch
-      .rotateZ(sketch.frameCount * 0.1)
-      .rotateX(sketch.frameCount * 0.1)
-      .rotateY(sketch.frameCount * 0.1);
+    transform(sketch, 0.02)
 
     sketch.plane(200).pop();
 
     sketch.translate(200, 0, 0).push();
-    sketch
-      .rotateZ(sketch.frameCount * 0.01)
-      .rotateX(sketch.frameCount * 0.01)
-      .rotateY(sketch.frameCount * 0.01);
-
+    transform(sketch);
     sketch.box(70, 70, 70);
     sketch.pop();
 
     sketch.translate(200, 0, 0).push();
-    sketch
-      .rotateZ(sketch.frameCount * 0.01)
-      .rotateX(sketch.frameCount * 0.01)
-      .rotateY(sketch.frameCount * 0.01);
+    transform(sketch);
+
     sketch.cylinder(30, 10);
     sketch.pop();
 
     sketch.translate(-400, 200, 0);
     sketch.push();
-    sketch.rotateZ(sketch.frameCount * 0.01);
-    sketch.rotateX(sketch.frameCount * 0.01);
-    sketch.rotateY(sketch.frameCount * 0.01);
+    transform(sketch);
+
     // 底r和高
     sketch.cone(30, 100);
     sketch.pop();
 
     sketch.translate(200, 0, 0);
     sketch.push();
-    sketch.rotateZ(sketch.frameCount * 0.02);
-    sketch.rotateX(sketch.frameCount * 0.01);
-    sketch.rotateY(sketch.frameCount * 0.01);
+    transform(sketch);
+
     // 圆环 半径和高
     sketch.torus(60, 30);
     sketch.pop();
 
     sketch.translate(200, 0, 0);
     sketch.push();
-    sketch.rotateZ(sketch.frameCount * 0.01);
-    sketch.rotateX(sketch.frameCount * 0.01);
-    sketch.rotateY(sketch.frameCount * 0.01);
+    transform(sketch);
+
     sketch.sphere(70);
     sketch.pop();
   };

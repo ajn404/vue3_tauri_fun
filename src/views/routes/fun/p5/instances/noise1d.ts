@@ -6,10 +6,8 @@ export const noise = (_: p5, container: HTMLElement | null) => {
     _.createCanvas(
       container?.clientWidth || 400,
       container?.clientHeight || 400,
-      _.WEBGL
     );
-    //   background(0);
-    //   noStroke();
+      _.background(0).noStroke();
   };
 
   _.draw = () => {};

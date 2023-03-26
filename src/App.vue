@@ -1,7 +1,7 @@
 <script setup lang="ts" name="App">
 import { RouterView, useRoute, useRouter } from 'vue-router';
 import Menu from './views/menu/index.vue';
-import { watch, ref } from 'vue';
+import { watch, ref,version } from 'vue';
 import { useStore } from './stores';
 import { invoke } from '@tauri-apps/api';
 import { handleIsTauri } from '@/script/utils';
@@ -32,6 +32,9 @@ watch(
 
 const store = useStore();
 const component = ref(null);
+
+console.log("当前使用的vue版本为",version)
+
 </script>
 
 <template>
