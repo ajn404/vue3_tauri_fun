@@ -1,5 +1,5 @@
 //防抖 强制函数在某段时间内只执行一次
-export const debounce = (fn: () => {}, delay: number) => {
+export const debounce = (fn: () => void, delay: number) => {
   let inDebounce: string | number | NodeJS.Timeout;
   return function (this: any, ...args: []) {
     clearTimeout(inDebounce);
@@ -102,4 +102,12 @@ export const assertIsNonNullish = <T>(
 
 export const messOrder = (arr: any[]) => {
   arr.sort(() => Math.random() - 0.5);
+};
+
+export const sleep = async (time?: number) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('操作已完成');
+    }, time || 1000);
+  });
 };

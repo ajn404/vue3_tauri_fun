@@ -24,7 +24,6 @@
           draggable="true"
           @drag="dragMenu"
           @dragover.prevent="dragMenu"
-          
         ></div>
       </ul>
     </div>
@@ -33,7 +32,7 @@
 
 <script lang="ts" setup name="menu">
 import { endRoutes } from '@/router';
-import { reactive, ref, type Ref,nextTick } from 'vue';
+import { reactive, ref, type Ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useStore } from '@/stores';
 
@@ -69,7 +68,7 @@ const routeClick = (route: endRoutes) => {
 };
 
 // const windowWidth = window.innerWidth;
-// const windowHeight = window.innerHeight; 
+// const windowHeight = window.innerHeight;
 // let dragElementWidth = 0;
 // let dragElementHeight = 0;
 
@@ -82,18 +81,14 @@ const routeClick = (route: endRoutes) => {
 
 const dragMenu = (e: Event) => {
   e.preventDefault();
-  const { x ,y,} = e as DragEvent;
-  const target = drag.value
+  const { x } = e as DragEvent;
+  const target = drag.value;
   const event = new Event('resize');
   dispatchEvent(event);
-  if(target) target.style.top = '0px'
+  if (target) target.style.top = '0px';
 
-
-  if (x > 0&&target) {
-
-      target.style.left = `${x-4}px`
-  
-
+  if (x > 0 && target) {
+    target.style.left = `${x - 4}px`;
 
     store.viewStyle = {
       transform: store.menu ? `translate(${x}px,0)` : 'none',

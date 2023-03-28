@@ -103,7 +103,7 @@
   height: max-content;
   padding-bottom: 20em;
   display: grid;
-  box-sizing: border-box;
+  box-sizing: content-box;
   grid-template-columns: 30% 70%;
   grid-row-gap: 300px;
   .shape {

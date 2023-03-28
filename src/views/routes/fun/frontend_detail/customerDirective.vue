@@ -32,6 +32,8 @@ export default defineComponent({
 
 <style lang="scss">
 .view {
+  display: grid;
+  place-items: center;
   input {
     padding: 2px 1em;
     color: #222;

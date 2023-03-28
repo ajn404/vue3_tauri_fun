@@ -4,28 +4,20 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref, type Ref } from 'vue';
+<script lang="ts" setup>
 import p5 from 'p5';
-import { geometries } from './instances/geometries';
-import P5Common from '@/components/common/p5Common.vue';
+import { nextTick } from 'vue';
+import { geometries } from './instances';
 
-export default defineComponent({
-  extends: P5Common,
-  setup() {
-    const container: Ref<HTMLElement | null> = ref(null);
-    return { container };
-  },
-  mounted() {
-    this.$nextTick(() => {
-      if (this.container) {
-        const container = this.container;
+import { useP5 } from '@/script/composition';
 
-        this.p5_instance = new p5(function (args: p5) {
-          geometries(args, container);
-        }, this.container);
-      }
-    });
-  },
+const { container, p5_instance } = useP5();
+
+nextTick(() => {
+  if (container.value) {
+    p5_instance.value = new p5(function (args: p5) {
+      geometries(args, container.value);
+    }, container.value);
+  }
 });
 </script>
