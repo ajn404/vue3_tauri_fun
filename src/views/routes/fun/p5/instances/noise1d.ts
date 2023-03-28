@@ -1,7 +1,8 @@
 import type p5 from 'p5';
+import type { p5_func } from './index'
 
 //coding is art
-export const noise = (
+export const noise:p5_func = (
   sketch: p5,
   container: HTMLElement | null,
   xoff = 0.0,

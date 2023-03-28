@@ -118,8 +118,8 @@ nav {
 
     input {
       display: block;
-      width: 100px;
-      height: 100px;
+      width: 33px;
+      height: 33px;
       cursor: pointer;
       position: absolute;
       top: -7px;
@@ -184,8 +184,9 @@ nav {
     width: 30%;
     width: 300px;
     min-height: calc(100vh + 100px);
-    overflow-y: hidden;
-    overflow-x: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 100%;
     margin: -100px 0 0 -10px;
     padding: 175px 50px 50px 100px;
     box-sizing: border-box;
