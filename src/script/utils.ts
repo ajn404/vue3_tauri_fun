@@ -75,15 +75,12 @@ export function toggleFullScreen(docElm: HtmlElement, doc: DocumentExtend) {
 }
 
 export const isElementNotInViewport = (el: HTMLElement) => {
-  if (el) {
-    const rect = el.getBoundingClientRect();
-    return (
-      rect.top >=
-        (window.innerHeight || document.documentElement.clientHeight) ||
-      rect.bottom <= 0
-    );
-  }
-  return false;
+  const { top, bottom } = el?.getBoundingClientRect() ?? {};
+  return (
+    (top >= (window.innerHeight || document.documentElement.clientHeight) ||
+      bottom <= 0) &&
+    !!el
+  );
 };
 
 export const handleIsTauri = () => {
@@ -101,4 +98,8 @@ export const assertIsNonNullish = <T>(
   if (value === null || value === undefined) {
     throw Error(message);
   }
+};
+
+export const messOrder = (arr: any[]) => {
+  arr.sort(() => Math.random() - 0.5);
 };
