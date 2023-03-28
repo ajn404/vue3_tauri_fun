@@ -24,6 +24,7 @@
           draggable="true"
           @drag="dragMenu"
           @dragover.prevent="dragMenu"
+          
         ></div>
       </ul>
     </div>
@@ -32,7 +33,7 @@
 
 <script lang="ts" setup name="menu">
 import { endRoutes } from '@/router';
-import { reactive, ref, type Ref } from 'vue';
+import { reactive, ref, type Ref,nextTick } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useStore } from '@/stores';
 
@@ -67,11 +68,33 @@ const routeClick = (route: endRoutes) => {
   // if (route.rank !== 0) checkbox.value?.click();
 };
 
+// const windowWidth = window.innerWidth;
+// const windowHeight = window.innerHeight; 
+// let dragElementWidth = 0;
+// let dragElementHeight = 0;
+
+// nextTick(()=>{
+//   if(drag.value){
+//     dragElementWidth = drag.value.offsetWidth;
+//     dragElementHeight = drag.value.offsetHeight;
+//   }
+// })
+
 const dragMenu = (e: Event) => {
   e.preventDefault();
-  const { x } = e as DragEvent;
+  const { x ,y,} = e as DragEvent;
+  const target = drag.value
+  const event = new Event('resize');
+  dispatchEvent(event);
+  if(target) target.style.top = '0px'
 
-  if (x > 0) {
+
+  if (x > 0&&target) {
+
+      target.style.left = `${x-4}px`
+  
+
+
     store.viewStyle = {
       transform: store.menu ? `translate(${x}px,0)` : 'none',
       width: store.menu ? `calc(100% - ${x}px)` : '100%',
@@ -182,11 +205,11 @@ nav {
       display: inline-block;
       width: 4px;
       height: 100%;
-      position: absolute;
+      position: fixed;
+      background-image: linear-gradient(to bottom, #000, #fff);
       top: 0;
-      right: 0;
+      left: 300px;
       &:hover {
-        background-image: linear-gradient(to bottom, #000, #fff);
         cursor: move;
         cursor: col-resize;
       }

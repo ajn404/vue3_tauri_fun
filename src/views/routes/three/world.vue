@@ -51,7 +51,7 @@ onUnmounted(() => {
 
   .btn {
     position: fixed;
-    left: 50vw;
+    left: 0;
     top: 100px;
   }
 }

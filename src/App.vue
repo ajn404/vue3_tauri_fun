@@ -46,13 +46,27 @@ console.log("当前使用的vue版本为",version)
         </keep-alive>
       </transition>
     </div>
-    <router-view v-slot="{ Component }">
+        <router-view v-slot="{ Component }">
+      <KeepAlive>
+        <XyzTransition appear :xyz="`fade stagger-1`" mode="in-out">
+          <component
+        class="component"
+        ref="component"
+        :style="store.viewStyle"
+        :is="Component"
+      />
+        </XyzTransition>
+      </KeepAlive>
+    </router-view>
+
+    <!-- <router-view v-slot="{ Component }">
       <component
         class="component"
         ref="component"
         :style="store.viewStyle"
         :is="Component"
       />
-    </router-view>
+    </router-view> -->
   </div>
 </template>
+
