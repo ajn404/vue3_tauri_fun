@@ -6,27 +6,38 @@
       v-focus
       v-model="input"
     />
+    <DefaultEditor :disabled="true" v-model="code" />
+
   </div>
+
+
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'customerDirective',
-  data() {
-    return {
-      input: '',
-    };
-  },
-
-  directives: {
-    focus: {
-      mounted: (el) => {
-        el.focus();
+    name: "customerDirective",
+    data() {
+        return {
+            input: "",
+            code: `     directives: {
+        focus: {
+          mounted: (el) => {
+            el.focus();
+          },
+        },
       },
+      `
+        };
     },
-  },
+    directives: {
+        focus: {
+            mounted: (el) => {
+                el.focus();
+            },
+        },
+    },
 });
 </script>
 

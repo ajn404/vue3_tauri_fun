@@ -64,20 +64,7 @@ const routeClick = (route: endRoutes) => {
     path: route.path,
   });
 
-  // if (route.rank !== 0) checkbox.value?.click();
 };
-
-// const windowWidth = window.innerWidth;
-// const windowHeight = window.innerHeight;
-// let dragElementWidth = 0;
-// let dragElementHeight = 0;
-
-// nextTick(()=>{
-//   if(drag.value){
-//     dragElementWidth = drag.value.offsetWidth;
-//     dragElementHeight = drag.value.offsetHeight;
-//   }
-// })
 
 const dragMenu = (e: Event) => {
   e.preventDefault();
