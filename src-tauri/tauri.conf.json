@@ -55,11 +55,11 @@
     },
     "windows": [
       {
-        "fullscreen": true,
+        "fullscreen": false,
         "height": 600,
+        "width": 800,
         "resizable": true,
-        "title": "宁辉岳nb",
-        "width": 800
+        "title": "tauri app"
       }
     ]
   }

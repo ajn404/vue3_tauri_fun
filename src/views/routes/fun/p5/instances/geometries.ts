@@ -1,6 +1,6 @@
 import type p5 from 'p5';
 //coding is art\
-import { transform } from '../basic'
+import { transform } from '../basic';
 
 export const geometries = (sketch: p5, container: HTMLElement | null) => {
   sketch.setup = () => {
@@ -18,7 +18,7 @@ export const geometries = (sketch: p5, container: HTMLElement | null) => {
 
     sketch.push();
 
-    transform(sketch, 0.02)
+    transform(sketch, 0.02);
 
     sketch.plane(200).pop();
 

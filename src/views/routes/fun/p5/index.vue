@@ -14,20 +14,18 @@ export default defineComponent({
   extends: P5Common,
   setup() {
     const container: Ref<HTMLElement | null> = ref(null);
-    return { container }
+    return { container };
   },
   mounted() {
     this.$nextTick(() => {
-
       if (this.container) {
-        const container = this.container
+        const container = this.container;
 
         this.p5_instance = new p5(function (args: p5) {
           geometries(args, container);
         }, this.container);
       }
     });
-  }
-})
+  },
+});
 </script>
-
