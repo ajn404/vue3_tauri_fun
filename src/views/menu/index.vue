@@ -18,13 +18,7 @@
           {{ item.name }}
           <span> ({{ item.path }}) </span>
         </li>
-        <div
-          class="after"
-          ref="drag"
-          draggable="true"
-          @drag="dragMenu"
-          @dragover.prevent="dragMenu"
-        ></div>
+        <div class="after" ref="drag" @mousedown="mousedown"></div>
       </ul>
     </div>
   </nav>
@@ -63,28 +57,36 @@ const routeClick = (route: endRoutes) => {
     name: route.name,
     path: route.path,
   });
-
 };
 
-const dragMenu = (e: Event) => {
-  e.preventDefault();
-  const { x } = e as DragEvent;
-  const target = drag.value;
-  const event = new Event('resize');
-  dispatchEvent(event);
-  if (target) target.style.top = '0px';
+const mousemove = (e: MouseEvent) => {
+  const x = e.clientX;
+  drag.value?.classList.add('dragging');
 
-  if (x > 0 && target) {
-    target.style.left = `${x - 4}px`;
+  if (drag.value && menu.value && menu.value?.clientWidth >= 90) {
+    const target = drag.value;
+    const event = new Event('resize');
+    dispatchEvent(event);
 
-    store.viewStyle = {
-      transform: store.menu ? `translate(${x}px,0)` : 'none',
-      width: store.menu ? `calc(100% - ${x}px)` : '100%',
-    };
+    if (x > 0 && target) {
+      target.style.left = `${x - 4}px`;
 
-    if (menu.value) menu.value.style.width = `${x}px`;
-    drag.value?.classList.add('dragging');
-  } else drag.value?.classList.remove('dragging');
+      store.viewStyle = {
+        transform: store.menu ? `translate(${x}px,0)` : 'none',
+        width: store.menu ? `calc(100% - ${x}px)` : '100%',
+      };
+
+      if (menu.value) menu.value.style.width = `${x}px`;
+    }
+  }
+};
+
+const mousedown = () => {
+  addEventListener('mousemove', mousemove, false);
+
+  addEventListener('mouseup', () =>
+    removeEventListener('mousemove', mousemove, false)
+  );
 };
 </script>
 
@@ -197,7 +199,7 @@ nav {
         cursor: col-resize;
       }
       &.dragging {
-        background-image: linear-gradient(to top, #000, #fff);
+        background: transparent;
         opacity: 0.4;
       }
     }
