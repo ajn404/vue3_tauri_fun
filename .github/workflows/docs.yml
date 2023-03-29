@@ -32,10 +32,10 @@ jobs:
       - name: Install dependencies
         run: npm i
 
-      - name: Build VuePress site
+      - name: Build site
         run: npm run build
 
-      - name: add status
+      - name: add status.html
         run: mv stats.html ./dist
 
       - name: Install Rust
@@ -44,13 +44,10 @@ jobs:
           profile: minimal
           toolchain: stable
 
-      - name: setup mdbook
-        run: cd ./docs && cargo install mdbook
-      - name: Build Book
-        run: mdbook build
-
-      - name: move
-        run: mv ./book ../dist
+      - name: Setup mdbook
+        run: cargo install mdbook
+      - name: Build Book and Move
+        run: mdbook build docs && mv ./docs/book ./dist
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2
