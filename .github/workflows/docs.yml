@@ -35,17 +35,22 @@ jobs:
       - name: Build VuePress site
         run: npm run build
 
+      - name: add status
+        run: mv stats.html ./dist
+
       - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
           profile: minimal
           toolchain: stable
 
-      - name: build mdbook
-        run: cd ./docs && cargo install mdbook  && mdbook build
+      - name: setup mdbook
+        run: cd ./docs && cargo install mdbook
+      - name: Build Book
+        run: mdbook build
 
-      - name: add status
-        run: mv stats.html ./dist
+      - name: move
+        run: mv ./book ../dist
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2
