@@ -1,6 +1,6 @@
 import {
   BoxGeometry,
-  Color,
+  //   Color,
   Mesh,
   MeshBasicMaterial,
   PerspectiveCamera,
@@ -48,7 +48,7 @@ const createRenderer = (
 
 const createScene = () => {
   const scene = new Scene();
-  scene.background = new Color('rgba(10,10,10,0.5)');
+  //   scene.background = new Color('rgba(10,10,10,0.5)');
   return scene;
 };
 

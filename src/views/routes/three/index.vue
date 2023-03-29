@@ -8,7 +8,7 @@
 import { nextTick, onUnmounted, ref } from 'vue';
 import {
   BoxGeometry,
-  Color,
+  //   Color,
   Mesh,
   MeshBasicMaterial,
   PerspectiveCamera,
@@ -21,7 +21,7 @@ const container = ref();
 const initSketch = () => {
   if (container.value) {
     const scene = new Scene();
-    scene.background = new Color('skyblue');
+    // scene.background = new Color('skyblue');
     const fov = 35; // AKA Field of View
     const aspect = container.value.clientWidth / container.value.clientHeight;
     const near = 0.1; // the near clipping plane

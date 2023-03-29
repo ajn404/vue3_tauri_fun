@@ -19,6 +19,6 @@ export const createPBRRender = (
 ) => {
   const renderer = new WebGLRenderer();
   renderer.setSize(width, height, updateStyle);
-  renderer.physicallyCorrectLights = true;
+  //   renderer.physicallyCorrectLights = true;
   return renderer;
 };
