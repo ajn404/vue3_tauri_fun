@@ -3,4 +3,14 @@ authors = ["mac_ajn404"]
 language = "en"
 multilingual = false
 src = "src"
-title = "tauri app - vue three eg"
+title = "chatgpt自问自答 和 一些记录"
+
+
+[output.html]
+git-repository-url = "https://github.com/ajn404/vue3_tauri_fun"
+git-repository-icon = "fa-github"
+
+
+[preprocessor.toc]
+command = "mdbook-toc"
+renderer = ["html"]

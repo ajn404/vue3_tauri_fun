@@ -5,11 +5,13 @@ import {
   Material,
   MeshStandardMaterial,
   type ColorRepresentation,
+  Euler,
 } from 'three';
 
 interface createCubeOption {
   material: 'MeshStandardMaterial' | 'MeshBasicMaterial';
   color?: ColorRepresentation | undefined;
+  cubeRotate?: Euler;
 }
 
 export const createCube = (option?: createCubeOption): Mesh => {
@@ -30,7 +32,10 @@ export const createCube = (option?: createCubeOption): Mesh => {
   }
   const cube = new Mesh(geometry, material);
 
-  cube.rotation.set(-0.5, -0.1, 0.8);
+  if (option?.cubeRotate) {
+    const { x, y, z } = option.cubeRotate;
+    cube.rotation.set(x, y, z);
+  }
 
   return cube;
 };

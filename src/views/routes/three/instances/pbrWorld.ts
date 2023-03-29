@@ -2,6 +2,7 @@ import { createLights } from '../basic/light';
 import { createCube } from '../basic/cube';
 import { World } from './world';
 import { createPBRRender } from '../basic/renderer';
+import { Euler } from 'three';
 
 export class pbrWorld extends World {
   light_position_x?: number;
@@ -31,7 +32,11 @@ export class pbrWorld extends World {
     this.cube = createCube({
       material: 'MeshStandardMaterial',
       color: 'blue',
+      cubeRotate: new Euler(1, 1, 1),
     });
+
+    this.cube.position.set(0, 0, 10);
+    this.cube.scale.set(1.7, 0.7, 0.7);
 
     this.scene?.add(light, this.cube);
   }
