@@ -21,7 +21,8 @@ export default defineComponent({
     data() {
         return {
             input: "",
-            code: `     directives: {
+            code: `           //自定义指令
+                 directives: {
         focus: {
           mounted: (el) => {
             el.focus();
