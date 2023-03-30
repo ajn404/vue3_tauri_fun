@@ -1,7 +1,15 @@
-export { geometries } from './geometries';
-export { noise } from './noise1d';
-export { grid } from './grid';
+export * from './geometries';
+export * from './noise1d';
+export * from './grid';
+export * from './sort';
 
 import type p5 from 'p5';
 
-export type p5_func =  (sketch: p5, container: HTMLElement | null) => void
+export type p5_func = (
+  sketch: p5,
+  container: HTMLElement | null,
+  option?: p5Option
+) => void;
+export interface p5Option {
+  width?: number;
+}

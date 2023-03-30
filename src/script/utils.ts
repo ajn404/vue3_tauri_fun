@@ -8,7 +8,7 @@ export const debounce = (fn: () => void, delay: number) => {
     }, delay);
   };
 };
-
+//节流
 export const throttle = (fn: () => void, threshold: number) => {
   // 记录上次执行的时间
   let last: number;
