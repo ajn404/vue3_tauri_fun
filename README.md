@@ -64,16 +64,17 @@ npm run build
 npm run test:unit
 ```
 
-or 
-
-```sh
-npm run format
-```
 
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh
 npm run lint
+```
+
+or 
+
+```sh
+npm run format
 ```
 
 ### run Tauri app

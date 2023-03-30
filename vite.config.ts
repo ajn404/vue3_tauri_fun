@@ -51,6 +51,10 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
     build: {
       rollupOptions: {
         output: {
+          manualChunks: {
+            p5: ['p5'],
+          },
+
           sanitizeFileName: (filename: string): string => {
             if (filename.includes('plugin-vue')) {
               return filename.replace('\0', '');

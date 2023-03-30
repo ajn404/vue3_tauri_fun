@@ -1,3 +1,8 @@
+/**
+ * define some basic functions when using p5
+ *
+ */
+
 import type p5 from 'p5';
 
 export const transform = (sketch: p5, rate = 0.01): p5 => {
