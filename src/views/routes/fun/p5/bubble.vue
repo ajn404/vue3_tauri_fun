@@ -3,8 +3,8 @@
     <div class="control">
       <span>rate 刷新率</span>
       <el-slider
-        :min="30"
-        :max="90"
+        :min="1"
+        :max="120"
         :step="1"
         v-model="option.rate"
         @change="update"
@@ -13,7 +13,7 @@
       <span>width</span>
       <el-slider
         :min="1"
-        :max="20"
+        :max="50"
         :step="1"
         v-model="option.width"
         @change="update"

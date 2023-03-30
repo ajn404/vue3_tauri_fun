@@ -29,7 +29,27 @@ export const bubbleSortView = (
     }
   };
 
+  const drawLine = ()=>{
+    for (let m = 0; m < values.length; m++) {
+      let color = m/values.length*255;
+      let reverseColor  = 255 -color;
+
+      sketch.fill(255);
+      sketch.stroke(
+        color,
+        reverseColor,
+        color
+      );
+      sketch.strokeWeight(width);
+
+      const line_height = sketch.height - values[m];
+      sketch.line(m * width, sketch.height, m * width, line_height);
+    }
+  }
+
   sketch.draw = () => {
+
+
     sketch.background(0);
 
     //核心冒泡排序代码块
@@ -41,24 +61,18 @@ export const bubbleSortView = (
         if (a > b) {
           [values[j], values[j + 1]] = [b, a];
           calculate++;
+          
         }
       }
+      i++;
+      drawLine();
     } else {
       sketch.noLoop();
+      drawLine();
       console.log('n=', values.length, '一共交换', calculate, '次');
     }
-    i++;
-    for (let m = 0; m < values.length; m++) {
-      sketch.stroke(
-        (((m * width) / 10) % 200) + 50,
-        (((m * width) / 10) % 355) - 100,
-        (((m * width) / 10) % 55) + 200
-      );
-      sketch.strokeWeight(width);
 
-      const line_height = sketch.height - values[m];
-      sketch.line(m * width, sketch.height, m * width, line_height);
-    }
+
   };
 
   sketch.mousePressed = () => {};
