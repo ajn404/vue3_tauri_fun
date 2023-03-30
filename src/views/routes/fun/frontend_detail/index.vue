@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 import { onMounted, onUnmounted, ref, type Ref } from 'vue';
+import { Codemirror } from 'vue-codemirror';
+
 const limit_time = 20;
 const mute = ref(limit_time);
 const video: Ref<HTMLVideoElement | null> = ref(null);
@@ -88,7 +90,7 @@ $back_color: #eee;
       用户{{ mute }}s不操作，视频自动播放
     </h2>
 
-    <defaultEditor
+    <Codemirror
       ref="editor"
       v-model="code"
       placeholder="尝试在这里输入内容，视频就会暂停，计时会重新开始"

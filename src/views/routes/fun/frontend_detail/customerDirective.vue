@@ -6,22 +6,22 @@
       v-focus
       v-model="input"
     />
-    <DefaultEditor :disabled="true" v-model="code" />
-
+    <Codemirror :disabled="true" v-model="code" />
   </div>
-
-
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 
+import { Codemirror } from 'vue-codemirror';
+
 export default defineComponent({
-    name: "customerDirective",
-    data() {
-        return {
-            input: "",
-            code: `           //自定义指令
+  name: 'customerDirective',
+  components: { Codemirror },
+  data() {
+    return {
+      input: '',
+      code: `           //自定义指令
                  directives: {
         focus: {
           mounted: (el) => {
@@ -29,16 +29,16 @@ export default defineComponent({
           },
         },
       },
-      `
-        };
+      `,
+    };
+  },
+  directives: {
+    focus: {
+      mounted: (el) => {
+        el.focus();
+      },
     },
-    directives: {
-        focus: {
-            mounted: (el) => {
-                el.focus();
-            },
-        },
-    },
+  },
 });
 </script>
 

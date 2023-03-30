@@ -1,6 +1,22 @@
-# vue3 tauri app template
+# vue3 Tauri app template
 
-This template should help get you started developing with Vue 3 in Vite.
+This template should help get you started developing with Vue 3 [Tauri](http://tauri.app/) app in Vite.
+
+## web site
+
+- [Tauri Home](https://ajn404.github.io/vue3_tauri_fun/)
+
+- [Docs](https://ajn404.github.io/vue3_tauri_fun/book)
+
+- [Lib stats](https://ajn404.github.io/vue3_tauri_fun/stats)
+
+
+## Prerequisites
+
+- Rust (nightly)
+- Node.js
+- Npm
+- Mdbook
 
 ## Recommended IDE Setup
 
@@ -20,6 +36,9 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 ## Customize configuration
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+
+## development
 
 ## Project Setup
 
@@ -45,21 +64,29 @@ npm run build
 npm run test:unit
 ```
 
+or 
+
+```sh
+npm run format
+```
+
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh
 npm run lint
 ```
 
-
-### run tauri
+### run Tauri app
 
 ```sh
 npm run tauri
 ```
 
+### run Docs
 
-### web site
+```sh
+#if don not have mdbook
+cargo install mdbook
+npm run docs
+```
 
-[gitpage](https://ajn404.github.io/vue3_tauri_fun/)
-[stats](https://ajn404.github.io/vue3_tauri_fun/stats)
