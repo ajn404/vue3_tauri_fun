@@ -193,7 +193,7 @@ nav {
       position: fixed;
       background-image: linear-gradient(to bottom, #000, #fff);
       top: 0;
-      left: 300px;
+      left: 296px;
       &:hover {
         cursor: move;
         cursor: col-resize;
