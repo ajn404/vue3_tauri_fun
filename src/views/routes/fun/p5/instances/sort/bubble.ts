@@ -1,5 +1,6 @@
 import type p5 from 'p5';
 import type { p5Option } from '..';
+import { debounce } from '@/script/utils';
 export interface bubbleSortViewOption extends p5Option {
   rate?: number;
 }
@@ -12,10 +13,7 @@ export const bubbleSortView = (
   let i = 0;
   let values: number[] = [];
   const width: number = option?.width || 1;
-
   const rate = option?.rate || 60;
-
-  let calculate = 0;
   sketch.setup = () => {
     i = 0;
     sketch.createCanvas(
@@ -29,27 +27,20 @@ export const bubbleSortView = (
     }
   };
 
-  const drawLine = ()=>{
+  const drawLine = () => {
     for (let m = 0; m < values.length; m++) {
-      let color = m/values.length*255;
-      let reverseColor  = 255 -color;
+      const color = (m / values.length) * 255;
+      const reverseColor = 255 - color;
 
-      sketch.fill(255);
-      sketch.stroke(
-        color,
-        reverseColor,
-        color
-      );
+      sketch.stroke(color, reverseColor, color);
       sketch.strokeWeight(width);
 
       const line_height = sketch.height - values[m];
       sketch.line(m * width, sketch.height, m * width, line_height);
     }
-  }
+  };
 
   sketch.draw = () => {
-
-
     sketch.background(0);
 
     //核心冒泡排序代码块
@@ -60,8 +51,6 @@ export const bubbleSortView = (
         const b = values[j + 1];
         if (a > b) {
           [values[j], values[j + 1]] = [b, a];
-          calculate++;
-          
         }
       }
       i++;
@@ -69,11 +58,22 @@ export const bubbleSortView = (
     } else {
       sketch.noLoop();
       drawLine();
-      console.log('n=', values.length, '一共交换', calculate, '次');
     }
-
-
   };
 
-  sketch.mousePressed = () => {};
+  sketch.mouseMoved = debounce(() => {
+    const { mouseX } = sketch;
+    for (let m = 0; m < values.length; m++) {
+      const color = (m / values.length) * 255;
+      const reverseColor = 255 - color;
+      const line_height = sketch.height - values[m];
+
+      sketch.stroke(color, reverseColor, color);
+      sketch.strokeWeight(width);
+      if (mouseX > (m - 0.5) * width && mouseX < (m + 0.5) * width) {
+        sketch.stroke(0, 0, 0);
+      }
+      sketch.line(m * width, sketch.height, m * width, line_height);
+    }
+  }, 0);
 };
