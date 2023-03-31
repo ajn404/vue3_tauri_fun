@@ -4,7 +4,7 @@
       <span>rate 刷新率</span>
       <el-slider
         :min="1"
-        :max="120"
+        :max="20"
         :step="1"
         v-model="option.rate"
         @change="update"
