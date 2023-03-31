@@ -5,6 +5,6 @@
 </template>
 
 <script lang="ts" setup>
-import { usePbrWorld } from './composition/usePbrWorld';
+import { usePbrWorld } from './composition';
 let { container } = usePbrWorld();
 </script>
