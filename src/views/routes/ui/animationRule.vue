@@ -103,9 +103,12 @@
   height: max-content;
   padding-bottom: 20em;
   display: grid;
-  box-sizing: content-box;
   grid-template-columns: 30% 70%;
   grid-row-gap: 300px;
+
+  *{
+  box-sizing: content-box;
+  }
   .shape {
     display: flex;
     align-items: center;

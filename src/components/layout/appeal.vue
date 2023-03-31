@@ -22,8 +22,8 @@
 .twelve .shape .container {
   animation: show-container 8s infinite cubic-bezier(0.6, -0.44, 0.37, 1.44);
   transform-style: preserve-3d;
-  width: 4em;
-  height: 4em;
+  width: 100px;
+  height: 100px;
   border: 1em solid #fff;
   background: #2d97db;
   position: relative;
@@ -74,21 +74,21 @@
   10% {
     opacity: 1;
     transform: none;
-    width: 4em;
-    height: 4em;
+    width: 100px;
+    height: 100px;
   }
   15%,
   90% {
-    width: 12em;
-    height: 12em;
-    transform: translate(-4em, -4em);
+    width: 300px;
+    height: 300px;
+    transform: translate(-100px, -100px);
     opacity: 1;
   }
   100% {
     opacity: 0;
     transform: rotateX(-90deg);
-    width: 4em;
-    height: 4em;
+    width: 100px;
+    height: 100px;
   }
 }
 
@@ -136,9 +136,9 @@
 .shape {
   background: #2d97db;
   border: 1em solid #fff;
-  width: 4em;
+  width: 400px;
   display: block;
-  height: 4em;
+  height: 400px;
   position: absolute;
   top: calc(20% - 2em);
   left: calc(50% - 2em);

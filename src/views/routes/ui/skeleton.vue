@@ -2,15 +2,7 @@
 import { onMounted, ref, onUnmounted, nextTick } from 'vue';
 import { messOrder } from '@/script/utils';
 const loading = ref(true);
-const arr = [
-  '1/你好呀',
-  '2/这里是',
-  '3/加载到的',
-  '4/内容',
-  '5/你可以',
-  '6/随意',
-  '7/打乱顺序',
-];
+const arr = "你好呀😊,这里是加载到的内容📖,你可以打乱顺序🔢,也可以重新加载⏬,只要你喜欢的❤️,我都可以做⛽️".split(',');
 const contents = ref(structuredClone(arr));
 let timer: ReturnType<typeof setTimeout> | undefined;
 

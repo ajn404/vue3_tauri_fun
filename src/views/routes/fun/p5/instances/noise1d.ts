@@ -19,12 +19,17 @@ export const noise: p5_func = (sketch: p5, container: HTMLElement | null) => {
     // 基于 x_off 和 scale 得到一个噪声值
     // 并根据窗口宽度进行缩放
     const n = sketch.noise(x_off) * sketch.width;
-
+    
     // 每一轮增加 x_off
     x_off += x_increment;
 
     // 绘制由柏林噪声产生的数值的椭圆
-    sketch.fill(200);
-    sketch.ellipse(n, sketch.height / 2, 64, 64);
+    for(let i =1;i*100<sketch.height;i++){
+      const r = i*100/sketch.height*255;
+      sketch.fill(r,255-r,2*r%255);
+      sketch.ellipse(n-50*(sketch.height/100-i),  i*100-32, 64, 64);
+      // sketch.ellipse(n,  i*100-32, 64, 64);
+      sketch.ellipse(n+50*(sketch.height/100-i),  i*100-32, 64, 64);
+    }
   };
 };
