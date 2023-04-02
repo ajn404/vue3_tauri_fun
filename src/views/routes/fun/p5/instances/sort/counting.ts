@@ -69,10 +69,39 @@ export const countingSortView = (
         setupStoreArr();
     };
 
+
+    //any script
+    const deepCloneMethod = (target: any) => {
+        const map = new Map();
+        function isObject(val: any) {
+            return val != null && typeof val === "object";
+        }
+        function clone(target: any) {
+            if (isObject(target)) {
+                let cloneTarget: any = Array.isArray(target) ? [] : {};
+                if (map.get(target)) {
+                    return map.get(target);
+                }
+                map.set(target, cloneTarget);
+                for (const key in target) {
+                    cloneTarget[key] = clone(target[key]);
+                }
+                return cloneTarget;
+            } else {
+                return target;
+            }
+        }
+        return clone(target);
+    }
+
     const setupStoreArr = () => {
         k = values.length - 1;
         len = values.length;
-        storeArr = structuredClone(values);
+        
+        storeArr = deepCloneMethod(values);
+        // storeArr = structuredClone(values);
+        // storeArr = values;
+
         let max = storeArr[0];
         for (let i = 1; i < len; i++) {
             let item = storeArr[i];
@@ -93,7 +122,7 @@ export const countingSortView = (
             const color = (m / values.length) * 255;
             const reverseColor = 255 - color;
 
-            sketch.stroke(reverseColor-100, color, 100);
+            sketch.stroke(reverseColor - 100, color, 100);
             sketch.strokeWeight(width);
 
             const line_height = sketch.height - values[m];
