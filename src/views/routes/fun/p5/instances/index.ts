@@ -2,7 +2,7 @@ export * from './geometries';
 export * from './noise1d';
 export * from './grid';
 export * from './sort';
-
+export * from './sound';
 import type p5 from 'p5';
 
 export type p5_func = (

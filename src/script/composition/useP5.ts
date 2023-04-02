@@ -4,6 +4,17 @@ import { debounce } from '../utils';
 import { useStore } from '@/stores';
 import type { p5Option, p5_func } from '@/views/routes/fun/p5/instances';
 
+
+declare global {
+  interface Window {
+    p5: any;
+  }
+  var p5: any;
+}
+if (window)
+  window.p5 = p5;
+
+
 export const useP5 = (method: p5_func, option?: p5Option) => {
   const container: Ref<HTMLElement | null> = ref(null);
   const p5_instance: Ref<p5 | null> = ref(null);
