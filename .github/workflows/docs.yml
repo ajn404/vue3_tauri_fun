@@ -38,7 +38,25 @@ jobs:
       - name: add status.html
         run: mv stats.html ./dist
 
-      - name: Install Rust
+      - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: docs
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+on:
+  push:
+    paths:
+      - 'docs/**' # 监视docs目录及其所有子目录中的文件变化
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
           profile: minimal
@@ -49,10 +67,3 @@ jobs:
       - name: Build Book and Move
         run: mdbook build docs && mv ./docs/book ./dist
 
-      - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v2
-        with:
-          target_branch: docs
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
