@@ -4,7 +4,7 @@
       <span>rate 迭代速度</span>
       <el-slider
         :min="1"
-        :max="120"
+        :max="20"
         :step="1"
         v-model="option.rate"
         @change="update"
@@ -24,22 +24,11 @@
 </template>
 
 <script lang="ts" setup>
-import { useCounting } from './composition';
+import { useQuick } from './composition';
 
-const { container, update, option } = useCounting();
+const { container, update, option } = useQuick();
 </script>
 
 <style lang="scss" scoped>
-.view {
-  background-image: linear-gradient(to right, #aaa, #666);
-  .control {
-    width: 50vw;
-    position: fixed;
-    top: 20px;
-    color: white;
-    left: calc(50% - 25vw);
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-  }
-}
+@import url("./sort.scss");
 </style>

@@ -2,6 +2,7 @@ import type p5 from 'p5';
 import type { p5Option } from '..';
 export interface countingSortViewOption extends p5Option {
     rate?: number;
+    count?:number;
 }
 
 export const coutingSort = (storeArr: number[]): number[] => {
@@ -43,6 +44,30 @@ export const coutingSort = (storeArr: number[]): number[] => {
 
 }
 
+//any script
+export const deepCloneMethod = (target: any) => {
+    const map = new Map();
+    function isObject(val: any) {
+        return val != null && typeof val === "object";
+    }
+    function clone(target: any) {
+        if (isObject(target)) {
+            let cloneTarget: any = Array.isArray(target) ? [] : {};
+            if (map.get(target)) {
+                return map.get(target);
+            }
+            map.set(target, cloneTarget);
+            for (const key in target) {
+                cloneTarget[key] = clone(target[key]);
+            }
+            return cloneTarget;
+        } else {
+            return target;
+        }
+    }
+    return clone(target);
+}
+
 export const countingSortView = (
     sketch: p5,
     container: HTMLElement | null,
@@ -70,34 +95,12 @@ export const countingSortView = (
     };
 
 
-    //any script
-    const deepCloneMethod = (target: any) => {
-        const map = new Map();
-        function isObject(val: any) {
-            return val != null && typeof val === "object";
-        }
-        function clone(target: any) {
-            if (isObject(target)) {
-                let cloneTarget: any = Array.isArray(target) ? [] : {};
-                if (map.get(target)) {
-                    return map.get(target);
-                }
-                map.set(target, cloneTarget);
-                for (const key in target) {
-                    cloneTarget[key] = clone(target[key]);
-                }
-                return cloneTarget;
-            } else {
-                return target;
-            }
-        }
-        return clone(target);
-    }
+
 
     const setupStoreArr = () => {
         k = values.length - 1;
         len = values.length;
-        
+
         storeArr = deepCloneMethod(values);
         // storeArr = structuredClone(values);
         // storeArr = values;
@@ -131,11 +134,19 @@ export const countingSortView = (
     };
 
     sketch.draw = () => {
+        sketch.translate(0.5*width,0);
+
         sketch.background(0);
         drawLine();
 
         if (k >= 0 && len > 0) {
-            values[C[storeArr[k]]] = storeArr[k];
+            values[C[storeArr[k]] - 1] = storeArr[k];
+            {
+                sketch.stroke(256, 256, 256);
+                const line_height = sketch.height - values[k];
+                sketch.line(k * width, sketch.height, k * width, line_height);
+                if (option)option.count = values[k];
+            }
             C[storeArr[k]]--;
         }
         else {

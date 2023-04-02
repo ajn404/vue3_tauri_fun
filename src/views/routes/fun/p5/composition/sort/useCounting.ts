@@ -5,6 +5,7 @@ export const useCounting = () => {
   const option = reactive({
     rate: 60,
     width: 3,
+    count: 0,
   });
   const { container, p5_instance, update } = useP5(countingSortView, option);
 

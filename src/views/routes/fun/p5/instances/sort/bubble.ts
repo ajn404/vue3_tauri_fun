@@ -41,6 +41,8 @@ export const bubbleSortView = (
   };
 
   sketch.draw = () => {
+    sketch.translate(0.5*width,0);
+
     sketch.background(0);
 
     //核心冒泡排序代码块
@@ -71,7 +73,7 @@ export const bubbleSortView = (
       sketch.stroke(color, reverseColor, color);
       sketch.strokeWeight(width);
       if (mouseX > (m - 0.5) * width && mouseX < (m + 0.5) * width) {
-        sketch.stroke(0, 0, 0);
+        sketch.stroke(255, 255, 255);
       }
       sketch.line(m * width, sketch.height, m * width, line_height);
     }

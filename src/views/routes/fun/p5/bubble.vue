@@ -31,16 +31,5 @@ const { container, update, option } = useBubble();
 </script>
 
 <style lang="scss" scoped>
-.view {
-  background-image: linear-gradient(to right, #aaa, #666);
-  .control {
-    width: 50vw;
-    position: fixed;
-    top: 20px;
-    color: white;
-    left: calc(50% - 25vw);
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-  }
-}
+@import url("./sort.scss");
 </style>

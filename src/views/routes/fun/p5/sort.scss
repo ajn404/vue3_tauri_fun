@@ -1,0 +1,23 @@
+.view {
+    background-image: linear-gradient(to right, #aaa, #666);
+}
+
+.control {
+    width: 50vw;
+    position: fixed;
+    top: 20px;
+    color: white;
+    left: calc(50% - 25vw);
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+
+.data-view {
+    position: fixed;
+    left: 0;
+    top: 20%;
+    color: white;
+    padding: 1em;
+    border-radius: 5px;
+    border: 1px dotted #888;
+}
