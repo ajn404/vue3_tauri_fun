@@ -3,28 +3,47 @@ name: docs
 on:
   push:
     paths:
-      - 'docs/**' # 监视docs目录及其所有子目录中的文件变化
+      - 'docs/**'
     branches: [main]
   workflow_dispatch:
 
 jobs:
-  build:
+  docs:
+    needs: deploy
+
     runs-on: ubuntu-latest
+
     steps:
-
     - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      with:
+        fetch-depth: 0
 
-    - name: Install Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: stable
+    - name: Create dist directory
+      run: mkdir -p dist
 
-      - name: Setup mdbook
-        run: cargo install mdbook
+    - name: Install Rust and build dependencies
+      uses: actions-rs/toolchain@v1
+      with:
+        profile: minimal
+        toolchain: stable
 
-      - name: Build Book and Move
-        run: mdbook build docs && mv ./docs/book ./dist
+    - name: Check Rust code
+      run: cargo check
 
+    - name: Clean existing book
+      run: rm -rf ./docs/book
+
+    - name: Build Book
+      run: mdbook build docs
+
+    - name: Verify generated book
+      run: mdbook test docs
+
+    - name: Move Book to Dist
+      run: mv ./docs/book ./dist
+
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@4.1.3
+      with:
+        branch: gh-pages
+        folder: dist
