@@ -1,10 +1,10 @@
 <template>
   <div class="view">
     <div class="control">
-      <span>rate 刷新率</span>
+      <span>rate 迭代速度</span>
       <el-slider
         :min="1"
-        :max="20"
+        :max="120"
         :step="1"
         v-model="option.rate"
         @change="update"
