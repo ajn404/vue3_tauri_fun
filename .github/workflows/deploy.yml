@@ -38,6 +38,23 @@ jobs:
       - name: add status.html
         run: mv stats.html ./dist
 
+      
+      - name: Install Rust and build dependencies
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+
+      - name: Setup mdBook
+        uses: peaceiris/actions-mdbook@v1
+        with:
+          mdbook-version: '0.4.10'
+      - name: Build Book
+        run: mdbook ./docs/build
+  
+      - name: move
+        run: mv ./docs/book ./dist
+
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2
         with:
