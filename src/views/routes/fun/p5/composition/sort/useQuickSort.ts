@@ -1,6 +1,6 @@
 import { reactive } from 'vue';
 import { useP5 } from '@/script/composition';
-import { quickSortView } from '../../instances/sort/quick';
+import { quickSortView } from '../../instances';
 export const useQuick = () => {
   const option = reactive({
     rate: 5,

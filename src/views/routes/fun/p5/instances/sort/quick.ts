@@ -79,7 +79,7 @@ export const quickSortView = (
       container?.clientWidth || sketch.windowWidth,
       container?.clientHeight || sketch.windowHeight
     );
-    sketch.frameRate(rate * 20);
+    sketch.frameRate(rate );
     values = new Array(Math.round(sketch.width / width));
     for (let n = 0; n < values.length; n++) {
       values[n] = sketch.random(sketch.height);

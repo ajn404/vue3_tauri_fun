@@ -204,11 +204,12 @@ nav {
       }
     }
     li {
-      padding: 10px 0;
+      padding: 10px ;
       text-decoration: none;
       color: #887723;
       transition: color 0.3s ease;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
 
