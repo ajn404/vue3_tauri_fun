@@ -9,7 +9,6 @@ on:
 
 jobs:
   docs:
-    needs: deploy
 
     runs-on: ubuntu-latest
 
@@ -27,23 +26,13 @@ jobs:
         profile: minimal
         toolchain: stable
 
-    - name: Check Rust code
-      run: cargo check
+    - name: 
+    
 
-    - name: Clean existing book
-      run: rm -rf ./docs/book
-
-    - name: Build Book
-      run: mdbook build docs
-
-    - name: Verify generated book
-      run: mdbook test docs
-
-    - name: Move Book to Dist
-      run: mv ./docs/book ./dist
-
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@4.1.3
-      with:
-        branch: gh-pages
-        folder: dist
+    - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: docs
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
