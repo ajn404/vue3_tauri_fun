@@ -3,7 +3,7 @@ import { useP5 } from '@/script/composition';
 import { quickSortView } from '../../instances';
 export const useQuick = () => {
   const option = reactive({
-    rate: 5,
+    rate: 20,
     width: 2,
   });
   const { container, p5_instance, update } = useP5(quickSortView, option);
