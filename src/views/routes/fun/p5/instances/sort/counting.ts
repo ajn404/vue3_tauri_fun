@@ -1,5 +1,5 @@
 import type p5 from 'p5';
-import type { p5Option } from '..';
+import type { p5Option } from '../';
 export interface countingSortViewOption extends p5Option {
     rate?: number;
     count?:number;
