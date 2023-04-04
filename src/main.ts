@@ -2,6 +2,7 @@ import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import App from './App.vue';
 import router from './router';
+import './index.css';
 import '@/styles/index.scss';
 import '@animxyz/core';
 import VueAnimXyz from '@animxyz/vue3';
@@ -9,15 +10,7 @@ import { gsap } from 'gsap';
 import { CSSPlugin } from 'gsap/CSSPlugin';
 // 将 CSSPlugin 添加到 GSAP 插件中
 gsap.registerPlugin(CSSPlugin);
-// console.log('应用的环境变量', import.meta.env);
 const app = createApp(App);
-// router.beforeEach((to, from, next) => {
-//   to.matched.forEach((record) => {
-//     console.log(record);
-//   });
-
-//   console.log(from, next);
-// });
 app.use(createPinia());
 app.use(router);
 app.use(VueAnimXyz);
