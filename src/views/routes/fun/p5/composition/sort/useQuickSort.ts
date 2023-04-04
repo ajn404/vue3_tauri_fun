@@ -4,7 +4,7 @@ import { quickSortView } from '../../instances';
 export const useQuick = () => {
   const option = reactive({
     rate: 20,
-    width: 2,
+    width: 4,
   });
   const { container, p5_instance, update } = useP5(quickSortView, option);
 
