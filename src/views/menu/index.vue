@@ -204,7 +204,7 @@ nav {
       }
     }
     li {
-      padding: 10px ;
+      padding: 10px;
       text-decoration: none;
       color: #0c0e0e;
       transition: color 0.3s ease;

@@ -1,6 +1,11 @@
 import { WebGLRenderer } from 'three';
+type RenderFunc = (
+  width: number,
+  height: number,
+  updateStyle?: boolean
+) => WebGLRenderer;
 
-export const createRenderer = (
+const createRenderer: RenderFunc = (
   width: number,
   height: number,
   updateStyle?: boolean
@@ -10,15 +15,14 @@ export const createRenderer = (
   return renderer;
 };
 
-//pbr
-
-export const createPBRRender = (
+const createAntialiasRender: RenderFunc = (
   width: number,
   height: number,
   updateStyle?: boolean
 ) => {
-  const renderer = new WebGLRenderer();
-  renderer.setSize(width, height, updateStyle);
-  //   renderer.physicallyCorrectLights = true;
-  return renderer;
+  const render = new WebGLRenderer({ antialias: true });
+  render.setSize(width, height, updateStyle);
+  return render;
 };
+
+export { createRenderer, createAntialiasRender };

@@ -1,26 +1,25 @@
 import { nextTick, onUnmounted, reactive, ref } from 'vue';
-import { transitionWorld } from '../instances/transitionWorld';
+import { reactiveWorld } from '../instances';
 import '../three.scss';
-export const useTransitionWorld = () => {
+export const useReactiveWorld = () => {
   const container = ref();
-  let world: transitionWorld | Object = reactive({});
+  let world: reactiveWorld | Object = reactive({});
 
   const toggleRender = () => {
-    if (world instanceof transitionWorld) {
+    if (world instanceof reactiveWorld) {
       world.render(container.value);
     }
   };
 
   nextTick(() => {
     if (container.value) {
-      world = new transitionWorld(container.value);
-
+      world = new reactiveWorld(container.value);
       toggleRender();
     }
   });
 
   onUnmounted(() => {
-    if (world instanceof transitionWorld) {
+    if (world instanceof reactiveWorld) {
       world.beforeDestroy();
     }
   });

@@ -1,7 +1,7 @@
 import { createLights } from '../basic/light';
 import { createCube } from '../basic/cube';
 import { World } from './world';
-import { createPBRRender } from '../basic/renderer';
+import { createRenderer } from '../basic/renderer';
 import { Euler, Matrix4 } from 'three';
 
 export class transitionWorld extends World {
@@ -10,7 +10,7 @@ export class transitionWorld extends World {
   }
 
   appendRender(container: HTMLElement): void {
-    this.renderer = createPBRRender(
+    this.renderer = createRenderer(
       container.clientWidth,
       container.clientHeight
     );
