@@ -5,6 +5,8 @@ import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import { visualizer } from 'rollup-plugin-visualizer';
 import Components from 'unplugin-vue-components/vite';
+// import { internalIpV4 } from 'internal-ip';
+
 import {
   ElementPlusResolver,
   AntDesignVueResolver,
@@ -28,7 +30,8 @@ const loadEnv = (mode: string) => {
   return ret;
 };
 
-export default defineConfig(({ command, mode, ssrBuild }) => {
+export default defineConfig(async ({ command, mode, ssrBuild }) => {
+  //   const host = await internalIpV4();
   console.log(command, loadEnv(mode), ssrBuild);
   return {
     resolve: {
@@ -45,7 +48,14 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
       },
     },
     server: {
-      open: true,
+      host: '0.0.0.0', // listen on all addresses
+      port: 5173,
+      strictPort: true,
+      hmr: {
+        protocol: 'ws',
+        // host,
+        port: 5183,
+      },
     },
 
     build: {
