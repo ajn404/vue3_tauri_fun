@@ -5,6 +5,6 @@
 </template>
 
 <script lang="ts" setup>
-import { useTransitionWorld } from './composition';
-let { container } = useTransitionWorld();
+import { useGrid } from '../composition/useGrid';
+const { container } = useGrid();
 </script>

@@ -9,7 +9,7 @@
 
 <script lang="ts" setup>
 import { nextTick, onUnmounted, reactive, ref } from 'vue';
-import { World } from './instances/world';
+import { World } from '../instances/world';
 
 const container = ref();
 let world: World | Object = reactive({});

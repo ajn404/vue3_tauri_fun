@@ -1,7 +1,6 @@
 <template>
   <div class="view">
     <div class="control">
-      
       <span>rate 迭代速度</span>
       <el-slider
         :min="1"
@@ -25,11 +24,11 @@
 </template>
 
 <script lang="ts" setup>
-import { useBubble } from './composition';
+import { useHeap } from '../composition';
 
-const { container, update, option } = useBubble();
+const { container, update, option } = useHeap();
 </script>
 
 <style lang="scss" scoped>
-@import url("./sort.scss");
+@import url('./sort.scss');
 </style>

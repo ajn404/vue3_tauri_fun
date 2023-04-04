@@ -5,7 +5,6 @@
 </template>
 
 <script lang="ts" setup>
-import { noise } from './instances';
-import { useP5 } from '@/script/composition';
-const { container } = useP5(noise);
+import { useTransitionWorld } from '../composition';
+let { container } = useTransitionWorld();
 </script>

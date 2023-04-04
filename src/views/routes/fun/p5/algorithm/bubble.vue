@@ -4,7 +4,7 @@
       <span>rate 迭代速度</span>
       <el-slider
         :min="1"
-        :max="20"
+        :max="120"
         :step="1"
         v-model="option.rate"
         @change="update"
@@ -24,11 +24,11 @@
 </template>
 
 <script lang="ts" setup>
-import { useQuick } from './composition';
+import { useBubble } from '../composition';
 
-const { container, update, option } = useQuick();
+const { container, update, option } = useBubble();
 </script>
 
 <style lang="scss" scoped>
-@import url("./sort.scss");
+@import url('./sort.scss');
 </style>

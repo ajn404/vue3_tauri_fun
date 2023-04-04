@@ -1,11 +1,10 @@
 <template>
   <div class="view">
     <div class="control">
-      
       <span>rate 迭代速度</span>
       <el-slider
         :min="1"
-        :max="120"
+        :max="20"
         :step="1"
         v-model="option.rate"
         @change="update"
@@ -25,11 +24,11 @@
 </template>
 
 <script lang="ts" setup>
-import { useHeap } from './composition';
+import { useQuick } from '../composition';
 
-const { container, update, option } = useHeap();
+const { container, update, option } = useQuick();
 </script>
 
 <style lang="scss" scoped>
-@import url("./sort.scss");
+@import url('./sort.scss');
 </style>

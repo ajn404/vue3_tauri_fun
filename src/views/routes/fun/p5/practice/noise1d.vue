@@ -5,6 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useGrid } from './composition/useGrid';
-const { container } = useGrid();
+import { noise } from '../instances';
+import { useP5 } from '@/script/composition';
+const { container } = useP5(noise);
 </script>

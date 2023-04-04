@@ -18,23 +18,22 @@
         v-model="option.width"
         @change="update"
       />
-
     </div>
 
     <div class="data-view">
-          计数排序
-          <p> A[j]={{ option.count }}</p>
-    </div>  
+      计数排序
+      <p>A[j]={{ option.count }}</p>
+    </div>
     <div class="container" ref="container"></div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { useCounting } from './composition';
+import { useCounting } from '../composition';
 
 const { container, update, option } = useCounting();
 </script>
 
 <style lang="scss" scoped>
-@import url("./sort.scss");
+@import url('./sort.scss');
 </style>
