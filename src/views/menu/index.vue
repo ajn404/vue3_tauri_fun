@@ -226,11 +226,11 @@ nav {
         $fontsize: calc(44px / $i);
         $font-weight: calc(400 / $i);
         $margin-left-right: calc($i * 20px);
+        word-break: break-all;
         cursor: pointer;
-
         &.level-#{$i} {
           font-size: $fontsize;
-          margin: 0 $margin-left-right;
+          // margin: 0 $margin-left-right;
           font-weight: $font-weight;
           line-height: $fontsize;
 

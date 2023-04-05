@@ -4,7 +4,7 @@ export * from './grid';
 export * from './sort';
 export * from './sound';
 import type p5 from 'p5';
-
+export * from './practice'
 export type p5_func = (
   sketch: p5,
   container: HTMLElement | null,
