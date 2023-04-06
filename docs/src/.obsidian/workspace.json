@@ -1,0 +1,163 @@
+{
+  "main": {
+    "id": "fe4507b374d69779",
+    "type": "split",
+    "children": [
+      {
+        "id": "630658fd8b3adc96",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b428cce089665f88",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "interview_everyday/day06.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "109093cb7bb0e830",
+    "type": "split",
+    "children": [
+      {
+        "id": "4b53d0a699518dec",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8109444033f4308c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "9e4d0f037d2e99f0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "c4638760ff617e07",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "bfa15fb42edc9896",
+    "type": "split",
+    "children": [
+      {
+        "id": "f55ffc2357fdac78",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e34e92733ac51976",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "interview_everyday/day06.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "2bff99eadca960d8",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "interview_everyday/day06.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "05774645042043d1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "bd83e3f7df3b9008",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "interview_everyday/day06.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "b428cce089665f88",
+  "lastOpenFiles": [
+    "interview_everyday/day05.md",
+    "SUMMARY.md",
+    "shell.md",
+    "record.md",
+    "interview.md",
+    "doc.md",
+    "interview_everyday/day04.md",
+    "interview_everyday/day06.md",
+    "interview_everyday/day03.md",
+    "interview_everyday/day02.md",
+    "interview_everyday/day01.md"
+  ]
+}

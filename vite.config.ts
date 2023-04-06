@@ -6,7 +6,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 import { visualizer } from 'rollup-plugin-visualizer';
 import Components from 'unplugin-vue-components/vite';
 // import { internalIpV4 } from 'internal-ip';
-
+import { config } from './config/postcss.config';
 import {
   ElementPlusResolver,
   AntDesignVueResolver,
@@ -25,28 +25,29 @@ const loadEnv = (mode: string) => {
   for (const key in env) {
     ret[key] = JSON.stringify(env[key]);
   }
-  console.log(ret);
-
   return ret;
 };
 
-export default defineConfig(async ({ command, mode, ssrBuild }) => {
+export default defineConfig(({ command, mode, ssrBuild }) => {
   //   const host = await internalIpV4();
-  console.log(command, loadEnv(mode), ssrBuild);
+  //   console.log(command, loadEnv(mode), ssrBuild);
   return {
+    base: '/vue3_tauri_fun/',
+
+    css: {
+      postcss: config,
+      devSourcemap: true,
+      preprocessorOptions: {
+        scss: {},
+      },
+    },
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
       },
     },
     define: loadEnv(mode),
-    css: {
-      postcss: './postcss.config.js',
-      devSourcemap: true,
-      preprocessorOptions: {
-        scss: {},
-      },
-    },
+
     server: {
       host: '0.0.0.0', // listen on all addresses
       port: 5173,
@@ -75,7 +76,6 @@ export default defineConfig(async ({ command, mode, ssrBuild }) => {
         },
       },
     },
-    base: '/vue3_tauri_fun/',
     plugins: [
       vue(),
       vueJsx(),

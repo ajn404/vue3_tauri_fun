@@ -1,2 +1,5 @@
-@import url('./anime.scss');
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 @import url('./base.scss');
+@import url('./anime.scss');

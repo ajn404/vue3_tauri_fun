@@ -2,14 +2,15 @@ import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import App from './App.vue';
 import router from './router';
-import './index.css';
 import '@/styles/index.scss';
 import '@animxyz/core';
 import VueAnimXyz from '@animxyz/vue3';
 import { gsap } from 'gsap';
 import { CSSPlugin } from 'gsap/CSSPlugin';
+
 // 将 CSSPlugin 添加到 GSAP 插件中
 gsap.registerPlugin(CSSPlugin);
+
 const app = createApp(App);
 app.use(createPinia());
 app.use(router);

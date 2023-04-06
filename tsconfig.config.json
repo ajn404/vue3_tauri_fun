@@ -4,8 +4,10 @@
     "vite.config.*",
     "vitest.config.*",
     "cypress.config.*",
-    "playwright.config.*"
+    "playwright.config.*",
+    "config/postcss.config.*"
   ],
+  "$schema": "http://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "composite": true,
     "types": ["node"],
