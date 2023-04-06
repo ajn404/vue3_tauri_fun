@@ -10,16 +10,22 @@ if (handleIsTauri())
 
 const route = useRoute();
 const router = useRouter();
-
+const loading = ref(false);
 router.beforeEach((to, from, next) => {
-  to.matched.forEach((record) => {});
-
+  loading.value = true;
+  to.matched.forEach((record) => {});  
   next();
 });
+
+router.afterEach(()=>{
+  console.clear();
+})
+
 watch(
   () => route.path,
   (newPath, oldPath) => {
-    console.log(`路由从 ${oldPath} 切换到了 ${newPath}`);
+    // console.log(`路由从 ${oldPath} 切换到了 ${newPath}`);
+    
   }
 );
 
@@ -31,6 +37,15 @@ const component = ref(null);
 
 <template>
   <div class="App">
+    <!-- <el-progress
+      :percentage="100"
+      :indeterminate="true"
+      :show-text="false"
+      color="green"
+      :duration="5"
+      v-show="loading"
+      class="fixed z-50 w-full"
+    /> -->
     <div class="menu">
       <transition>
         <keep-alive>
