@@ -3,29 +3,14 @@
 </template>
 <script lang="ts" setup>
 import { Viewer } from '@photo-sphere-viewer/core';
+import { getImgSize } from '@/script/util';
+
 import '@photo-sphere-viewer/core/index.scss';
 import imgPath from '@/assets/k.webp';
 import { onMounted, ref, type Ref } from 'vue';
 const container: Ref<HTMLElement | null> = ref(null);
 const viewer: any = ref(null);
 const img_url = ref(imgPath);
-
-const getImgSize = (url: string): Promise<{ width: number; height: number }> =>
-  new Promise((resolve, reject) => {
-    const img = new Image();
-    img.src = url;
-
-    img.onload = function () {
-      resolve({
-        width: img.width,
-        height: img.height,
-      });
-
-      img.onerror = function () {
-        reject(new Error('error'));
-      };
-    };
-  });
 
 onMounted(async () => {
   if (container.value) {

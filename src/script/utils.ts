@@ -1,3 +1,5 @@
+export * from './util';
+
 //防抖 强制函数在某段时间内只执行一次
 export const debounce = (fn: () => void, delay: number) => {
   let inDebounce: string | number | NodeJS.Timeout;
