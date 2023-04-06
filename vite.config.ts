@@ -1,11 +1,9 @@
 import { fileURLToPath, URL } from 'node:url';
-
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import { visualizer } from 'rollup-plugin-visualizer';
 import Components from 'unplugin-vue-components/vite';
-// import { internalIpV4 } from 'internal-ip';
 import { config } from './config/postcss.config';
 import {
   ElementPlusResolver,
@@ -28,7 +26,12 @@ const loadEnv = (mode: string) => {
   return ret;
 };
 
-export default defineConfig(({ command, mode, ssrBuild }) => {
+export default defineConfig(async ({ command, mode, ssrBuild }) => {
+  let host = null;
+  const module = await import('internal-ip');
+  host = await module.internalIpV4();
+  console.log(host);
+
   //   const host = await internalIpV4();
   //   console.log(command, loadEnv(mode), ssrBuild);
   return {
@@ -52,11 +55,11 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
       host: '0.0.0.0', // listen on all addresses
       port: 5173,
       strictPort: true,
-      // hmr: {
-      //   protocol: 'ws',
-      //   // host,
-      //   port: 5183,
-      // },
+      hmr: {
+        protocol: 'ws',
+        host,
+        port: 5173,
+      },
     },
 
     build: {

@@ -15,14 +15,12 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "npx prettier . --write",
     "format:check": "npx prettier . --check",
-    "tauri": "tauri dev",
-    "docs": "mdbook serve docs",
-    "tauri:android init": "tauri android init",
-    "tauri:android dev": "tauri android dev"
+    "docs": "mdbook serve docs"
   },
   "dependencies": {
     "@animxyz/vue3": "^0.6.7",
     "@kitware/vtk.js": "^26.9.8",
+    "@photo-sphere-viewer/core": "^5.1.4",
     "@tauri-apps/api": "^2.0.0-alpha.2",
     "@types/p5": "^1.6.0",
     "@types/three": "^0.150.0",
