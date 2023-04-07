@@ -2,10 +2,9 @@ import { createLights } from '../basic/light';
 import { createCube } from '../basic/cube';
 import { World } from './';
 import { createAntialiasRender } from '../basic/renderer';
-import { Euler, Mesh, Object3D, MathUtils, Clock } from 'three';
+import { Euler, MathUtils, Clock } from 'three';
 import { resize } from '../basic/resize';
 const clock = new Clock();
-
 export class animationWorld extends World {
   animationFrame?: number;
   constructor(container: HTMLElement) {

@@ -1,3 +1,3 @@
-- https://discoverthreejs.com/zh/book/introduction/about-the-book/
-- https://tauri.app/
-- https://cn.vuejs.org/
+- [discover three](https://discoverthreejs.com/zh/book/introduction/about-the-book/)
+- [tauri docs](https://tauri.app/)
+- [vue3 docs](https://cn.vuejs.org/)
