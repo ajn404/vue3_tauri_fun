@@ -40,7 +40,7 @@ export const throttle = (fn: () => void, threshold: number) => {
   };
 };
 
-export function toggleFullScreen(docElm: HtmlElement, doc: DocumentExtend) {
+export const toggleFullScreen = (docElm: HtmlElement, doc: DocumentExtend) => {
   const requestFullScreen =
     docElm?.requestFullscreen ||
     docElm?.mozRequestFullScreen ||
@@ -74,15 +74,6 @@ export function toggleFullScreen(docElm: HtmlElement, doc: DocumentExtend) {
         console.log('Fullscreen API is not supported');
     }
   }
-}
-
-export const isElementNotInViewport = (el: HTMLElement) => {
-  const { top, bottom } = el?.getBoundingClientRect() ?? {};
-  return (
-    (top >= (window.innerHeight || document.documentElement.clientHeight) ||
-      bottom <= 0) &&
-    !!el
-  );
 };
 
 export const handleIsTauri = () => {
@@ -91,15 +82,6 @@ export const handleIsTauri = () => {
       window !== undefined &&
       window.__TAURI_IPC__ !== undefined
   );
-};
-
-export const assertIsNonNullish = <T>(
-  value: T,
-  message: string
-): asserts value is NonNullable<T> => {
-  if (value === null || value === undefined) {
-    throw Error(message);
-  }
 };
 
 export const messOrder = (arr: any[]) => {
@@ -112,28 +94,4 @@ export const sleep = async (time?: number) => {
       resolve('操作已完成');
     }, time || 1000);
   });
-};
-
-export const getBrowserVersion = (): { browser: String; version: String } => {
-  const userAgent = navigator.userAgent;
-  const res = {
-    version: '',
-    browser: '',
-  };
-  // 判断浏览器类型，并从 User-Agent 字符串中提取版本信息
-  if (userAgent.indexOf('Firefox') > -1) {
-    res.version = userAgent.match(/Firefox\/(\d+\.\d+)/)![1];
-    res.browser = 'firefox';
-  } else if (userAgent.indexOf('Chrome') > -1) {
-    res.version = userAgent.match(/Chrome\/(\d+\.\d+)/)![1];
-    res.browser = 'chrome';
-  } else if (userAgent.indexOf('Edge') > -1) {
-    res.version = userAgent.match(/Edge\/(\d+\.\d+)/)![1];
-    res.browser = 'edge';
-  } else if (userAgent.indexOf('Safari') > -1) {
-    res.version = userAgent.match(/Version\/(\d+\.\d+)/)![1];
-    res.browser = 'safari';
-  }
-
-  return res;
 };

@@ -31,7 +31,6 @@ export const createCube = (option?: createCubeOption): Mesh => {
       break;
   }
   const cube = new Mesh(geometry, material);
-
   if (option?.cubeRotate) {
     const { x, y, z } = option.cubeRotate;
     cube.rotation.set(x, y, z);

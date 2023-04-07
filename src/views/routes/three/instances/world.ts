@@ -14,6 +14,7 @@ import { resize } from '../basic/resize';
 
 import { useStore } from '@/stores';
 import { watch, nextTick } from 'vue';
+import type { animationWorld } from './animationWorld';
 const store = useStore();
 //World
 
@@ -32,6 +33,14 @@ class World {
     );
     this.appendRender(container);
     this.addProject();
+    watch(
+      () => store.menu,
+      () => {
+        nextTick(() => {
+          resize(this, container);
+        });
+      }
+    );
   }
 
   appendRender(container: HTMLElement): void {
@@ -51,15 +60,6 @@ class World {
         resize(this, container);
       },
       false
-    );
-
-    watch(
-      () => store.menu,
-      () => {
-        nextTick(() => {
-          resize(this, container);
-        });
-      }
     );
   }
 
