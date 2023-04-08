@@ -14,7 +14,7 @@ import {
 } from 'unplugin-vue-components/resolvers';
 
 type MyObject = {
-  [key: string]: any;
+  [key: string]: unknown;
 };
 
 const loadEnv = (mode: string) => {
@@ -27,13 +27,8 @@ const loadEnv = (mode: string) => {
 };
 
 export default defineConfig(async ({ command, mode, ssrBuild }) => {
-  let host = null;
   const module = await import('internal-ip');
-  host = await module.internalIpV4();
-  console.log(host);
-
-  //   const host = await internalIpV4();
-  //   console.log(command, loadEnv(mode), ssrBuild);
+  let host = await module.internalIpV4();
   return {
     base: '/vue3_tauri_fun/',
 
@@ -50,7 +45,6 @@ export default defineConfig(async ({ command, mode, ssrBuild }) => {
       },
     },
     define: loadEnv(mode),
-
     server: {
       host: '0.0.0.0', // listen on all addresses
       port: 5173,
@@ -68,7 +62,6 @@ export default defineConfig(async ({ command, mode, ssrBuild }) => {
           manualChunks: {
             p5: ['p5'],
           },
-
           sanitizeFileName: (filename: string): string => {
             if (filename.includes('plugin-vue')) {
               return filename.replace('\0', '');

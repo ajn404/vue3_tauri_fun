@@ -1,12 +1,8 @@
 <template>
   <div class="view">
     <div class="container" ref="container"></div>
-    <div
-      class="controller fixed left-3/4 top-5 flex flex-1 flex-col gap-2 w-1/4"
-    >
-      <el-button @click="toggleCustomer"
-        >{{ customer ? '关闭' : '打开' }}控制</el-button
-      >
+    <div class="controller fixed right-0 top-5 flex flex-1 flex-col gap-2 min-w-1/4">
+      <el-button @click="toggleCustomer">{{ customer ? '关闭' : '打开' }}控制</el-button>
       <div class="grid grid-cols-2" v-show="customer">
         <span class="text-white">camera position x</span>
         <el-slider :min="-12" :max="12" :step="0.1" v-model="option.cpx" />
@@ -68,11 +64,8 @@ const toggleCustomer = () => {
       }
       //0,0,0
       if (this.cube) {
-        console.log(this.cube);
-
         this.cube.position.x = option.value.mpx;
         this.cube.position.z = option.value.mpz;
-
         this.cube.rotation.x = option.value.mrx;
         this.cube.rotation.z = option.value.mrz;
       }
