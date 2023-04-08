@@ -1,0 +1,109 @@
+name : Build and Release
+
+on:
+    push:
+      tags:
+        - "v*"
+  
+jobs:
+    build-release:
+      runs-on: ubuntu-latest
+  
+      steps:
+        - uses: actions/checkout@v2
+          with:
+            fetch-depth: 0
+  
+        - name: Setup Node.js
+          uses: actions/setup-node@v1
+          with:
+            node-version: '16'
+  
+        - name: Cache dependencies
+          uses: actions/cache@v2
+          id: yarn-cache
+          with:
+            path: |
+              **/node_modules
+            key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+            restore-keys: |
+              ${{ runner.os }}-yarn-
+  
+        - name: Install dependencies
+          run: npm i
+
+        - name: Build site
+          run: npm run build
+  
+        - name: add status.html
+          run: mv stats.html ./dist
+
+        - name: Install Rust and build dependencies
+          uses: actions-rs/toolchain@v1
+          with:
+            profile: minimal
+            toolchain: stable
+  
+        - name: Setup mdBook
+          uses: peaceiris/actions-mdbook@v1
+          with:
+            mdbook-version: "latest"
+  
+        - name: Build Book
+          run: mdbook build ./docs
+    
+        - name: move
+          run: mv ./docs/book ./dist
+
+        # 将dist目录打成zip包
+        - name: Zip Dist
+          run: zip -r dist.zip dist
+
+        # 创建Release
+        - name: Create Release
+          id: create_release
+          uses: actions/create-release@v1
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            tag_name: ${{ github.ref }}
+            release_name: ${{ github.ref }}
+            draft: false
+            prerelease: false
+        # 上传zip包
+        - name: Upload Release Asset
+          uses: actions/upload-release-asset@v1
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            upload_url: ${{ steps.create_release.outputs.upload_url }}
+            asset_path: ./dist.zip
+            asset_name: js-screen-shot-dist.zip
+            asset_content_type: application/zip
+
+        - name: Deploy to GitHub Pages
+          uses: crazy-max/ghaction-github-pages@v2
+          with:
+            target_branch: docs
+            build_dir: dist
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    create-changelog:
+                runs-on: ubuntu-latest
+                # 需要等build结束后才执行此处
+                needs: build-release
+                steps:
+                  - uses: actions/checkout@v3
+                    with:
+                      fetch-depth: 0
+            
+                  - uses: actions/setup-node@v3
+                    with:
+                      node-version: 16.x
+            
+                  # 生成版本更新日志
+                  - run: npx changelogithub
+                    env:
+                      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+            

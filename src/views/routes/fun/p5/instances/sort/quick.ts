@@ -79,7 +79,7 @@ export const quickSortView = (
       container?.clientWidth || sketch.windowWidth,
       container?.clientHeight || sketch.windowHeight
     );
-    sketch.frameRate(rate * 100);
+    sketch.frameRate(rate * 8);
     values = new Array(Math.round(sketch.width / width));
     for (let n = 0; n < values.length; n++) {
       values[n] = sketch.random(sketch.height);
@@ -87,15 +87,18 @@ export const quickSortView = (
     stack.push([0, values.length - 1]);
   };
 
+  const g = sketch.random(255);
+
   const drawLine = () => {
     for (let m = 0; m < values.length; m++) {
       const color = (m / values.length) * 255;
       const reverseColor = 255 - color;
+
+      sketch.stroke(g,  reverseColor, color);
+      sketch.strokeWeight(width);
+
       const line_height = sketch.height - values[m];
-      sketch
-        .stroke(reverseColor, reverseColor, color)
-        .strokeWeight(width)
-        .line(m * width, sketch.height, m * width, line_height);
+      sketch.line(m * width, sketch.height, m * width, line_height);
     }
   };
 
@@ -118,6 +121,12 @@ export const quickSortView = (
       resolve(pivotIndex);
     });
   };
+
+  sketch.keyPressed = () => {
+    if (sketch.key === 's') {
+        sketch.saveGif("quickSort", 3, {});
+    }
+}
 
   sketch.draw = async () => {
     sketch.background(0);

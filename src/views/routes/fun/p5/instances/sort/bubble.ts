@@ -27,12 +27,14 @@ export const bubbleSortView = (
     }
   };
 
+  const g = sketch.random(255);
+
   const drawLine = () => {
     for (let m = 0; m < values.length; m++) {
       const color = (m / values.length) * 255;
       const reverseColor = 255 - color;
 
-      sketch.stroke(color, reverseColor, color);
+      sketch.stroke(g,  reverseColor, color);
       sketch.strokeWeight(width);
 
       const line_height = sketch.height - values[m];

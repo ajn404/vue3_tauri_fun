@@ -96,6 +96,12 @@ export const heapSortView = (
     }
   };
 
+  sketch.keyPressed = () => {
+    if (sketch.key === 's') {
+        sketch.saveGif("heapSort", 2, {});
+    }
+}
+
   sketch.draw = () => {
     sketch.translate(0.5 * width, 0);
     sketch.background(0);

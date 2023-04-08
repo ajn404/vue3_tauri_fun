@@ -2,7 +2,7 @@ import type p5 from 'p5';
 import type { p5Option } from '../';
 export interface countingSortViewOption extends p5Option {
     rate?: number;
-    count?:number;
+    count?: number;
 }
 
 export const coutingSort = (storeArr: number[]): number[] => {
@@ -120,21 +120,28 @@ export const countingSortView = (
         }
     }
 
+    const g = sketch.random(255);
+
     const drawLine = () => {
-        for (let m = 0; m < values.length; m++) {
-            const color = (m / values.length) * 255;
-            const reverseColor = 255 - color;
-
-            sketch.stroke(reverseColor - 100, color, 100);
-            sketch.strokeWeight(width);
-
-            const line_height = sketch.height - values[m];
-            sketch.line(m * width, sketch.height, m * width, line_height);
-        }
+      for (let m = 0; m < values.length; m++) {
+        const color = (m / values.length) * 255;
+        const reverseColor = 255 - color;
+  
+        sketch.stroke(g,  reverseColor, color);
+        sketch.strokeWeight(width);
+  
+        const line_height = sketch.height - values[m];
+        sketch.line(m * width, sketch.height, m * width, line_height);
+      }
     };
 
+    sketch.keyPressed = () => {
+        if (sketch.key === 's') {
+            sketch.saveGif("CountingSort", 2, {});
+        }
+    }
     sketch.draw = () => {
-        sketch.translate(0.5*width,0);
+        sketch.translate(0.5 * width, 0);
 
         sketch.background(0);
         drawLine();
@@ -145,7 +152,7 @@ export const countingSortView = (
                 sketch.stroke(256, 256, 256);
                 const line_height = sketch.height - values[k];
                 sketch.line(k * width, sketch.height, k * width, line_height);
-                if (option)option.count = values[k];
+                if (option) option.count = values[k];
             }
             C[storeArr[k]]--;
         }
@@ -158,4 +165,6 @@ export const countingSortView = (
 
 
     };
+
+ 
 };
