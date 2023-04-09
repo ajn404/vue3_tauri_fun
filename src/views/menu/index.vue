@@ -25,14 +25,14 @@
 </template>
 
 <script lang="ts" setup name="menu">
-import { endRoutes } from '@/router';
+import { autoRoutes } from '@/router';
 import { reactive, ref, type Ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useStore } from '@/stores';
 
 const store = useStore();
 
-const routes = reactive(endRoutes);
+const routes = reactive(autoRoutes);
 const router = useRouter();
 const route = useRoute();
 const checkbox: Ref<HTMLInputElement | undefined> = ref();
@@ -52,7 +52,7 @@ const menuClick = (pe: MouseEvent) => {
   };
 };
 
-const routeClick = (route: endRoutes) => {
+const routeClick = (route: autoRoutes) => {
   router.push({
     name: route.name,
     path: route.path,
