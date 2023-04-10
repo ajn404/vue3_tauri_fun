@@ -74,7 +74,7 @@ class World {
   }
 }
 
-const disposeChild = (mesh: any) => {
+const disposeChild = (mesh: unknown) => {
   if (mesh instanceof Mesh) {
     if (mesh.geometry?.dispose) {
       mesh.geometry.dispose();
@@ -94,4 +94,4 @@ const disposeChild = (mesh: any) => {
   }
 };
 
-export { World };
+export { World, disposeChild };

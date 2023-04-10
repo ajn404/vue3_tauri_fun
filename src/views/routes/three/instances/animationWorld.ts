@@ -48,9 +48,9 @@ export class animationWorld extends World {
     } else return;
   }
 
+  //真正的动画函数在这里
   render(container: HTMLElement) {
     resize(this, container);
-
     this.animate();
     if (container.getBoundingClientRect().width > 0) {
       this.animationFrame = requestAnimationFrame(

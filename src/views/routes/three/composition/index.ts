@@ -1,5 +1,7 @@
-export * from './usePbrWorld';
-export * from './useTransitionWorld';
-export * from './useReactiveWorld';
+// @index('./*', f => `export * from '${f.path}'`)
 export * from './useAnimationWorld';
+export * from './useOrbitControl';
+export * from './usePbrWorld';
+export * from './useReactiveWorld';
 export * from './useTextureWorld';
+export * from './useTransitionWorld';
