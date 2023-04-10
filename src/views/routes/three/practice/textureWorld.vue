@@ -20,10 +20,13 @@
         <span class="text-white">mesh position z</span>
         <el-slider :min="-15" :max="15" :step="0.1" v-model="option.mpz" />
 
-        <span class="text-white">camera position x</span>
+        <span class="text-white">cube rotation x</span>
         <el-slider :min="0" :max="6.28" :step="0.01" v-model="option.mrx" />
 
-        <span class="text-white">camera position z</span>
+        <span class="text-white">cube rotation y</span>
+        <el-slider :min="0" :max="6.28" :step="0.01" v-model="option.mry" />
+
+        <span class="text-white">cube rotation z</span>
         <el-slider :min="0" :max="6.28" :step="0.01" v-model="option.mrz" />
       </div>
     </div>
@@ -31,6 +34,6 @@
 </template>
 
 <script lang="ts" setup>
-import { useAnimationWorld } from '../composition';
-const { container, customer, toggleCustomer, option } = useAnimationWorld();
+import { useTextureWorld } from '../composition';
+const { container, customer, toggleCustomer, option } = useTextureWorld();
 </script>

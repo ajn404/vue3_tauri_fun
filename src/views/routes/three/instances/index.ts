@@ -4,3 +4,4 @@ export * from './transitionWorld';
 export * from './transformWorld';
 export * from './reactiveWorld';
 export * from './animationWorld';
+export * from './textureWorld';
