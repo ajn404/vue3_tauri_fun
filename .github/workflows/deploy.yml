@@ -15,19 +15,19 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: 16
 
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        id: yarn-cache
-        with:
-          path: |
-            **/node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+      # - name: Cache dependencies
+      #   uses: actions/cache@v2
+      #   id: yarn-cache
+      #   with:
+      #     path: |
+      #       **/node_modules
+      #     key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-yarn-
 
       - name: Install dependencies
         run: npm i
@@ -38,7 +38,6 @@ jobs:
       - name: add status.html
         run: mv stats.html ./dist
 
-      
       - name: Install Rust and build dependencies
         uses: actions-rs/toolchain@v1
         with:
@@ -48,11 +47,11 @@ jobs:
       - name: Setup mdBook
         uses: peaceiris/actions-mdbook@v1
         with:
-          mdbook-version: "latest"
+          mdbook-version: 'latest'
 
       - name: Build Book
         run: mdbook build ./docs
-  
+
       - name: move
         run: mv ./docs/book ./dist
 
