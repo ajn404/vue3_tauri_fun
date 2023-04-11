@@ -42,7 +42,7 @@ const generate = () => {
     loop: true,
   };
   const container = player.value;
-  const file_url = `${import.meta.env.BASE_URL}/src/data/casts/${
+  const file_url = `${import.meta.env.BASE_URL}src/data/casts/${
     props.file || 'man-ascii'
   }.cast`;
   asciinema_instance.value = AsciinemaPlayer.create(
