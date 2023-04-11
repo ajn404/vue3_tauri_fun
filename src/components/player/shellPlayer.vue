@@ -13,8 +13,7 @@ export interface asciinema_player {
   generate: () => {};
 }
 
-const url = `/data/casts`;
-console.log(url);
+const url = `${import.meta.env.BASE_URL}data/casts`;
 
 const player: Ref<HtmlElement | null> = ref(null);
 const asciinema_instance = ref();
