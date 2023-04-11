@@ -14,7 +14,7 @@ import {
 } from 'unplugin-vue-components/resolvers';
 
 type MyObject = {
-  [key: string]: unknown;
+  [key: string]: string;
 };
 
 const loadEnv = (mode: string) => {
@@ -29,8 +29,10 @@ const loadEnv = (mode: string) => {
 export default defineConfig(async ({ command, mode, ssrBuild }) => {
   const module = await import('internal-ip');
   let host = await module.internalIpV4();
+  const base = JSON.parse(loadEnv(mode).BASE);
+
   return {
-    base: '/vue3_tauri_fun/',
+    base: base.trim(),
 
     css: {
       postcss: config,

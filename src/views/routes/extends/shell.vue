@@ -1,5 +1,6 @@
 <template>
   <div class="view">
-    <ShellPlayer></ShellPlayer>
+    <h1 class="text-center">man</h1>
+    <ShellPlayer theme="monokai"></ShellPlayer>
   </div>
 </template>
