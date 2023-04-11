@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "shell.md",
+                "file": "interview_everyday/day07.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "82202adef0ceab89",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "interview_everyday/day08.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "shell.md",
+                "file": "interview_everyday/day08.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "shell.md",
+                "file": "interview_everyday/day08.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "shell.md"
+                "file": "interview_everyday/day08.md"
               }
             }
           }
@@ -146,8 +159,10 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "b3b486991d6642e7",
+  "active": "82202adef0ceab89",
   "lastOpenFiles": [
+    "interview_everyday/day07.md",
+    "interview_everyday/day08.md",
     "shell.md",
     "shell_record/man.md",
     "shell_record",
@@ -157,7 +172,6 @@
     "shell",
     "interview.md",
     "record.md",
-    "interview_everyday/day07.md",
     "interview_everyday/day06.md",
     "interview_everyday/day05.md",
     "interview_everyday/day04.md",
