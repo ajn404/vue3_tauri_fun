@@ -2,8 +2,7 @@ import { ref, onMounted, onUnmounted, type Ref, watch, nextTick } from 'vue';
 import p5 from 'p5';
 import { debounce } from '../utils';
 import { useStore } from '@/stores';
-import type { p5Option, p5_func } from '@/views/routes/fun/p5/instances';
-
+import type { p5Option, p5_func } from '@/views/routes/p5/instances';
 
 declare global {
   interface Window {
@@ -11,9 +10,7 @@ declare global {
   }
   var p5: any;
 }
-if (window)
-  window.p5 = p5;
-
+if (window) window.p5 = p5;
 
 export const useP5 = (method: p5_func, option?: p5Option) => {
   const container: Ref<HTMLElement | null> = ref(null);

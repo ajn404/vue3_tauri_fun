@@ -12,11 +12,9 @@ declare module '@vue/runtime-core' {
     Appeal: typeof import('./components/layout/appeal.vue')['default']
     Codemirror: typeof import('vue-codemirror')['Codemirror']
     ElButton: typeof import('element-plus/es')['ElButton']
-    ElColorPicker: typeof import('element-plus/es')['ElColorPicker']
-    ElProgress: typeof import('element-plus/es')['ElProgress']
     ElSkeleton: typeof import('element-plus/es')['ElSkeleton']
     ElSlider: typeof import('element-plus/es')['ElSlider']
-    ElSwitch: typeof import('element-plus/es')['ElSwitch']
     RustEditor: typeof import('./components/editor/rustEditor.vue')['default']
+    ShellPlayer: typeof import('./components/player/shellPlayer.vue')['default']
   }
 }

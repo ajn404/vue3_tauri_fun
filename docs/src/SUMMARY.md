@@ -14,3 +14,4 @@
     - [第六天](./interview_everyday/day06.md)
 
 - [shell](./shell.md)
+    - [man](./shell_record/man.md)

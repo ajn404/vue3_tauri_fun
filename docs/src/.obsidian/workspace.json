@@ -13,8 +13,34 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "interview_everyday/day06.md",
+                "file": "shell.md",
                 "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3465f263e96eecee",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "b41775c34d00d864",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b3b486991d6642e7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "shell.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -85,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "interview_everyday/day06.md",
+                "file": "shell.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "interview_everyday/day06.md",
+                "file": "shell.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "interview_everyday/day06.md"
+                "file": "shell.md"
               }
             }
           }
@@ -146,16 +172,21 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "b428cce089665f88",
+  "active": "8109444033f4308c",
   "lastOpenFiles": [
-    "interview_everyday/day05.md",
-    "SUMMARY.md",
+    "shell_record/man.md",
+    "shell_record",
     "shell.md",
-    "record.md",
-    "interview.md",
+    "SUMMARY.md",
     "doc.md",
-    "interview_everyday/day04.md",
+    "shell/man.md",
+    "shell",
+    "interview.md",
+    "record.md",
+    "interview_everyday/day07.md",
     "interview_everyday/day06.md",
+    "interview_everyday/day05.md",
+    "interview_everyday/day04.md",
     "interview_everyday/day03.md",
     "interview_everyday/day02.md",
     "interview_everyday/day01.md"

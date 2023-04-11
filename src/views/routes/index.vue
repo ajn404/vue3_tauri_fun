@@ -11,7 +11,7 @@
 
 <script lang="ts" setup>
 import { onMounted, onUpdated, ref, type Ref, watch, reactive } from 'vue';
-import TagsCloud from './tagsCloud';
+import TagsCloud from '@/script/tagsCloud';
 import { useStore } from '@/stores';
 import { invoke } from '@tauri-apps/api';
 import { handleIsTauri } from '@/script/utils';

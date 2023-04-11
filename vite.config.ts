@@ -57,6 +57,7 @@ export default defineConfig(async ({ command, mode, ssrBuild }) => {
     },
 
     build: {
+      chunkSizeWarningLimit: 1000, //lazy
       rollupOptions: {
         output: {
           manualChunks: {

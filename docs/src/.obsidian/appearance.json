@@ -1,3 +1,7 @@
 {
-  "accentColor": ""
+  "accentColor": "#1a065b",
+  "theme": "system",
+  "cssTheme": "Minimal",
+  "interfaceFontFamily": "Inter",
+  "translucency": true
 }
