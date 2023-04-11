@@ -6,7 +6,6 @@
 import * as AsciinemaPlayer from 'asciinema-player';
 import 'asciinema-player/dist/bundle/asciinema-player.css';
 import { ref, nextTick, type Ref } from 'vue';
-import baseUrl from '../../data/casts/nu.cast?url';
 
 export interface asciinema_player {
   player: HtmlElement;
@@ -14,7 +13,8 @@ export interface asciinema_player {
   generate: () => {};
 }
 
-const url = baseUrl.substring(0, baseUrl.indexOf('nu.cast'));
+const url = `/data/casts`;
+console.log(url);
 
 const player: Ref<HtmlElement | null> = ref(null);
 const asciinema_instance = ref();
@@ -37,8 +37,6 @@ const props = defineProps({
 });
 
 const generate = () => {
-  console.log(props);
-
   const option = {
     theme: props.theme || 'asciinema',
     autoPlay: true,

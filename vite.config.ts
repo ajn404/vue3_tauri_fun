@@ -33,7 +33,7 @@ export default defineConfig(async ({ command, mode, ssrBuild }) => {
 
   return {
     base: base.trim(),
-
+    
     css: {
       postcss: config,
       devSourcemap: true,
