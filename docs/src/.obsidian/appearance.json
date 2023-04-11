@@ -1,7 +1,7 @@
 {
-  "accentColor": "#1a065b",
+  "accentColor": "#ffffff",
   "theme": "system",
-  "cssTheme": "Ono Sendai",
+  "cssTheme": "",
   "interfaceFontFamily": "Inter",
   "translucency": true
 }

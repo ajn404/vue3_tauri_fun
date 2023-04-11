@@ -1,13 +1,20 @@
 <template>
-  <div class="player h-2 w-1/2 m-auto" ref="player"></div>
+  <div class="player w-4/6 m-auto" ref="player"></div>
 </template>
 
 <script lang="ts" setup>
 import * as AsciinemaPlayer from 'asciinema-player';
 import 'asciinema-player/dist/bundle/asciinema-player.css';
-import { ref, nextTick } from 'vue';
-const player = ref();
+import { ref, nextTick, type Ref } from 'vue';
 
+export interface asciinema_player {
+  player: HtmlElement;
+  asciinema_instance: any;
+  generate: () => {};
+}
+
+const player: Ref<HtmlElement | null> = ref(null);
+const asciinema_instance = ref();
 const props = defineProps({
   file: String,
   theme: {
@@ -26,15 +33,34 @@ const props = defineProps({
   },
 });
 
-nextTick(() => {
+const generate = () => {
+  console.log(props);
+
   const option = {
     theme: props.theme || 'asciinema',
-    autoPlay: false,
+    autoPlay: true,
+    loop: true,
   };
   const container = player.value;
   const file_url = `${import.meta.env.BASE_URL}/src/data/casts/${
     props.file || 'man-ascii'
   }.cast`;
-  AsciinemaPlayer.create(file_url, container, option);
+  asciinema_instance.value = AsciinemaPlayer.create(
+    file_url,
+    container,
+    option
+  );
+};
+
+defineExpose({ player, asciinema_instance, generate: generate });
+
+nextTick(() => {
+  generate();
 });
 </script>
+
+<style scoped lang="scss">
+:deep(svg) {
+  display: inline;
+}
+</style>

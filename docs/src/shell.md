@@ -26,3 +26,16 @@ change directory 切换到指定的工作目录
 - cp
 copy 复制文件或者目录
 
+### nushell
+A new type of shell.
+```shell
+nu 
+ls
+ls | sort-by size | reverse
+ps
+sys
+sys | get host
+ls *.js
+"hello" | save output.txt
+```
+

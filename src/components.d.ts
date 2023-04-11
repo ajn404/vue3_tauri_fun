@@ -11,7 +11,11 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Appeal: typeof import('./components/layout/appeal.vue')['default']
     Codemirror: typeof import('vue-codemirror')['Codemirror']
+    ElAutocomplete: typeof import('element-plus/es')['ElAutocomplete']
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElCol: typeof import('element-plus/es')['ElCol']
+    ElIcon: typeof import('element-plus/es')['ElIcon']
+    ElRow: typeof import('element-plus/es')['ElRow']
     ElSkeleton: typeof import('element-plus/es')['ElSkeleton']
     ElSlider: typeof import('element-plus/es')['ElSlider']
     RustEditor: typeof import('./components/editor/rustEditor.vue')['default']

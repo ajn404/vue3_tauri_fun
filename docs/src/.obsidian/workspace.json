@@ -4,32 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "630658fd8b3adc96",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "b428cce089665f88",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "shell.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "3465f263e96eecee",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {}
-            }
-          }
-        ]
-      },
-      {
         "id": "b41775c34d00d864",
         "type": "tabs",
         "children": [
@@ -40,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "shell.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               }
             }
@@ -172,11 +146,11 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "8109444033f4308c",
+  "active": "b3b486991d6642e7",
   "lastOpenFiles": [
+    "shell.md",
     "shell_record/man.md",
     "shell_record",
-    "shell.md",
     "SUMMARY.md",
     "doc.md",
     "shell/man.md",
