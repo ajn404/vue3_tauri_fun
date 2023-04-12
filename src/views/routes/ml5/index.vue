@@ -1,7 +1,7 @@
 <template>
   <div class="view">
     <canvas ref="canvas" width="640" height="480"></canvas>
-    <video ref="video" class="hidden"></video>
+    <video ref="video" width="640" height="480" class="hidden"></video>
   </div>
 </template>
 
