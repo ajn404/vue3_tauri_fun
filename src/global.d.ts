@@ -23,3 +23,5 @@ interface DocumentExtend extends Document {
   msExitFullscreen(): Promise<void>;
   mozCancelFullScreen(): Promise<void>;
 }
+
+declare module 'ml5';
