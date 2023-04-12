@@ -1,90 +1,101 @@
 <template>
   <div class="view">
-    <canvas id="canvas"></canvas>
-    <video id="video"></video>
+    <canvas ref="canvas" width="640" height="480"></canvas>
+    <video ref="video" class="hidden"></video>
   </div>
 </template>
 
 <script lang="ts" setup>
 import * as ml5 from 'ml5';
-import { nextTick } from 'vue';
+import { onMounted, ref, type Ref } from 'vue';
+
 //这个包着实有点大
+const canvas: Ref<HTMLCanvasElement | null> = ref(null);
+const video: Ref<HTMLVideoElement | null> = ref(null);
 
-nextTick(() => {
-  // Grab elements, create settings, etc.
-  var video = document.getElementById('video');
-  var canvas = document.getElementById('canvas');
-  var ctx = canvas.getContext('2d');
-
-  // The detected positions will be inside an array
-  let poses = [];
-
+onMounted(() => {
   // Create a webcam capture
   if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices
       .getUserMedia({ video: true })
       .then(function (stream) {
-        video.srcObject = stream;
-        video.play();
+        if (video.value) {
+          video.value.srcObject = stream;
+          video.value.play();
+        }
       });
   }
 
-  function drawCameraIntoCanvas() {
-    // Draw the video element into the canvas
-    ctx.drawImage(video, 0, 0, 640, 480);
-    // We can call both functions to draw all keypoints and the skeletons
-    drawKeypoints();
-    drawSkeleton();
-    window.requestAnimationFrame(drawCameraIntoCanvas);
-  }
-  // Loop over the drawCameraIntoCanvas function
-  drawCameraIntoCanvas();
+  if (canvas.value && video.value) {
+    const ctx: CanvasRenderingContext2D | null = canvas.value.getContext('2d');
+    // The detected positions will be inside an array
+    let poses: any[] = [];
+    function drawCameraIntoCanvas() {
+      // Draw the video element into the canvas
+      if (video.value && ctx) ctx.drawImage(video.value, 0, 0, 640, 480);
+      // We can call both functions to draw all keypoints and the skeletons
+      drawKeypoints();
+      drawSkeleton();
+      
+      requestAnimationFrame(drawCameraIntoCanvas);
+    }
+    drawCameraIntoCanvas();
 
-  // Create a new poseNet method with a single detection
-  const poseNet = ml5.poseNet(video, modelReady);
-  poseNet.on('pose', gotPoses);
+    // Create a new poseNet method with a single detection
+    const poseNet = ml5.poseNet(video.value, modelReady);
+    poseNet.on('pose', gotPoses);
 
-  // A function that gets called every time there's an update from the model
-  function gotPoses(results) {
-    poses = results;
-  }
+    function gotPoses(results: any[]) {
+      poses = results;
+    }
 
-  function modelReady() {
-    console.log('model ready');
-    poseNet.multiPose(video);
-  }
+    function modelReady() {
+      poseNet.multiPose(video.value);
+    }
+    function drawKeypoints() {
+      if (ctx) {
 
-  // A function to draw ellipses over the detected keypoints
-  function drawKeypoints() {
-    // Loop through all the poses detected
-    for (let i = 0; i < poses.length; i += 1) {
-      // For each pose detected, loop through all the keypoints
-      for (let j = 0; j < poses[i].pose.keypoints.length; j += 1) {
-        let keypoint = poses[i].pose.keypoints[j];
-        // Only draw an ellipse is the pose probability is bigger than 0.2
-        if (keypoint.score > 0.2) {
-          ctx.beginPath();
-          ctx.arc(keypoint.position.x, keypoint.position.y, 10, 0, 2 * Math.PI);
-          ctx.stroke();
+        for (let i = 0; i < poses.length; i += 1) {
+          // For each pose detected, loop through all the keypoints
+          for (let j = 0; j < poses[i].pose.keypoints.length; j += 1) {
+            let keypoint = poses[i].pose.keypoints[j];
+            // Only draw an ellipse is the pose probability is bigger than 0.2
+            if (keypoint.score > 0.2) {
+              ctx.beginPath();
+              ctx.arc(
+                keypoint.position.x,
+                keypoint.position.y,
+                10,
+                0,
+                2 * Math.PI
+              );
+              ctx.stroke();
+            }
+          }
+        }
+      }
+      // Loop through all the poses detected
+
+    }
+
+    function drawSkeleton() {
+      if (ctx)
+      {
+        for (let i = 0; i < poses.length; i += 1) {
+          // For every skeleton, loop through all body connections
+          for (let j = 0; j < poses[i].skeleton.length; j += 1) {
+            let partA = poses[i].skeleton[j][0];
+            let partB = poses[i].skeleton[j][1];
+            ctx.beginPath();
+            ctx.moveTo(partA.position.x, partA.position.y);
+            ctx.lineTo(partB.position.x, partB.position.y);
+            ctx.stroke();
+          }
         }
       }
     }
   }
 
-  // A function to draw the skeletons
-  function drawSkeleton() {
-    // Loop through all the skeletons detected
-    for (let i = 0; i < poses.length; i += 1) {
-      // For every skeleton, loop through all body connections
-      for (let j = 0; j < poses[i].skeleton.length; j += 1) {
-        let partA = poses[i].skeleton[j][0];
-        let partB = poses[i].skeleton[j][1];
-        ctx.beginPath();
-        ctx.moveTo(partA.position.x, partA.position.y);
-        ctx.lineTo(partB.position.x, partB.position.y);
-        ctx.stroke();
-      }
-    }
-  }
-});
+})
+
 </script>
