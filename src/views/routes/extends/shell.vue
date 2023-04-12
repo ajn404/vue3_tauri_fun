@@ -1,5 +1,6 @@
 <template>
   <div class="view bg-slate-400 h-auto">
+    <h2 class="text-center">shell record</h2>
     <el-autocomplete
       v-model="exec"
       :fetch-suggestions="querySearch"
@@ -16,9 +17,29 @@
 
     <ShellPlayer
       ref="player"
-      :theme="pass_props.theme"
+      :theme="theme"
       :file="pass_props.file"
     ></ShellPlayer>
+
+    <h3 class="text-center">theme</h3>
+
+    <el-radio-group
+      v-model="theme"
+      class="justify-center m-auto flex gap-1 items-center w-full text-lg"
+      @change="handleSelect"
+    >
+      <el-radio-button
+        v-for="_ in [
+          'asciinema',
+          'monokai',
+          'tango',
+          'solarized-dark',
+          'solarized-light',
+        ]"
+        :label="_"
+        >{{ _ }}</el-radio-button
+      >
+    </el-radio-group>
 
     <div class="w-10/12 sticky m-9 bg-black text-white p-3">
       <ul dir="auto">
@@ -54,16 +75,18 @@ const exec = ref('nu');
 
 const player: Ref<null | asciinema_player> = ref(null);
 
+type Theme =
+  | 'asciinema'
+  | 'monokai'
+  | 'tango'
+  | 'solarized-dark'
+  | 'solarized-light';
+const theme: Ref<Theme> = ref('solarized-dark');
+
 interface LinkItem {
   value: string;
   des: string;
   file: string;
-  theme:
-    | 'asciinema'
-    | 'monokai'
-    | 'tango'
-    | 'solarized-dark'
-    | 'solarized-light';
 }
 const suggestLinks = ref<LinkItem[]>([]);
 const querySearch = (
@@ -89,26 +112,27 @@ const loadAll = (): LinkItem[] => {
     {
       value: 'nushell',
       file: 'nu',
-      theme: 'solarized-dark',
       des: 'a new type of shell',
     },
     {
       value: 'man',
       file: 'man-ascii',
-      theme: 'solarized-dark',
       des: '查看命令的帮助，命令的词典，更复杂的还有info,但不常用',
     },
     {
       value: 'whois',
       file: 'whois',
-      theme: 'tango',
       des: '查询域名ip及所有者信息',
     },
     {
       value: 'curl parrot.live; ',
       file: 'curlLive',
-      theme: 'solarized-light',
       des: '查询域名ip及所有者信息',
+    },
+    {
+      value: 'find',
+      file: 'find',
+      des: '根据路径和条件搜索指定文件',
     },
   ];
 };

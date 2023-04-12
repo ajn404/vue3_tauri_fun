@@ -39,3 +39,10 @@ ls *.js
 "hello" | save output.txt
 ```
 
+### find
+根据路径和条件搜索指定文件
+```shell
+find src -mtime +7  
+find src -mtime +1 -name "*.ts*"
+find src -name "*.mp4" -exec open {} \
+```

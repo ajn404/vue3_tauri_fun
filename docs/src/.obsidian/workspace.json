@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "interview_everyday/day08.md",
+                "file": "shell.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "interview_everyday/day08.md",
+                "file": "shell.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "interview_everyday/day08.md",
+                "file": "shell.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "interview_everyday/day08.md"
+                "file": "shell.md"
               }
             }
           }
@@ -161,8 +161,8 @@
   },
   "active": "82202adef0ceab89",
   "lastOpenFiles": [
-    "interview_everyday/day07.md",
     "interview_everyday/day08.md",
+    "interview_everyday/day07.md",
     "shell.md",
     "shell_record/man.md",
     "shell_record",
