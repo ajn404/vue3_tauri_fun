@@ -1,7 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-import { autoRoutes } from './auto'
+import { autoRoutes } from './auto';
 import { customRoute } from './customer';
-
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -23,4 +22,4 @@ router.push = (location) => {
 };
 
 export default router;
-export { autoRoutes };
+export * from './auto';

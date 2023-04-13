@@ -1,11 +1,18 @@
 <template>
   <nav role="navigation">
     <div id="menuToggle">
-      <input type="checkbox" ref="checkbox" @click="menuClick" />
+      <input
+        type="checkbox"
+        class="hamburger"
+        ref="checkbox"
+        @click="menuClick"
+      />
       <span></span>
       <span></span>
       <span></span>
       <ul id="menu" ref="menu">
+        <search />
+
         <li
           v-for="item in routes"
           :key="item.path"
@@ -25,10 +32,11 @@
 </template>
 
 <script lang="ts" setup name="menu">
-import { autoRoutes } from '@/router';
+import { autoRoutes, type autoRoute } from '@/router';
 import { reactive, ref, type Ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useStore } from '@/stores';
+import search from './search.vue';
 
 const store = useStore();
 
@@ -52,7 +60,7 @@ const menuClick = (pe: MouseEvent) => {
   };
 };
 
-const routeClick = (route: autoRoutes) => {
+const routeClick = (route: autoRoute) => {
   router.push({
     name: route.name,
     path: route.path,
@@ -105,7 +113,7 @@ nav {
     -webkit-user-select: none;
     user-select: none;
 
-    input {
+    .hamburger {
       display: block;
       width: 33px;
       height: 33px;
@@ -148,7 +156,7 @@ nav {
       }
     }
 
-    input:checked ~ span {
+    .hamburger:checked ~ span {
       opacity: 1;
       transform: rotate(45deg) translate(-2px, -1px);
       background: #232323;
@@ -163,7 +171,7 @@ nav {
       }
     }
 
-    input:checked ~ ul {
+    .hamburger:checked ~ ul {
       transform: none;
     }
   }
@@ -172,15 +180,15 @@ nav {
     position: absolute;
     width: 30%;
     width: 300px;
-    min-height: calc(100vh + 100px);
+    min-height: calc(100vh + 150px);
     overflow-y: scroll;
     overflow-x: hidden;
     max-height: 100%;
-    margin: -100px 0 0 -10px;
+    margin: -150px 0 0 -10px;
     padding: 175px 50px 50px 100px;
     box-sizing: border-box;
     top: 0;
-    background-image: radial-gradient(#999, #fff);
+    background-image: radial-gradient(#000, #999);
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
     transform-origin: 0% 0%;
@@ -217,15 +225,13 @@ nav {
         font-weight: 100;
       }
 
-      &.active,
-      &:hover {
-        color: #f60000;
-      }
-
-      @for $i from 1 through 4 {
+      @for $i from 1 through 10 {
         $fontsize: calc(44px / $i);
-        $font-weight: calc(400 / $i);
+        $font-weight: calc(1000 / $i);
         $margin-left-right: calc($i * 20px);
+        $rate: calc(1 - calc($i/20));
+        $color: rgba(calc(255 * $rate), calc(255 * $rate), 0, $rate);
+        $hover-color: rgba(calc(255 * $rate), 255, 0, 1);
         word-break: break-all;
         cursor: pointer;
         &.level-#{$i} {
@@ -233,9 +239,17 @@ nav {
           // margin: 0 $margin-left-right;
           font-weight: $font-weight;
           line-height: $fontsize;
+          filter: drop-shadow(0 0 2px $color)
+            invert(0%)
+            brightness(calc($i * 1.2));
 
           span {
             font-size: calc($fontsize / 2);
+          }
+
+          &.active,
+          &:hover {
+            color: $hover-color;
           }
         }
       }
