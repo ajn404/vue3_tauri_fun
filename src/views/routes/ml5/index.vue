@@ -2,6 +2,12 @@
   <div class="view" ref="view">
     <canvas ref="canvas"> </canvas>
     <video ref="video" class="hidden"></video>
+
+    <div class="fixed w-1/2 flex right-0 top-1 items-center">
+      <span>SCORE</span>
+      <el-slider :min="0.1" :max="1" :step="0.01" v-model="score" />
+
+    </div>
   </div>
 </template>
 
@@ -13,7 +19,7 @@ const canvas: Ref<HTMLCanvasElement | null> = ref(null);
 const video: Ref<HTMLVideoElement | null> = ref(null);
 const view: Ref<HTMLElement | null> = ref(null);
 
-
+const score = ref(0.2);
 const animationId = ref(0);
 
 onUnmounted(() => {
@@ -71,7 +77,7 @@ onUnmounted(() => {
             for (let j = 0; j < poses[i].pose.keypoints.length; j += 1) {
 
               let keypoint = poses[i].pose.keypoints[j];
-              if (keypoint.score > 0.2) {
+              if (keypoint.score > score.value) {
                 let { x, y } = keypoint.position;
 
                 ctx.beginPath();
@@ -82,7 +88,15 @@ onUnmounted(() => {
                   0,
                   2 * Math.PI
                 );
-                ctx.fillText(keypoint.part, x - 10, y - 10)
+                if (keypoint.part.includes('Eye')) {
+                  ctx.fillStyle = `rgba(${x * 100 % 255},${y * 100 % 255},${x * 100 % 255},${x % 1})`;
+                }
+
+                else {
+                  ctx.fillStyle = 'white'
+                }
+                ctx.fill()
+                ctx.fillText(keypoint.part, x - 10, y - 10);
                 ctx.stroke();
               }
             }

@@ -50,7 +50,7 @@ export default defineConfig(async ({ command, mode, ssrBuild }) => {
     server: {
       host: '0.0.0.0', // listen on all addresses
       port: 5173,
-      strictPort: true,
+      // strictPort: true,
       hmr: {
         protocol: 'ws',
         host,
