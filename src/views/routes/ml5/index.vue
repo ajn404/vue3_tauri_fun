@@ -8,7 +8,6 @@
 <script lang="ts" setup>
 import * as ml5 from 'ml5';
 import { onMounted, ref, type Ref } from 'vue';
-
 //这个包着实有点大
 const canvas: Ref<HTMLCanvasElement | null> = ref(null);
 const video: Ref<HTMLVideoElement | null> = ref(null);
@@ -29,6 +28,7 @@ onMounted(() => {
   if (canvas.value && video.value) {
     const ctx: CanvasRenderingContext2D | null = canvas.value.getContext('2d');
     let poses: any[] = [];
+
     function drawCameraIntoCanvas() {
       if (video.value && ctx) ctx.drawImage(video.value, 0, 0, 640, 480);
       drawKeypoints();
@@ -37,16 +37,15 @@ onMounted(() => {
       requestAnimationFrame(drawCameraIntoCanvas);
     }
     drawCameraIntoCanvas();
-    const poseNet = ml5.poseNet(video.value, modelReady);
-    poseNet.on('pose', gotPoses);
 
-    function gotPoses(results: any[]) {
-      poses = results;
-    }
-
-    function modelReady() {
+    const poseNet = ml5.poseNet(video.value, () => {
       poseNet.multiPose(video.value);
-    }
+    });
+
+    poseNet.on('pose', (res: any[]) => {
+      poses = res;
+    });
+
     function drawKeypoints() {
       if (ctx) {
         for (let i = 0; i < poses.length; i += 1) {
