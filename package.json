@@ -15,7 +15,8 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "npx prettier . --write",
     "format:check": "npx prettier . --check",
-    "docs": "mdbook serve docs"
+    "docs": "mdbook serve docs",
+    "tauri": "tauri dev"
   },
   "dependencies": {
     "@animxyz/vue3": "^0.6.7",

@@ -83,11 +83,6 @@ or
 npm run format
 ```
 
-### run Tauri app
-
-```sh
-npm run tauri
-```
 
 ### run Docs
 
