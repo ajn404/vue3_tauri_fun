@@ -1,5 +1,3 @@
-export * from './util';
-
 //防抖 强制函数在某段时间内只执行一次
 export const debounce = (fn: () => void, delay: number) => {
   let inDebounce: string | number | NodeJS.Timeout;
@@ -95,3 +93,11 @@ export const sleep = async (time?: number) => {
     }, time || 1000);
   });
 };
+
+// Here are some commonly used utility functions in TypeScript:
+// @index('./*', f => `export * from '${f.path}'`)
+export * from './browser';
+export * from './dom';
+export * from './img';
+export * from './switchBoard';
+export * from './type';

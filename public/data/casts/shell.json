@@ -1,0 +1,27 @@
+[
+  {
+    "value": "nushell",
+    "file": "nu",
+    "des": "a new type of shell"
+  },
+  {
+    "value": "man",
+    "file": "man-ascii",
+    "des": "查看命令的帮助，命令的词典，更复杂的还有info,但不常用"
+  },
+  {
+    "value": "whois",
+    "file": "whois",
+    "des": "查询域名ip及所有者信息"
+  },
+  {
+    "value": "curl parrot.live; ",
+    "file": "curlLive",
+    "des": "查询域名ip及所有者信息"
+  },
+  {
+    "value": "find",
+    "file": "find",
+    "des": "根据路径和条件搜索指定文件"
+  }
+]

@@ -5,7 +5,7 @@
 <script lang="ts" setup>
 import * as AsciinemaPlayer from 'asciinema-player';
 import 'asciinema-player/dist/bundle/asciinema-player.css';
-import { ref, nextTick, type Ref } from 'vue';
+import { ref, nextTick, type Ref, inject } from 'vue';
 
 export interface asciinema_player {
   player: HtmlElement;
@@ -13,7 +13,7 @@ export interface asciinema_player {
   generate: () => {};
 }
 
-const url = `${import.meta.env.BASE_URL}data/casts`;
+const url = inject('cast_url') || `${import.meta.env.BASE_URL}data/casts`;
 
 const player: Ref<HtmlElement | null> = ref(null);
 const asciinema_instance = ref();

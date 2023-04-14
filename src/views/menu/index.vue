@@ -23,7 +23,7 @@
           @click="routeClick(item)"
         >
           {{ item.name }}
-          <span> ({{ item.path }}) </span>
+          <!-- <span> ({{ item.path }}) </span> -->
         </li>
         <div class="after" ref="drag" @mousedown="mousedown"></div>
       </ul>

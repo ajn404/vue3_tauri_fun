@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { rust } from '@codemirror/lang-rust';
 import { oneDark } from '@codemirror/theme-one-dark';
 import { Codemirror } from 'vue-codemirror';
-import { executeRustCode } from '@/script/http';
+import { executeRustCode } from '@/script/network/http';
 const playground: any = ref(null);
 const editor: any = ref(null);
 const extensions = [rust(), oneDark];

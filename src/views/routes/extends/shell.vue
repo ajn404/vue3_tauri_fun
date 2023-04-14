@@ -6,6 +6,7 @@
       :fetch-suggestions="querySearch"
       class="auto-input"
       clearable
+      ref="execSearch"
       placeholder="Please Input"
       @select="handleSelect"
     >
@@ -67,12 +68,15 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref, type Ref, reactive, nextTick } from 'vue';
-import type { AutocompleteFetchSuggestionsCallback } from 'element-plus';
+import { onMounted, ref, type Ref, reactive, nextTick, inject } from 'vue';
+import type {
+  AutocompleteFetchSuggestionsCallback,
+  AutocompleteInstance,
+} from 'element-plus';
 import type { asciinema_player } from '@/components/player/shellPlayer.vue';
 
 const exec = ref('nu');
-
+const execSearch: Ref<null | AutocompleteInstance> = ref(null);
 const player: Ref<null | asciinema_player> = ref(null);
 
 type Theme =
@@ -96,6 +100,7 @@ const querySearch = (
   const results = queryString
     ? suggestLinks.value.filter(createFilter(queryString))
     : suggestLinks.value;
+
   cb(results);
 };
 
@@ -107,37 +112,11 @@ const createFilter = (queryString: string) => {
   };
 };
 
-const loadAll = (): LinkItem[] => {
-  return [
-    {
-      value: 'nushell',
-      file: 'nu',
-      des: 'a new type of shell',
-    },
-    {
-      value: 'man',
-      file: 'man-ascii',
-      des: '查看命令的帮助，命令的词典，更复杂的还有info,但不常用',
-    },
-    {
-      value: 'whois',
-      file: 'whois',
-      des: '查询域名ip及所有者信息',
-    },
-    {
-      value: 'curl parrot.live; ',
-      file: 'curlLive',
-      des: '查询域名ip及所有者信息',
-    },
-    {
-      value: 'find',
-      file: 'find',
-      des: '根据路径和条件搜索指定文件',
-    },
-  ];
-};
-
-let pass_props = reactive(loadAll()[0]);
+let pass_props = reactive({
+  value: 'nushell',
+  file: 'nu',
+  des: 'a new type of shell',
+});
 
 const handleSelect = async (item: any) => {
   if (player.value) {
@@ -148,8 +127,10 @@ const handleSelect = async (item: any) => {
   }
 };
 
-onMounted(() => {
-  suggestLinks.value = loadAll();
+onMounted(async () => {
+  const response = await fetch(`${inject('cast_url')}/shell.json`, {});
+  const data = await response.json();
+  suggestLinks.value = data;
 });
 </script>
 
