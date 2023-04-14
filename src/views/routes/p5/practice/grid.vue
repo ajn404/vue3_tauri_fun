@@ -5,6 +5,6 @@
 </template>
 
 <script lang="ts" setup>
-import { useGrid } from '../composition/useGrid';
+import { useGrid } from '../composition';
 const { container } = useGrid();
 </script>

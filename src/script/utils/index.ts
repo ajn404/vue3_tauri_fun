@@ -99,5 +99,6 @@ export const sleep = async (time?: number) => {
 export * from './browser';
 export * from './dom';
 export * from './img';
+export * from './math';
 export * from './switchBoard';
 export * from './type';

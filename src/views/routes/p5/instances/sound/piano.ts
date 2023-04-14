@@ -1,10 +1,10 @@
 import type p5 from 'p5';
 import C2Path from '@/assets/piano/C2.mp3';
 import type { SoundFile } from 'p5';
-import type { p5_func } from '../index';
+import type { p5Function } from '../index';
 // import { getBrowserVersion } from '@/script/utils';
 
-const all: p5_func = (sketch: p5, container: HTMLElement | null) => {
+const all: p5Function = (sketch: p5, container: HTMLElement | null) => {
   let C2: SoundFile | null = null;
 
   const preload = async () => {

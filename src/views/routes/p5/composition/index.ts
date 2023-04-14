@@ -5,7 +5,8 @@
  * maybe it's unnecessary
  *
  */
+// @index('./*', f => `export * from '${f.path}'`)
 
-export * from './useGrid';
+export * from './practice';
 export * from './useP5Instance';
 export * from './sort';

@@ -1,9 +1,12 @@
 import type p5 from 'p5';
 //coding is art\
 import { transform } from '../basic';
-import type { p5_func } from './index'
+import type { p5Function } from './index';
 
-export const geometries:p5_func = (sketch: p5, container: HTMLElement | null) => {
+export const geometries: p5Function = (
+  sketch: p5,
+  container: HTMLElement | null
+) => {
   sketch.setup = () => {
     sketch.createCanvas(
       container?.clientWidth || 400,

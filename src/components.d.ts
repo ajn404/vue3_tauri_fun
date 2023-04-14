@@ -17,6 +17,7 @@ declare module '@vue/runtime-core' {
     ElRadioGroup: typeof import('element-plus/es')['ElRadioGroup']
     ElSkeleton: typeof import('element-plus/es')['ElSkeleton']
     ElSlider: typeof import('element-plus/es')['ElSlider']
+    ElSwitch: typeof import('element-plus/es')['ElSwitch']
     RustEditor: typeof import('./components/editor/rustEditor.vue')['default']
     ShellPlayer: typeof import('./components/player/shellPlayer.vue')['default']
   }
