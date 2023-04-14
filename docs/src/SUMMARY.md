@@ -12,6 +12,8 @@
     - [第四天](./interview_everyday/day04.md)
     - [第五天](./interview_everyday/day05.md)
     - [第六天](./interview_everyday/day06.md)
+    - [第七天](./interview_everyday/day07.md)
+    - [第八天](./interview_everyday/day08.md)
 
 - [shell](./shell.md)
     - [man](./shell_record/man.md)
