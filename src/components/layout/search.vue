@@ -2,7 +2,7 @@
   <el-autocomplete
     v-model="key"
     :fetch-suggestions="querySearch"
-    class="search-input sticky top-0 block z-50"
+    class="search-input sticky top-0 block z-50 opacity-20"
     clearable
     placeholder="搜索ctr+k"
     ref="search"
