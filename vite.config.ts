@@ -33,7 +33,7 @@ export default defineConfig(async ({ command, mode, ssrBuild }) => {
 
   return {
     base: base.trim(),
-    
+
     css: {
       postcss: config,
       devSourcemap: true,
@@ -59,7 +59,7 @@ export default defineConfig(async ({ command, mode, ssrBuild }) => {
     },
 
     build: {
-      chunkSizeWarningLimit: 1000, //lazy
+      chunkSizeWarningLimit: 10000, //lazy
       rollupOptions: {
         output: {
           manualChunks: {

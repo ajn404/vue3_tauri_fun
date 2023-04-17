@@ -25,3 +25,4 @@ interface DocumentExtend extends Document {
 }
 
 declare module 'ml5';
+declare module 'svgcanvas';
