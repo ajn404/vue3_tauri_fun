@@ -1,6 +1,5 @@
 <script setup lang="ts" name="App">
 import { RouterView, useRoute, useRouter } from 'vue-router';
-import Menu from './views/menu/index.vue';
 import { watch, ref, version, provide } from 'vue';
 import { useStore } from './stores';
 import { invoke } from '@tauri-apps/api';
@@ -39,19 +38,10 @@ setProvide();
 
 <template>
   <div class="App">
-    <!-- <el-progress
-      :percentage="100"
-      :indeterminate="true"
-      :show-text="false"
-      color="green"
-      :duration="5"
-      v-show="loading"
-      class="fixed z-50 w-full"
-    /> -->
     <div class="menu">
       <transition>
         <keep-alive>
-          <Menu />
+          <search></search>
         </keep-alive>
       </transition>
     </div>

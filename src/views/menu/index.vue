@@ -36,7 +36,6 @@ import { autoRoutes, type autoRoute } from '@/router';
 import { reactive, ref, type Ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useStore } from '@/stores';
-import search from './search.vue';
 
 const store = useStore();
 

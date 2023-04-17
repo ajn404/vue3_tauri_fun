@@ -3,7 +3,7 @@
 </template>
 <script lang="ts" setup>
 import { Viewer } from '@photo-sphere-viewer/core';
-import { getImgSize } from '@/script/util';
+import { getImgSize } from '@/script/utils';
 
 import '@photo-sphere-viewer/core/index.scss';
 import imgPath from '@/assets/k.webp';

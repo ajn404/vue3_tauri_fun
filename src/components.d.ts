@@ -19,6 +19,7 @@ declare module '@vue/runtime-core' {
     ElSlider: typeof import('element-plus/es')['ElSlider']
     ElSwitch: typeof import('element-plus/es')['ElSwitch']
     RustEditor: typeof import('./components/editor/rustEditor.vue')['default']
+    Search: typeof import('./components/layout/search.vue')['default']
     ShellPlayer: typeof import('./components/player/shellPlayer.vue')['default']
   }
 }
