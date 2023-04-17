@@ -4,29 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "b41775c34d00d864",
+        "id": "30f04f9fe7a95389",
         "type": "tabs",
         "children": [
           {
-            "id": "b3b486991d6642e7",
+            "id": "d57936ab83aafcbf",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {}
-            }
-          },
-          {
-            "id": "08633e810393fdab",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.1.16"
+                "file": "dayly/2023-04-17.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -56,9 +49,9 @@
               "type": "search",
               "state": {
                 "query": "",
-                "matchingCase": false,
+                "matchingCase": true,
                 "explainSearch": false,
-                "collapseAll": false,
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               }
@@ -76,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 312.5
   },
   "right": {
     "id": "bfa15fb42edc9896",
@@ -92,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "dayly/2023-04-17.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "dayly/2023-04-17.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -129,6 +124,36 @@
             "type": "leaf",
             "state": {
               "type": "outline",
+              "state": {
+                "file": "dayly/2023-04-17.md"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "90e3d18f902c7564",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a908fb7eb6bd7c75",
+            "type": "leaf",
+            "state": {
+              "type": "timeline",
+              "state": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "2f3d0c0cfc5c717f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "647ca1c6963b35dc",
+            "type": "leaf",
+            "state": {
+              "type": "map-of-content",
               "state": {}
             }
           }
@@ -146,27 +171,49 @@
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "command-palette:打开命令面板": false
+      "command-palette:打开命令面板": false,
+      "obsidian-excalidraw-plugin:新建 Excalidraw 绘图": false,
+      "map-of-content:Update Map of Content": false
     }
   },
-  "active": "08633e810393fdab",
+  "active": "d57936ab83aafcbf",
   "lastOpenFiles": [
-    "interview_everyday/day07.md",
+    "Day Planners/Day Planner-20230417.md",
+    "dayly/2023-04-17.md",
+    "dayly/Drawing 2023-04-17 15.38.33.excalidraw.md",
+    "Pasted Image 20230417154042_064.png",
+    "tips/keyboard.md",
+    "未命名.canvas",
     "SUMMARY.md",
-    "interview_everyday/day08.md",
-    "interview_everyday/day05.md",
-    "interview_everyday/day06.md",
-    "shell.md",
+    "draft/record.md",
+    "draft",
     "shell_record/man.md",
-    "shell_record",
-    "doc.md",
-    "shell/man.md",
-    "shell",
-    "interview.md",
-    "record.md",
+    "interview_everyday/day01.md",
+    "draft/interview.md",
+    "math/未命名.md",
+    "math/MATH_INDEX.md",
+    "math/未命名.canvas",
+    "Excalidraw/Drawing 2023-04-17 14.57.13.excalidraw.md",
+    "dayly",
+    "interview_everyday/day08.md",
+    "interview_everyday/day07.md",
+    "interview_everyday/day06.md",
+    "interview_everyday/day05.md",
     "interview_everyday/day04.md",
     "interview_everyday/day03.md",
     "interview_everyday/day02.md",
-    "interview_everyday/day01.md"
+    "Excalidraw",
+    "Day Planners",
+    "tips/未命名.md",
+    "draft/shell.md",
+    "tips",
+    "Pasted image 20230417141640.png",
+    "Pasted image 20230417140625.png",
+    "draft/doc.md",
+    "math",
+    "interview_everyday/day09.md",
+    "未命名.md",
+    "shell_record",
+    "shell"
   ]
 }

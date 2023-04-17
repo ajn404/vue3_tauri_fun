@@ -1,7 +1,9 @@
 {
   "accentColor": "#ffffff",
   "theme": "system",
-  "cssTheme": "",
+  "cssTheme": "PLN",
   "interfaceFontFamily": "Inter",
-  "translucency": true
+  "translucency": true,
+  "baseFontSize": 11,
+  "baseFontSizeAction": true
 }
