@@ -4,19 +4,67 @@
     "type": "split",
     "children": [
       {
-        "id": "30f04f9fe7a95389",
+        "id": "6417338efa33b0a4",
+        "type": "split",
+        "children": [
+          {
+            "id": "30f04f9fe7a95389",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "d57936ab83aafcbf",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "interview_everyday/day01.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              },
+              {
+                "id": "6315964097c02aa3",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "dayly/2023-04-17.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ],
+            "currentTab": 1
+          },
+          {
+            "id": "642049a91798e4ce",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "51361b2fbdefaadb",
+                "type": "leaf",
+                "state": {
+                  "type": "mindmap",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal"
+      },
+      {
+        "id": "afdcbb04d831f55c",
         "type": "tabs",
         "children": [
           {
-            "id": "d57936ab83aafcbf",
+            "id": "d60a4b3044f2beb4",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "dayly/2023-04-17.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "graph",
+              "state": {}
             }
           }
         ]
@@ -85,7 +133,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "dayly/2023-04-17.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +149,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "dayly/2023-04-17.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +170,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "dayly/2023-04-17.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -176,13 +220,15 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "d57936ab83aafcbf",
+  "active": "d60a4b3044f2beb4",
   "lastOpenFiles": [
-    "dayly/Drawing 2023-04-17 16.45.24.excalidraw.md",
     "dayly/2023-04-17.md",
+    "interview_everyday/day01.md",
+    "interview_everyday/day09.md",
+    "Day Planners/Day Planner-20230417.md",
+    "dayly/Drawing 2023-04-17 16.45.24.excalidraw.md",
     "Pasted Image 20230417164539_429.png",
     "tips/keyboard.md",
-    "Day Planners/Day Planner-20230417.md",
     "dayly/Drawing 2023-04-17 15.38.33.excalidraw.md",
     "Pasted Image 20230417154042_064.png",
     "未命名.canvas",
@@ -190,7 +236,6 @@
     "draft/record.md",
     "draft",
     "shell_record/man.md",
-    "interview_everyday/day01.md",
     "draft/interview.md",
     "math/未命名.md",
     "math/MATH_INDEX.md",
@@ -213,7 +258,6 @@
     "Pasted image 20230417140625.png",
     "draft/doc.md",
     "math",
-    "interview_everyday/day09.md",
     "未命名.md",
     "shell_record",
     "shell"
