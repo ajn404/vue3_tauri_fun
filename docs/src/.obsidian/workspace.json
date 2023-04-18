@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily/2023-04-17.md",
+                "file": "daily/2023-04-18.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily/2023-04-17.md",
+                "file": "daily/2023-04-18.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily/2023-04-17.md",
+                "file": "daily/2023-04-18.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily/2023-04-17.md"
+                "file": "daily/2023-04-18.md"
               }
             }
           }
@@ -178,8 +178,10 @@
   },
   "active": "b8fc65105dff8b94",
   "lastOpenFiles": [
-    "daily/2023-04-18.md",
+    "english_words/trademark.md",
+    "english_words",
     "daily/2023-04-17.md",
+    "daily/2023-04-18.md",
     "math/MATH_INDEX.md",
     "Day Planners/Day Planner-20230417.md",
     "Day Planners/Day Planner-20230418.md",
@@ -210,7 +212,6 @@
     "Excalidraw/Drawing 2023-04-17 14.57.13.excalidraw.md",
     "daily",
     "interview_everyday/day08.md",
-    "interview_everyday/day07.md",
     "Excalidraw",
     "Day Planners",
     "tips",

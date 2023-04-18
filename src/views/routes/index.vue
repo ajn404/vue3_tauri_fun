@@ -59,6 +59,7 @@ const main = () => {
 onMounted(async () => {
   if (handleIsTauri()) {
     const response: string[] = await invoke('read_tags');
+    await invoke('read_header_from_md');
     if (response?.length > 0) {
       tags.value = response;
     }

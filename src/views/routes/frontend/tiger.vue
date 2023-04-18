@@ -18,7 +18,7 @@ onMounted(() => {
   if (canvas.value && view.value) {
     let canvas_ctx = canvas.value.getContext('2d');
     const options = {
-      height: view.value.clientWidth, // falsy values get converted to 500
+      height: view.value.clientHeight, // falsy values get converted to 500
       width: 0 / 0, // falsy values get converted to 500
       ctx: canvas_ctx, // existing Context2D to wrap around
       enableMirroring: true, // whether canvas mirroring (get image data) is enabled (defaults to false)

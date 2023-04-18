@@ -29,8 +29,6 @@ onMounted(() => {
       .getUserMedia({ video: true })
       .then(function (stream) {
         if (video.value) {
-          console.log('1');
-
           video.value.srcObject = stream;
           video.value.play();
         }

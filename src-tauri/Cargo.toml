@@ -19,7 +19,9 @@ serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
 tauri = { version = "2.0.0-alpha.0", features = [] }
 tokio = { version = "1", features = ["full"] }
-
+pulldown-cmark = { version = "0.9.2", default-features = false, features = [
+    "simd",
+] }
 [features]
 # by default Tauri runs in production mode
 # when `tauri dev` runs it is executed with `cargo run --no-default-features` if `devPath` is an URL

@@ -1,6 +1,5 @@
 <template>
   <div class="view bg-slate-400 h-auto">
-    <h2 class="text-center">shell record</h2>
     <el-autocomplete
       v-model="exec"
       :fetch-suggestions="querySearch"
