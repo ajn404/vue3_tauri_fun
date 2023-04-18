@@ -19,7 +19,7 @@ router.beforeEach((to, from, next) => {
 });
 
 router.afterEach(() => {
-  console.clear();
+  //   console.clear();
 });
 
 watch(
@@ -38,13 +38,9 @@ setProvide();
 
 <template>
   <div class="App">
-    <div class="menu">
-      <transition>
-        <keep-alive>
-          <search></search>
-        </keep-alive>
-      </transition>
-    </div>
+    <keep-alive>
+      <search></search>
+    </keep-alive>
     <router-view v-slot="{ Component }">
       <KeepAlive>
         <XyzTransition appear :xyz="`fade stagger-1`" mode="in-out">

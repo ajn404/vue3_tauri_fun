@@ -133,6 +133,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "dayly/2023-04-17.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -149,6 +150,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "dayly/2023-04-17.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +172,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "dayly/2023-04-17.md"
+              }
             }
           }
         ]
@@ -220,8 +224,9 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "d60a4b3044f2beb4",
+  "active": "6315964097c02aa3",
   "lastOpenFiles": [
+    "Day Planners/Day Planner-20230418.md",
     "dayly/2023-04-17.md",
     "interview_everyday/day01.md",
     "interview_everyday/day09.md",
