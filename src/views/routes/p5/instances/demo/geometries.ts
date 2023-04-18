@@ -1,7 +1,7 @@
 import type p5 from 'p5';
 //coding is art\
-import { transform } from '../basic';
-import type { p5Function } from './index';
+import { transform } from '../../basic';
+import type { p5Function } from '../index';
 
 export const geometries: p5Function = (
   sketch: p5,

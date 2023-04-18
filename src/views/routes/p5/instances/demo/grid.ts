@@ -1,9 +1,9 @@
 import type { Image } from 'p5';
 import type p5 from 'p5';
-import { randomColor, make2DArray } from '../basic';
-import kk from '@/assets/k.webp';
+import { randomColor, make2DArray } from '../../basic';
+import kk from '@/assets/k.webp'; //kun kun=>k k
 
-import type { p5Function } from './index';
+import type { p5Function } from '../index';
 //coding is art
 export const grid: p5Function = (sketch: p5, container: HTMLElement | null) => {
   const rows = 20,

@@ -1,5 +1,5 @@
 import type p5 from 'p5';
-import type { p5Function } from './index';
+import type { p5Function } from '../index';
 
 //coding is art
 export const noise: p5Function = (

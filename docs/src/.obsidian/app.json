@@ -1,5 +1,6 @@
 {
   "promptDelete": false,
   "alwaysUpdateLinks": true,
-  "vimMode": true
+  "vimMode": false,
+  "attachmentFolderPath": "sources"
 }

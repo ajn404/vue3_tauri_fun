@@ -1,11 +1,11 @@
 
 # Summary
 
-- [doc](doc.md)
+- [doc](./draft/doc.md)
 
-- [record](record.md)
+- [record](./draft/record.md)
 
-- [interview](interview.md)
+- [interview](./draft/interview.md)
     - [第一天](./interview_everyday/day01.md)
     - [第二天](./interview_everyday/day02.md)
     - [第三天](./interview_everyday/day03.md)
@@ -15,5 +15,9 @@
     - [第七天](./interview_everyday/day07.md)
     - [第八天](./interview_everyday/day08.md)
 
-- [shell](shell.md)
+- [shell](./draft/shell.md)
     - [man](./shell_record/man.md)
+
+- [每日](./daily/2023-04-17.md)
+    - [2024-04-18](./daily/2023-04-17.md)
+    - [2024-04-18](./daily/2023-04-18.md)

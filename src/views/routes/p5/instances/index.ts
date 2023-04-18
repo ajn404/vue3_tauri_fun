@@ -1,10 +1,4 @@
-export * from './geometries';
-export * from './noise1d';
-export * from './grid';
-export * from './sort';
-export * from './sound';
 import type p5 from 'p5';
-export * from './practice';
 export type p5Function = (
   sketch: p5,
   container: HTMLElement | null,
@@ -19,3 +13,10 @@ export interface p5Option {
   magnification?: number;
   switch?: boolean;
 }
+
+// @index('./*', f => `export * from '${f.path}'`)
+export * from './demo';
+export * from './math';
+export * from './practice';
+export * from './sort';
+export * from './sound';
