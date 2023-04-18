@@ -5,7 +5,8 @@ import { useStore } from './stores';
 import { invoke } from '@tauri-apps/api';
 import { handleIsTauri } from '@/script/utils';
 import { setProvide } from '@/script/provide';
-
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
 if (handleIsTauri())
   invoke('greet', { name: 'World' }).then((response) => console.log(response));
 
@@ -13,6 +14,7 @@ const route = useRoute();
 const router = useRouter();
 const loading = ref(false);
 router.beforeEach((to, from, next) => {
+  NProgress.start();
   loading.value = true;
   to.matched.forEach((record) => {});
   next();
@@ -20,6 +22,7 @@ router.beforeEach((to, from, next) => {
 
 router.afterEach(() => {
   //   console.clear();
+  NProgress.done();
 });
 
 watch(

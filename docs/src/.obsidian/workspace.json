@@ -4,27 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "30f04f9fe7a95389",
+        "id": "44b53c21ec4c2067",
         "type": "tabs",
         "children": [
           {
-            "id": "6315964097c02aa3",
+            "id": "b8fc65105dff8b94",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "daily/2023-04-17.md",
                 "mode": "source",
-                "source": true
+                "source": false
               }
-            }
-          },
-          {
-            "id": "d179f856e7fea9d2",
-            "type": "leaf",
-            "state": {
-              "type": "mindmap",
-              "state": {}
             }
           }
         ]
@@ -184,12 +176,13 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "6315964097c02aa3",
+  "active": "b8fc65105dff8b94",
   "lastOpenFiles": [
     "daily/2023-04-18.md",
+    "daily/2023-04-17.md",
+    "math/MATH_INDEX.md",
     "Day Planners/Day Planner-20230417.md",
     "Day Planners/Day Planner-20230418.md",
-    "daily/2023-04-17.md",
     "draft/interview.md",
     "SUMMARY.md",
     "interview.md",
@@ -199,7 +192,6 @@
     "draftdoc.md",
     "dadoc.md",
     "doc.md",
-    "math/MATH_INDEX.md",
     "daily/203-04-18.md",
     "sources",
     "tips/keyboard.md",

@@ -1,6 +1,7 @@
 <template>
   <div class="view">
     <div class="fixed top-1 right-0 w-1/2">
+      <h2 class="text-4xl">利用1-1/3+1/5-1/7+1.9...计算pi/4</h2>
       <span>rate 迭代速度(分辨率)</span>
       <el-slider
         :min="1"
@@ -23,6 +24,8 @@
 
       <h1>第i={{ option.index }}次迭代</h1>
       <h2>PI={{ option.PI * 4 }}</h2>
+
+      <span v-if="!Number.isSafeInteger(option.index)">算不动了</span>
     </div>
     <div class="container" ref="container"></div>
   </div>

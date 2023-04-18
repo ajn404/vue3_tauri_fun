@@ -14,13 +14,10 @@ export const leibnizSeries: p5Function = (
     sketch.frameRate(option?.rate || 1);
     sketch.background(255);
   };
-
   sketch.mouseClicked = () => {};
-
   const calcPi = () => {
     if (option?.index && (option.PI || option.PI === 0)) {
       let temp = 1 / (option.index * 2 - 1);
-
       if (option.index % 2 === 0) {
         option.PI -= temp;
       } else {
@@ -31,9 +28,10 @@ export const leibnizSeries: p5Function = (
   };
 
   sketch.draw = async () => {
-    new Array(option?.magnification || 10000).fill(1).map(() => {
-      calcPi();
-    });
+    if (Number.isSafeInteger(option?.index))
+      new Array(option?.magnification || 10000).fill(1).map(() => {
+        calcPi();
+      });
     if (!option?.switch) {
       sketch.background(255);
     }
