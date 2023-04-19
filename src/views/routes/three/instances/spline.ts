@@ -10,6 +10,7 @@ import {
   MathUtils,
   PCFShadowMap,
   Color,
+  Scene,
 } from 'three';
 import { createOrthographicCamera } from '../basic/camera';
 import { createTextureCube } from '../basic/cube';
@@ -30,7 +31,7 @@ const store = useStore();
 
 class Spline {
   camera: OrthographicCamera;
-  scene: Object3D;
+  scene: Scene;
   renderer: WebGLRenderer;
   cube?: Object3D;
   animationFrame?: number;
@@ -40,7 +41,7 @@ class Spline {
   constructor(container: HTMLElement) {
     this.camera = createOrthographicCamera(container);
     this.scene = createScene();
-
+    this.scene.background = new Color('rgb(255,200,160)');
     this.renderer = createAntialiasRender(
       container.clientWidth,
       container.clientHeight
