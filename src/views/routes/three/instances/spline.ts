@@ -1,6 +1,5 @@
 import {
   Mesh,
-  PerspectiveCamera,
   OrthographicCamera,
   WebGLRenderer,
   Group,
@@ -21,13 +20,11 @@ import { resize } from '../basic/resize';
 import { useStore } from '@/stores';
 import { watch, nextTick } from 'vue';
 import type { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import type { createCameraControlOption } from '../plugin';
 import { createCameraControl } from '../plugin';
 import SplineLoader from '@splinetool/loader';
-const clock = new Clock();
 
+const clock = new Clock();
 const store = useStore();
-//World
 
 class Spline {
   camera: OrthographicCamera;
@@ -36,7 +33,6 @@ class Spline {
   cube?: Object3D;
   animationFrame?: number;
   control?: OrbitControls;
-  option?: createCameraControlOption;
 
   constructor(container: HTMLElement) {
     this.camera = createOrthographicCamera(container);
@@ -64,31 +60,37 @@ class Spline {
     );
   }
 
-  addProject() {
-    const light = createLights();
-    this.cube = createTextureCube();
-    this.cube.updateMatrix();
-    this.scene?.add(light, this.cube);
-  }
-
   addControl() {
-    this.control = createCameraControl(
-      this.camera,
-      this.renderer.domElement,
-      this.option
-    );
+    this.control = createCameraControl(this.camera, this.renderer.domElement);
     this.control.enableDamping = true;
     this.control.dampingFactor = 0.125;
   }
 
   loadSpline() {
     const loader = new SplineLoader();
+    // const url = `${import.meta.env.BASE_URL}data/models/scene.splinecode`;
+    const url = `https://prod.spline.design/bCHj2cYTqGBa3R7S/scene.splinecode`;
+
     loader.load(
-      `${import.meta.env.BASE_URL}data/models/scene.splinecode`,
+      url,
       (splineScene) => {
         this.scene.add(splineScene);
+        // console.clear();
       },
-      () => {},
+      (progress: ProgressEvent) => {
+        if (progress.lengthComputable) {
+          console.log(progress);
+          const { total, loaded } = progress;
+          const percent = (loaded / total) * 100;
+          console.log('进度%d%', percent);
+
+          if (total > loaded) {
+            console.log('加载中');
+          } else {
+            console.log('加载完毕');
+          }
+        }
+      },
       (error) => {
         console.log('An error happened');
       }
@@ -107,9 +109,9 @@ class Spline {
 
   //真正的动画函数在这里
   render(container: HTMLElement) {
-    resize(this, container);
     this.control?.update();
     this.animate();
+    resize(this, container);
 
     if (container.getBoundingClientRect().width > 0) {
       this.animationFrame = requestAnimationFrame(

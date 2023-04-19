@@ -6,5 +6,5 @@
 
 <script lang="ts" setup>
 import { useSpline } from '../composition';
-const { container } = useSpline();
+const { container, world } = useSpline();
 </script>

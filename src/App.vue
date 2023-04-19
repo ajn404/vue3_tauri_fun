@@ -21,7 +21,7 @@ router.beforeEach((to, from, next) => {
 });
 
 router.afterEach(() => {
-  //   console.clear();
+  console.clear();
   NProgress.done();
 });
 
