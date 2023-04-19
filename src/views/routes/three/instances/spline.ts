@@ -12,8 +12,6 @@ import {
   Scene,
 } from 'three';
 import { createOrthographicCamera } from '../basic/camera';
-import { createTextureCube } from '../basic/cube';
-import { createLights } from '../basic/light';
 import { createScene } from '../basic/scene';
 import { createAntialiasRender } from '../basic/renderer';
 import { resize } from '../basic/resize';
@@ -22,6 +20,7 @@ import { watch, nextTick } from 'vue';
 import type { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { createCameraControl } from '../plugin';
 import SplineLoader from '@splinetool/loader';
+import type { reactiveData } from '../composition';
 
 const clock = new Clock();
 const store = useStore();
@@ -29,12 +28,15 @@ const store = useStore();
 class Spline {
   camera: OrthographicCamera;
   scene: Scene;
+  //   splineScene?: Scene;
   renderer: WebGLRenderer;
   cube?: Object3D;
   animationFrame?: number;
   control?: OrbitControls;
+  reactiveData: reactiveData;
 
-  constructor(container: HTMLElement) {
+  constructor(container: HTMLElement, reactiveData: reactiveData) {
+    this.reactiveData = reactiveData;
     this.camera = createOrthographicCamera(container);
     this.scene = createScene();
     this.scene.background = new Color('rgb(255,200,160)');
@@ -48,7 +50,10 @@ class Spline {
     this.renderer.setClearAlpha(1);
 
     this.addControl();
-    this.loadSpline();
+    this.loadSpline().then((splineScene) => {
+      this.scene = splineScene;
+      this.scene.background = new Color('rgb(255,200,160)');
+    });
 
     watch(
       () => store.menu,
@@ -66,35 +71,34 @@ class Spline {
     this.control.dampingFactor = 0.125;
   }
 
-  loadSpline() {
-    const loader = new SplineLoader();
-    const url = `${import.meta.env.BASE_URL}data/models/scene.splinecode`;
-    // const url = `https://prod.spline.design/bCHj2cYTqGBa3R7S/scene.splinecode`;
+  loadSpline(): Promise<Scene> {
+    return new Promise((resolve, reject) => {
+      const loader = new SplineLoader();
+      const url = `${import.meta.env.BASE_URL}data/models/scene.splinecode`;
+      loader.load(
+        url,
+        (splineScene) => {
+          resolve(splineScene);
+          //   console.clear();
+        },
+        (progress: ProgressEvent) => {
+          if (progress.lengthComputable) {
+            const { total, loaded } = progress;
+            const percent = (loaded / total) * 100;
 
-    loader.load(
-      url,
-      (splineScene) => {
-        this.scene.add(splineScene);
-        // console.clear();
-      },
-      (progress: ProgressEvent) => {
-        if (progress.lengthComputable) {
-          console.log(progress);
-          const { total, loaded } = progress;
-          const percent = (loaded / total) * 100;
-          console.log('进度%d%', percent);
-
-          if (total > loaded) {
-            console.log('加载中');
-          } else {
-            console.log('加载完毕');
+            this.reactiveData.percent = Number(percent.toFixed(2));
+            if (total > loaded) {
+              console.log('加载中');
+            } else {
+              console.log('加载完毕');
+            }
           }
+        },
+        (error) => {
+          reject(new Error('An error happened'));
         }
-      },
-      (error) => {
-        console.log('An error happened');
-      }
-    );
+      );
+    });
   }
 
   animate() {
