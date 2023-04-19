@@ -23,6 +23,7 @@
     "@animxyz/vue3": "^0.6.7",
     "@kitware/vtk.js": "^26.9.8",
     "@photo-sphere-viewer/core": "^5.1.4",
+    "@splinetool/loader": "^0.9.298",
     "@tauri-apps/api": "^2.0.0-alpha.2",
     "@types/p5": "^1.6.0",
     "@types/three": "^0.150.0",

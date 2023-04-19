@@ -1,4 +1,4 @@
-import { PerspectiveCamera } from 'three';
+import { PerspectiveCamera, OrthographicCamera, Euler } from 'three';
 
 export const createPerspectiveCamera = () => {
   const fov = 35; // AKA Field of View
@@ -8,5 +8,19 @@ export const createPerspectiveCamera = () => {
   const far = 100; // the far clipping plane
   const camera = new PerspectiveCamera(fov, aspect, near, far);
   camera.position.set(0, 0, 20);
+  return camera;
+};
+
+export const createOrthographicCamera = (container: HTMLElement) => {
+  const camera = new OrthographicCamera(
+    container.clientWidth / -2,
+    container.clientWidth / 2,
+    container.clientHeight / 2,
+    container.clientHeight / -2,
+    -100000,
+    100000
+  );
+  camera.position.set(-840.75, 872.62, -204.75);
+  camera.quaternion.setFromEuler(new Euler(-2.22, -0.98, -2.31));
   return camera;
 };
