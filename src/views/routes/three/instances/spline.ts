@@ -68,8 +68,8 @@ class Spline {
 
   loadSpline() {
     const loader = new SplineLoader();
-    // const url = `${import.meta.env.BASE_URL}data/models/scene.splinecode`;
-    const url = `https://prod.spline.design/bCHj2cYTqGBa3R7S/scene.splinecode`;
+    const url = `${import.meta.env.BASE_URL}data/models/scene.splinecode`;
+    // const url = `https://prod.spline.design/bCHj2cYTqGBa3R7S/scene.splinecode`;
 
     loader.load(
       url,
