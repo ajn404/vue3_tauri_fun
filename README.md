@@ -1,7 +1,7 @@
 # vue3 Tauri app template
 
 This template should help get you started developing with Vue 3 [Tauri](http://tauri.app/) app in Vite.
-
+**It’s more like a demo that mixes various front-end technologies.**
 ## web site
 
 - [Tauri Home](https://ajn404.github.io/vue3_tauri_fun/)
@@ -10,11 +10,14 @@ This template should help get you started developing with Vue 3 [Tauri](http://t
 
 - [Lib stats](https://ajn404.github.io/vue3_tauri_fun/stats)
 
+### gitee 
+
 - [国内Tauri Home](https://ajn404.gitee.io/vue3_tauri_fun/)
+### netlify
 
 - [netlify](https://taurifun.netlify.app/)
 
-### site log
+### site review
 
 - [4 sort methods](https://ajn404.github.io/vue3_tauri_fun/#/fun/p5/algorithm/mixSort)
 - [three animation](https://ajn404.github.io/vue3_tauri_fun/#/three/practice/animationWorld)
@@ -94,4 +97,10 @@ npm run format
 #if don not have mdbook
 cargo install mdbook
 npm run docs
+```
+
+
+### socket demo
+```sh
+npm run socket-server
 ```
