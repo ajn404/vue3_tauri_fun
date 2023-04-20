@@ -11,6 +11,8 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Appeal: typeof import('./components/layout/appeal.vue')['default']
     Codemirror: typeof import('vue-codemirror')['Codemirror']
+    ConnectionManager: typeof import('./components/socket/ConnectionManager.vue')['default']
+    ConnectionState: typeof import('./components/socket/ConnectionState.vue')['default']
     ElAutocomplete: typeof import('element-plus/es')['ElAutocomplete']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElProgress: typeof import('element-plus/es')['ElProgress']
@@ -24,5 +26,6 @@ declare module '@vue/runtime-core' {
     RustEditor: typeof import('./components/editor/rustEditor.vue')['default']
     Search: typeof import('./components/layout/search.vue')['default']
     ShellPlayer: typeof import('./components/player/shellPlayer.vue')['default']
+    SocketForm: typeof import('./components/socket/socketForm.vue')['default']
   }
 }
