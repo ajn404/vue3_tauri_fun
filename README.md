@@ -19,8 +19,8 @@ This template should help get you started developing with Vue 3 [Tauri](http://t
 - [4 sort methods](https://ajn404.github.io/vue3_tauri_fun/#/fun/p5/algorithm/mixSort)
 - [three animation](https://ajn404.github.io/vue3_tauri_fun/#/three/practice/animationWorld)
 - [spline demo](https://ajn404.github.io/vue3_tauri_fun/#/three/spline)
-! [spline](./public/imgs/page/spline.png)
 
+![spline](./public/imgs/page/spline.png)
 ## Prerequisites
 
 - Rust (nightly)
