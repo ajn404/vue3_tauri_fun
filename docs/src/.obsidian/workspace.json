@@ -13,13 +13,48 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "english_words/trademark.md",
+                "file": "daily/2023-04-19.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "69659ad41f83d9fb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "SUMMARY.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b20f9159feea7973",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "math/MATH_INDEX.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "0350195541f80502",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "sources/1.png"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -85,7 +120,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "english_words/trademark.md",
+                "file": "math/MATH_INDEX.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +137,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "english_words/trademark.md",
+                "file": "math/MATH_INDEX.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +160,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "english_words/trademark.md"
+                "file": "math/MATH_INDEX.md"
               }
             }
           }
@@ -176,18 +211,23 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "b8fc65105dff8b94",
+  "active": "b20f9159feea7973",
   "lastOpenFiles": [
-    "Day Planners/Day Planner-20230419.md",
+    "Day Planners/Day Planner-20230420.md",
+    "SUMMARY.md",
+    "sources/1.png",
+    "sources/Pasted image 20230419171849 1.png",
     "math/MATH_INDEX.md",
+    "math/MATH_INDEX",
+    "daily/2023-04-19.md",
     "daily/2023-04-18.md",
     "english_words/trademark.md",
+    "Day Planners/Day Planner-20230419.md",
     "english_words",
     "daily/2023-04-17.md",
     "Day Planners/Day Planner-20230417.md",
     "Day Planners/Day Planner-20230418.md",
     "draft/interview.md",
-    "SUMMARY.md",
     "interview.md",
     "draft/doc.md",
     "shell.md",
@@ -208,9 +248,7 @@
     "draft/record.md",
     "draft",
     "shell_record/man.md",
-    "math/未命名.md",
     "math/未命名.canvas",
-    "Excalidraw/Drawing 2023-04-17 14.57.13.excalidraw.md",
     "daily",
     "Excalidraw",
     "Day Planners",
@@ -218,7 +256,6 @@
     "Pasted image 20230417141640.png",
     "Pasted image 20230417140625.png",
     "math",
-    "shell_record",
-    "shell"
+    "shell_record"
   ]
 }

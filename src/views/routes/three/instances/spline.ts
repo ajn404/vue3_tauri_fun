@@ -28,7 +28,6 @@ const store = useStore();
 class Spline {
   camera: OrthographicCamera;
   scene: Scene;
-  //   splineScene?: Scene;
   renderer: WebGLRenderer;
   cube?: Object3D;
   animationFrame?: number;
@@ -74,7 +73,7 @@ class Spline {
   loadSpline(): Promise<Scene> {
     return new Promise((resolve, reject) => {
       const loader = new SplineLoader();
-      const url = `${import.meta.env.BASE_URL}data/models/scene.splinecode`;
+      const url = this.reactiveData.splineSceneUrl;
       loader.load(
         url,
         (splineScene) => {

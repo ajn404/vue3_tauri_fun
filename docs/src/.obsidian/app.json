@@ -2,5 +2,6 @@
   "promptDelete": false,
   "alwaysUpdateLinks": true,
   "vimMode": false,
-  "attachmentFolderPath": "sources"
+  "attachmentFolderPath": "sources",
+  "newLinkFormat": "absolute"
 }

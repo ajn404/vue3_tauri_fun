@@ -1,6 +1,6 @@
 //an example use Default
 #[cfg(test)]
-mod about_Default_derive {
+mod about_default_derive {
     #[derive(Debug, Default)]
     struct CQueue {
         p: Vec<i32>,
@@ -8,15 +8,15 @@ mod about_Default_derive {
     }
 
     impl CQueue {
-        fn new() -> Self {
+        fn _new() -> Self {
             Default::default()
         }
 
-        fn append_tail(&mut self, value: i32) {
+        fn _append_tail(&mut self, value: i32) {
             self.p.push(value);
         }
 
-        fn delete_head(&mut self) -> i32 {
+        fn _delete_head(&mut self) -> i32 {
             match self.q.pop() {
                 Some(val) => val,
                 None => {

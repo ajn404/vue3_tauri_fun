@@ -3,7 +3,8 @@ import { Spline } from '../instances';
 import '../three.scss';
 
 export interface reactiveData {
-  percent?: number;
+  percent: number;
+  splineSceneUrl: string;
 }
 
 export const useSpline = () => {
@@ -11,6 +12,7 @@ export const useSpline = () => {
   let world: Spline | Object = reactive({});
   let reactiveData: reactiveData = reactive({
     percent: 0,
+    splineSceneUrl: `${import.meta.env.BASE_URL}data/models/scene.splinecode`,
   });
 
   const toggleRender = () => {
