@@ -50,7 +50,13 @@ class Spline {
 
     this.addControl();
     this.loadSpline().then((splineScene) => {
-      this.scene = splineScene;
+      //   splineScene.rotation.x += 100;
+      splineScene.rotation.z += 50;
+      splineScene.rotation.y += 200;
+      splineScene.scale.set(1.2, 1.2, 1.2);
+
+      this.scene.add(splineScene);
+
       this.scene.background = new Color('rgb(255,200,160)');
     });
 
