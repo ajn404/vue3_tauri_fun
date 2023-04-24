@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily/2023-04-20.md",
+                "file": "daily/2023-04-24.md",
                 "mode": "source",
                 "source": false
               }
@@ -122,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily/2023-04-20.md",
+                "file": "daily/2023-04-24.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily/2023-04-20.md",
+                "file": "daily/2023-04-24.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily/2023-04-20.md"
+                "file": "daily/2023-04-24.md"
               }
             }
           }
@@ -213,12 +213,17 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "b20f9159feea7973",
+  "active": "8109444033f4308c",
   "lastOpenFiles": [
+    "daily/2023-04-20.md",
+    "daily/2023-04-24.md",
+    "Day Planners/Day Planner-20230424.md",
+    "Day Planners/Day Planner-20230423.md",
+    "Day Planners/Day Planner-20230422.md",
+    "Day Planners/Day Planner-20230421.md",
     "daily/2023-04-19.md",
     "SUMMARY.md",
     "math/MATH_INDEX.md",
-    "daily/2023-04-20.md",
     "daily/2023-04-18.md",
     "sources/1.png",
     "Day Planners/Day Planner-20230420.md",
@@ -241,11 +246,7 @@
     "daily/203-04-18.md",
     "sources",
     "tips/keyboard.md",
-    "interview_everyday/day01.md",
-    "dayly/Drawing 2023-04-17 16.45.24.excalidraw.md",
-    "interview_everyday/day09.md",
     "Pasted Image 20230417164539_429.png",
-    "dayly/Drawing 2023-04-17 15.38.33.excalidraw.md",
     "Pasted Image 20230417154042_064.png",
     "未命名.canvas",
     "draft",

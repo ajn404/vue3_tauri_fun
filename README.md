@@ -6,7 +6,7 @@ This template should help get you started developing with Vue 3 [Tauri](http://t
 
 - [Tauri Home](https://ajn404.github.io/vue3_tauri_fun/)
 
-- [Docs](https://ajn404.github.io/vue3_tauri_fun/book)
+- [Docs](https://ajn404.github.io/vue3_tauri_fun/book/print.html)
 
 - [Lib stats](https://ajn404.github.io/vue3_tauri_fun/stats)
 
