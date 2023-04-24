@@ -18,6 +18,7 @@
     "format:check": "npx prettier . --check",
     "docs": "mdbook serve docs",
     "tauri": "tauri dev",
+    "tauri:build": "tauri build",
     "test:e2e": "npx cypress open",
     "socket-server": "npm run -C server/socket-chat dev"
   },

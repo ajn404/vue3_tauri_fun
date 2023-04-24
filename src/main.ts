@@ -17,7 +17,4 @@ app.use(VueAnimXyz);
 app.config.globalProperties.$myVue = app;
 // 将 GSAP 添加到 Vue 实例的原型中
 app.config.globalProperties.$gsap = gsap;
-
-
-
 app.mount('#app');
