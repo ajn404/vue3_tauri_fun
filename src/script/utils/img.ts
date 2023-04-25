@@ -1,3 +1,8 @@
+/*
+ * @Description:获取图片的宽高
+ * @Version: 1.0
+ * */
+
 export const getImgSize = (
   url: string
 ): Promise<{ width: number; height: number }> =>
@@ -16,3 +21,22 @@ export const getImgSize = (
       };
     };
   });
+
+/**
+ *
+ * 懒加载
+ */
+export const lazyLoad = (
+  imgs: NodeListOf<HTMLImageElement>,
+  contentHeight: number = document.body.clientHeight
+) => {
+  const imgsArr = Array.from(imgs);
+  imgsArr.forEach((item) => {
+    if (!item.dataset.src) return;
+    const { top, bottom } = item.getBoundingClientRect();
+    if (top < contentHeight && bottom >= 0) {
+      item.src = item.dataset.src;
+      item.removeAttribute('data-src');
+    }
+  });
+};

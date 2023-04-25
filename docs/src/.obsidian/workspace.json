@@ -4,31 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "ff942c0b30b0b81f",
+        "id": "e3f7c55e23d6fdcb",
         "type": "tabs",
         "children": [
           {
-            "id": "ab19ef1893af3803",
-            "type": "leaf",
-            "state": {
-              "type": "mindmap",
-              "state": {}
-            }
-          },
-          {
-            "id": "5ec19c6540bfdb2b",
+            "id": "205d1e401409e6f8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily/2023-04-24.md",
+                "file": "daily/2023-04-25.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -78,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 312.5
+    "width": 200
   },
   "right": {
     "id": "bfa15fb42edc9896",
@@ -94,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily/2023-04-24.md",
+                "file": "daily/2023-04-25.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily/2023-04-24.md",
+                "file": "daily/2023-04-25.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily/2023-04-24.md"
+                "file": "daily/2023-04-25.md"
               }
             }
           }
@@ -185,12 +176,16 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "5ec19c6540bfdb2b",
+  "active": "205d1e401409e6f8",
   "lastOpenFiles": [
-    "[状态机和状态图简介.md",
-    "daily/2023-04-24.md",
     "sources/v8.png",
+    "未命名.canvas",
+    "daily/2023-04-25.md",
     "SUMMARY.md",
+    "daily/2023-04-24.md",
+    "Day Planners/Day Planner-20230425.md",
+    "Day Planners/Day Planner-20230417.md",
+    "[状态机和状态图简介.md",
     "math/MATH_INDEX.md",
     "shell_record/man.md",
     "sources/1.png",
@@ -213,15 +208,10 @@
     "Day Planners/Day Planner-20230420.md",
     "sources/Pasted image 20230419171849 1.png",
     "math/MATH_INDEX",
-    "english_words/trademark.md",
-    "Day Planners/Day Planner-20230419.md",
     "english_words",
-    "daily/2023-04-17.md",
-    "Day Planners/Day Planner-20230417.md",
     "sources",
     "Pasted Image 20230417164539_429.png",
     "Pasted Image 20230417154042_064.png",
-    "未命名.canvas",
     "draft",
     "math/未命名.canvas",
     "daily",
