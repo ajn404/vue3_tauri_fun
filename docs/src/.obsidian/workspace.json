@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily/2023-04-26.md",
+                "file": "draft/doc.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily/2023-04-26.md",
+                "file": "draft/doc.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily/2023-04-26.md",
+                "file": "draft/doc.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily/2023-04-26.md"
+                "file": "draft/doc.md"
               }
             }
           }
@@ -176,10 +176,12 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "8109444033f4308c",
+  "active": "205d1e401409e6f8",
   "lastOpenFiles": [
-    "daily/2023-04-25.md",
+    "draft/interview.md",
+    "draft/record.md",
     "daily/2023-04-26.md",
+    "daily/2023-04-25.md",
     "Day Planners/Day Planner-20230426.md",
     "math/MATH_INDEX.md",
     "SUMMARY.md",
@@ -205,8 +207,6 @@
     "Day Planners/Day Planner-20230423.md",
     "Day Planners/Day Planner-20230422.md",
     "Day Planners/Day Planner-20230421.md",
-    "daily/2023-04-19.md",
-    "daily/2023-04-18.md",
     "sources/Pasted image 20230419171849 1.png",
     "math/MATH_INDEX",
     "english_words",

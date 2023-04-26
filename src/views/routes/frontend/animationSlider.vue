@@ -36,40 +36,42 @@ const mouseUp = () => {
 One possible reason for this could be the use of the animate() method in the moveFun() function. The animate() method can be resource-intensive and may cause performance issues, especially when used repeatedly in a short amount of time
  * 
  */
+// const moveFun = (e: any) => {
+//     if (dataset.mouseDownAt === '0') return;
+
+//     if (track.value && imgs.value) {
+//         console.log('moving function');
+
+//         const mouseDelta = parseFloat(dataset.mouseDownAt) - e.clientX;
+//         nextPercentageUnconstrained = parseFloat(dataset.prevPercentage) + (mouseDelta / maxDelta) * -100;
+//         nextPercent = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+//         dataset.percent = nextPercent;
+//         track.value.style.transform = `translate(${nextPercent}%, -50%)`;
+//         for (const image of imgs.value) {
+//             (image as HTMLImageElement).style.objectPosition = `${100 + nextPercent}% center`;
+//         }
+//         aid = requestAnimationFrame(() => moveFun(e));
+
+//     }
+// }
 const moveFun = (e: any) => {
     if (dataset.mouseDownAt === '0') return;
-
     if (track.value && imgs.value) {
         const mouseDelta = parseFloat(dataset.mouseDownAt) - e.clientX;
         nextPercentageUnconstrained = parseFloat(dataset.prevPercentage) + (mouseDelta / maxDelta) * -100;
         nextPercent = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
         dataset.percent = nextPercent;
-        track.value.style.transform = `translate(${nextPercent}%, -50%)`;
+        track.value.animate({
+            transform: `translate(${nextPercent}%, -50%)`
+        }, { fill: "forwards", duration: 1200 });
         for (const image of imgs.value) {
-            (image as HTMLImageElement).style.objectPosition = `${100 + nextPercent}% center`;
+            image.animate({
+                objectPosition: `${100 + nextPercent}% center`
+            }, { duration: 1200, fill: "forwards" });
         }
-        aid = requestAnimationFrame(() => moveFun(e));
 
     }
 }
-// const moveFun = (e: any) => {
-//     if (dataset.mouseDownAt === '0') return;
-//     if (track.value && imgs.value) {
-//         const mouseDelta = parseFloat(dataset.mouseDownAt) - e.clientX;
-//         nextPercentageUnconstrained = parseFloat(dataset.prevPercentage) + (mouseDelta / maxDelta) * -100;
-//         nextPercent = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
-//         dataset.percent = nextPercent;
-//         track.value.animate({
-//             transform: `translate(${nextPercent}%, -50%)`
-//         }, { fill: "forwards", duration: 1200 });
-//         for (const image of imgs.value) {
-//             image.animate({
-//                 objectPosition: `${100 + nextPercent}% center`
-//             }, { duration: 1200, fill: "forwards" });
-//         }
-
-//     }
-// }
 
 const mouseMove = (e: any) => {
     moveFun(e)
