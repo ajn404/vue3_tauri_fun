@@ -1,6 +1,6 @@
 <template>
-    <div class="container bg-black m-0 w-screen overflow-hidden ">
-        <div id="image-track" ref="track">
+    <div class="container">
+        <div id="image-track" ref="track" data-mouse-down-at="0" data-prev-percentage="0">
             <img draggable="false" class="image" v-for="(item, index) in new Array(8).fill(1)"
                 :src="`${baseUrl}imgs/splash/${index + 1}.jpg`">
         </div>
@@ -8,76 +8,79 @@
 </template>
 
 <script lang="ts" setup>
-import { debounce } from '@/script/utils';
-import { onMounted, onUnmounted, type Ref, ref } from 'vue';
+import { onMounted, onUnmounted, type Ref, ref, reactive } from 'vue';
 const baseUrl = ref(import.meta.env.BASE_URL);
 const track: Ref<HTMLElement | null> = ref(null)
-const mouseDownAt = ref(0);
-const prePercent = ref(0);
-const percent = ref(0)
+
+let dataset: any = reactive({})
 const mouseDown = (e: any) => {
-    mouseDownAt.value = e.clientX;
+    dataset.mouseDownAt = e.clientX;
 }
 const mouseUp = (e: any) => {
-    mouseDownAt.value = 0
-    prePercent.value = percent.value;
+    dataset.mouseDownAt = '0'
+    dataset.prevPercentage = dataset.percent
+
 }
 const imgs: Ref<null | HTMLCollectionOf<Element>> = ref(null);
-const maxDelta = window.innerWidth;
-
-const mouseMove = (e: any) => {
-    if (mouseDownAt.value === 0) return;
+const maxDelta = window.innerWidth / 2;
+let nextPercentageUnconstrained = 0;
+let nextPercent = 0;
+const moveFun = (e: any) => {
     if (track.value && imgs.value) {
-        const mouseDelta = mouseDownAt.value - e.clientX;
-        percent.value = (mouseDelta / maxDelta) * -100;
-        const nextPercentageUnconstrained = prePercent.value + percent.value
-        const nextPercent = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
-
-        percent.value = nextPercent;
+        const mouseDelta = parseFloat(dataset.mouseDownAt) - e.clientX;
+        nextPercentageUnconstrained = parseFloat(dataset.prevPercentage) + (mouseDelta / maxDelta) * -100
+        nextPercent = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+        dataset.percent = nextPercent;
         track.value.animate({
             transform: `translate(${nextPercent}%, -50%)`
-        }, { duration: 10, fill: "forwards" });
-
-        Array.from(imgs.value).forEach(image => {
+        }, { fill: "forwards", duration: 1200 });
+        for (const image of imgs.value) {
             image.animate({
                 objectPosition: `${100 + nextPercent}% center`
-            }, { duration: 10, fill: "forwards" });
-        })
+            }, { duration: 1200, fill: "forwards" });
+        }
 
     }
-
+}
+const mouseMove = (e: any) => {
+    if (dataset.mouseDownAt === '0') return;
+    moveFun(e)
 }
 
-
-onMounted(() => {
-
-    if (track.value) {
-        imgs.value = track.value.getElementsByClassName("image")
-    }
+const addEvent = () => {
     addEventListener('mousedown', mouseDown);
     addEventListener('touchstart', e => mouseDown(e.touches[0]))
-
     addEventListener('mousemove', mouseMove);
     addEventListener('touchmove', e => mouseMove(e.touches[0]))
     addEventListener('mouseup', mouseUp)
     addEventListener('touchend', e => mouseUp(e.touches[0]))
+}
+
+onMounted(() => {
+    if (track.value) {
+        imgs.value = track.value.getElementsByClassName("image");
+        dataset = track.value.dataset;
+        addEvent();
+    }
 })
 
 onUnmounted(() => {
     removeEventListener('mousedown', mouseDown)
     removeEventListener('touchstart', e => mouseDown(e.touches[0]))
-
     removeEventListener('mousemove', mouseMove)
     removeEventListener('touchmove', e => mouseMove(e.touches[0]))
-
     removeEventListener('mouseup', mouseUp)
     removeEventListener('touchend', e => mouseUp(e.touches[0]))
-
-
 })
 </script>
 
 <style lang="scss" scoped>
+$image-width: 40vmin;
+$gap: 4vmin;
+$img-num: 8;
+$track-width: (
+    $image-width+$gap )*$img-num;
+
 .container {
     height: 100vh !important;
     width: 100vw !important;
@@ -88,19 +91,23 @@ onUnmounted(() => {
     #image-track {
         display: flex;
         position: absolute;
-        gap: 4vmin;
+        gap: $gap;
         left: 50%;
         top: 50%;
         user-select: none;
-        transform: translate(0, -50%);
-        width: 20vmin*8;
+        transform: translate(0, -50%
+        );
+    animation-duration: 1200ms;
+    transition-duration: 1200ms;
+    animation-fill-mode: forwards;
+    width: $track-width;
 
-        .image {
-            width: 16vmin;
-            height: 56vmin;
-            object-fit: cover;
-            object-position: 100% center;
-        }
+    .image {
+        width: $image-width;
+        height: 56vh;
+        object-fit: cover;
+        object-position: 100% center;
     }
+}
 }
 </style>

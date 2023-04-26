@@ -1,5 +1,8 @@
 //防抖 强制函数在某段时间内只执行一次
-export const debounce = (fn: (e: any) => void, delay: number) => {
+export const debounce = <T extends (...args: any) => any>(
+  fn: T,
+  delay: number
+) => {
   let inDebounce: string | number | NodeJS.Timeout;
   return function (this: any, ...args: [e: any]) {
     clearTimeout(inDebounce);
@@ -9,7 +12,10 @@ export const debounce = (fn: (e: any) => void, delay: number) => {
   };
 };
 //节流
-export const throttle = (fn: () => void, threshold: number) => {
+export const throttle = <T extends (...args: any) => any>(
+  fn: T,
+  threshold: number
+) => {
   // 记录上次执行的时间
   let last: number;
   // 定时器
