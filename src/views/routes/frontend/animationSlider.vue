@@ -3,32 +3,32 @@
         <div id="image-track" ref="track" data-mouse-down-at="0" data-prev-percentage="0">
             <img draggable="false" class="image" v-for="(item, index) in new Array(8).fill(1)"
                 :src="`${baseUrl}imgs/splash/${index + 1}.jpg`">
+
         </div>
     </div>
 </template>
 
 <script lang="ts" setup>
-import { onMounted, onUnmounted, type Ref, ref, reactive } from 'vue';
+import { onUnmounted, type Ref, ref, reactive, nextTick } from 'vue';
 const baseUrl = ref(import.meta.env.BASE_URL);
-const track: Ref<HTMLElement | null> = ref(null)
+const track: Ref<HTMLElement | null> = ref(null);
 
-let dataset: any = reactive({})
-const mouseDown = (e: any) => {
-    dataset.mouseDownAt = e.clientX;
-}
-const mouseUp = (e: any) => {
-    dataset.mouseDownAt = '0'
-    dataset.prevPercentage = dataset.percent
-
-}
+let dataset: any = reactive({});
 const imgs: Ref<null | HTMLCollectionOf<Element>> = ref(null);
 const maxDelta = window.innerWidth / 2;
 let nextPercentageUnconstrained = 0;
 let nextPercent = 0;
+const mouseDown = (e: any) => {
+    dataset.mouseDownAt = e.clientX;
+}
+const mouseUp = () => {
+    dataset.mouseDownAt = '0';
+    dataset.prevPercentage = dataset.percent;
+}
 const moveFun = (e: any) => {
     if (track.value && imgs.value) {
         const mouseDelta = parseFloat(dataset.mouseDownAt) - e.clientX;
-        nextPercentageUnconstrained = parseFloat(dataset.prevPercentage) + (mouseDelta / maxDelta) * -100
+        nextPercentageUnconstrained = parseFloat(dataset.prevPercentage) + (mouseDelta / maxDelta) * -100;
         nextPercent = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
         dataset.percent = nextPercent;
         track.value.animate({
@@ -49,14 +49,14 @@ const mouseMove = (e: any) => {
 
 const addEvent = () => {
     addEventListener('mousedown', mouseDown);
-    addEventListener('touchstart', e => mouseDown(e.touches[0]))
+    addEventListener('touchstart', e => mouseDown(e.touches[0]));
     addEventListener('mousemove', mouseMove);
-    addEventListener('touchmove', e => mouseMove(e.touches[0]))
-    addEventListener('mouseup', mouseUp)
-    addEventListener('touchend', e => mouseUp(e.touches[0]))
+    addEventListener('touchmove', e => mouseMove(e.touches[0]));
+    addEventListener('mouseup', mouseUp);
+    addEventListener('touchend', mouseUp);
 }
 
-onMounted(() => {
+nextTick(() => {
     if (track.value) {
         imgs.value = track.value.getElementsByClassName("image");
         dataset = track.value.dataset;
@@ -65,12 +65,12 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-    removeEventListener('mousedown', mouseDown)
-    removeEventListener('touchstart', e => mouseDown(e.touches[0]))
-    removeEventListener('mousemove', mouseMove)
-    removeEventListener('touchmove', e => mouseMove(e.touches[0]))
-    removeEventListener('mouseup', mouseUp)
-    removeEventListener('touchend', e => mouseUp(e.touches[0]))
+    removeEventListener('mousedown', mouseDown);
+    removeEventListener('touchstart', e => mouseDown(e.touches[0]));
+    removeEventListener('mousemove', mouseMove);
+    removeEventListener('touchmove', e => mouseMove(e.touches[0]));
+    removeEventListener('mouseup', mouseUp);
+    removeEventListener('touchend', mouseUp);
 })
 </script>
 
@@ -106,7 +106,8 @@ $track-width: (
         width: $image-width;
         height: 56vh;
         object-fit: cover;
-        object-position: 100% center;
+        object-position: 100% 50%;
+        aspect-ratio: 16/9;
     }
 }
 }

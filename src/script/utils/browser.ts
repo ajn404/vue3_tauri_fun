@@ -1,3 +1,5 @@
+/* __PURE__ */
+
 export const getBrowserVersion = (): { browser: String; version: String } => {
   const userAgent = navigator.userAgent;
   const res = {
