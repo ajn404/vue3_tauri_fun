@@ -1,7 +1,7 @@
 import { createCameraControl } from '../plugin';
 import { textureWorld } from './textureWorld';
 import { resize } from '../basic/resize';
-import type { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import type { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import type { createCameraControlOption } from '../plugin';
 
 export class textureControlWorld extends textureWorld {

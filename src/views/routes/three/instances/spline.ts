@@ -17,7 +17,7 @@ import { createAntialiasRender } from '../basic/renderer';
 import { resize } from '../basic/resize';
 import { useStore } from '@/stores';
 import { watch, nextTick } from 'vue';
-import type { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import type { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { createCameraControl } from '../plugin';
 import SplineLoader from '@splinetool/loader';
 import type { reactiveData } from '../composition';

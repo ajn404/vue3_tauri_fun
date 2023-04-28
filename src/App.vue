@@ -7,10 +7,6 @@ import { handleIsTauri } from '@/script/utils';
 import { setProvide } from '@/script/provide';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
-import {
-    ElMessage,
-    type MessageParams,
-} from 'element-plus';
 if (handleIsTauri())
     invoke('greet', { name: 'World' }).then((response) => console.log(response));
 
