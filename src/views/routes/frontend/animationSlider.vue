@@ -25,7 +25,7 @@ const mouseDown = (e: any) => {
 const mouseUp = () => {
     dataset.mouseDownAt = '0';
     dataset.prevPercentage = dataset.percent;
-    cancelAnimationFrame(aid);
+    // cancelAnimationFrame(aid);
 }
 
 /**
@@ -61,14 +61,26 @@ const moveFun = (e: any) => {
         nextPercentageUnconstrained = parseFloat(dataset.prevPercentage) + (mouseDelta / maxDelta) * -100;
         nextPercent = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
         dataset.percent = nextPercent;
-        track.value.animate({
-            transform: `translate(${nextPercent}%, -50%)`
-        }, { fill: "forwards", duration: 1200 });
-        for (const image of imgs.value) {
-            image.animate({
-                objectPosition: `${100 + nextPercent}% center`
-            }, { duration: 1200, fill: "forwards" });
+
+        const animate = () => {
+            if (track.value && imgs.value) {
+                track.value.style.transform = `translate(${nextPercent}%, -50%)`;
+                for (const image of imgs.value) {
+                    (image as HTMLImageElement).style.objectPosition = `${100 + nextPercent}% center`;
+                }
+            }
         }
+
+        aid = requestAnimationFrame(animate);
+
+        // track.value.animate({
+        //     transform: `translate(${nextPercent}%, -50%)`
+        // }, { fill: "forwards", duration: 1200 });
+        // for (const image of imgs.value) {
+        //     image.animate({
+        //         objectPosition: `${100 + nextPercent}% center`
+        //     }, { duration: 1200, fill: "forwards" });
+        // }
 
     }
 }
@@ -129,7 +141,6 @@ $track-width: (
         );
     animation-duration: 20ms;
     transition-duration: 1200ms;
-
     animation-fill-mode: forwards;
     width: $track-width;
 

@@ -74,3 +74,12 @@ router.afterEach((to, from) => {
     }
 });
 </script>
+
+<style lang="scss" scoped>
+:deep(.el-autocomplete-suggestion) {
+    li {
+        display: flex !important;
+        justify-content: space-between !important;
+    }
+}
+</style>
