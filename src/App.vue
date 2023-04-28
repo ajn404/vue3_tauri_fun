@@ -7,6 +7,10 @@ import { handleIsTauri } from '@/script/utils';
 import { setProvide } from '@/script/provide';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
+import {
+    ElMessage,
+    type MessageParams,
+} from 'element-plus';
 if (handleIsTauri())
     invoke('greet', { name: 'World' }).then((response) => console.log(response));
 
@@ -21,7 +25,7 @@ router.beforeEach((to, from, next) => {
 });
 
 router.afterEach(() => {
-    console.clear();
+    // console.clear();
     NProgress.done();
 });
 
@@ -35,6 +39,12 @@ watch(
 const store = useStore();
 const component = ref(null);
 
+const err = () => {
+    err();
+
+}
+
+//err();
 setProvide();
 // console.log('当前使用的vue版本为', version);
 </script>

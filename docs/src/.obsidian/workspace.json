@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "draft/doc.md",
+                "file": "daily/2023-04-27.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "draft/doc.md",
+                "file": "daily/2023-04-27.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "draft/doc.md",
+                "file": "daily/2023-04-27.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "draft/doc.md"
+                "file": "daily/2023-04-27.md"
               }
             }
           }
@@ -178,9 +178,13 @@
   },
   "active": "205d1e401409e6f8",
   "lastOpenFiles": [
+    "Day Planners/Day Planner-20230428.md",
+    "daily/2023-04-26.md",
+    "daily/2023-04-27.md",
+    "Day Planners/Day Planner-20230427.md",
+    "draft/doc.md",
     "draft/interview.md",
     "draft/record.md",
-    "daily/2023-04-26.md",
     "daily/2023-04-25.md",
     "Day Planners/Day Planner-20230426.md",
     "math/MATH_INDEX.md",
@@ -203,10 +207,6 @@
     "interview_everyday/day08.md",
     "interview_everyday/day07.md",
     "tips/keyboard.md",
-    "Day Planners/Day Planner-20230424.md",
-    "Day Planners/Day Planner-20230423.md",
-    "Day Planners/Day Planner-20230422.md",
-    "Day Planners/Day Planner-20230421.md",
     "sources/Pasted image 20230419171849 1.png",
     "math/MATH_INDEX",
     "english_words",
