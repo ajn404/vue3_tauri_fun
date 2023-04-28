@@ -25,7 +25,6 @@ const video: Ref<HTMLVideoElement | null> = ref(null);
 const view: Ref<HTMLElement | null> = ref(null);
 const score = ref(0.1);
 const animationId = ref(0);
-const instance = getCurrentInstance();
 const baseUrl = ref(import.meta.env.BASE_URL);
 
 const reactiveData = reactive({
