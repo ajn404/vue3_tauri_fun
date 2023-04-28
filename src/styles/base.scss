@@ -57,3 +57,7 @@ body {
   height: 100%;
   max-width: 100% !important;
 }
+
+.reflect {
+  -webkit-box-reflect: below 1px -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+}

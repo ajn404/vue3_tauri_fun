@@ -1,7 +1,7 @@
 <template>
     <el-autocomplete v-model="key" :fetch-suggestions="querySearch"
-        class="search-input sticky top-0 block z-50 opacity-50 w-1/2" clearable placeholder="搜索ctr+k" ref="search"
-        @select="handleSelect">
+        class="search-input fixed top-1 block z-50 opacity-50 w-1/2 translate-x-1/2 " clearable placeholder="搜索ctr+k"
+        ref="search" @select="handleSelect">
         <template #default="{ item }">
             <div class="value text-purple-300">{{ item.name }}</div>
             <span class="des">{{ item.path }}</span>

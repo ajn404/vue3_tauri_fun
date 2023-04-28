@@ -34,7 +34,9 @@ export const lazyLoad = (
   imgsArr.forEach((item) => {
     if (!item.dataset.src) return;
     const { top, bottom } = item.getBoundingClientRect();
-    if (top < contentHeight && bottom >= 0) {
+    console.log(top, top < contentHeight * 2 && bottom >= 0);
+
+    if (top < contentHeight * 2 && bottom >= 0) {
       item.src = item.dataset.src;
       item.removeAttribute('data-src');
     }

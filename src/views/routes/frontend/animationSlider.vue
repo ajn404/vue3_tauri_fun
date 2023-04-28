@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div id="image-track" ref="track" data-mouse-down-at="0" data-prev-percentage="0">
-            <img draggable="false" class="image" v-for="(item, index) in new Array(8).fill(1)"
+            <img draggable="false" class="image  reflect -skew-x-6" v-for="(item, index) in new Array(8).fill(1)"
                 :src="`${baseUrl}imgs/splash/${index + 1}.jpg`">
 
         </div>
