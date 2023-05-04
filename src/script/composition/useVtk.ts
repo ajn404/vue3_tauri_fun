@@ -28,7 +28,7 @@ export const useVtk = (container: Ref<HTMLElement | null>) => {
       });
 
       const fullScreenRenderer = vtkFullScreenRenderWindow.newInstance({
-        background: [54 / 255, 40 / 255, 43 / 255],
+        background: [68 / 255, 14 / 255, 37 / 255],
         container: container?.value,
       });
 
@@ -96,7 +96,6 @@ export const useVtk = (container: Ref<HTMLElement | null>) => {
       renderWindow.delete();
       window.removeEventListener('resize', fullScreenRenderer.resize);
       fullScreenRenderer.delete();
-      instances = {};
     }
   });
 

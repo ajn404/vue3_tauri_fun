@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily/2023-05-04.md",
+                "file": "SUMMARY.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily/2023-05-04.md",
+                "file": "SUMMARY.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily/2023-05-04.md",
+                "file": "SUMMARY.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily/2023-05-04.md"
+                "file": "SUMMARY.md"
               }
             }
           }
@@ -176,10 +176,10 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "8109444033f4308c",
+  "active": "205d1e401409e6f8",
   "lastOpenFiles": [
-    "daily/2023-04-27.md",
     "daily/2023-05-04.md",
+    "daily/2023-04-27.md",
     "Day Planners/Day Planner-20230504.md",
     "Day Planners/Day Planner-20230428.md",
     "daily/2023-04-26.md",

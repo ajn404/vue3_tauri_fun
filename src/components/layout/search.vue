@@ -61,7 +61,8 @@ onMounted(() => {
     }
 
     addEventListener('keydown', (e: KeyboardEvent) => {
-        if (e.ctrlKey && e.key === 'k' && search.value) {
+
+        if ((e.ctrlKey || e.key === 'Meta') && e.key === 'k' && search.value) {
             search.value.focus();
         }
     });
