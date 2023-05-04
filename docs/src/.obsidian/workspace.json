@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily/2023-04-27.md",
+                "file": "daily/2023-05-04.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily/2023-04-27.md",
+                "file": "daily/2023-05-04.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily/2023-04-27.md",
+                "file": "daily/2023-05-04.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily/2023-04-27.md"
+                "file": "daily/2023-05-04.md"
               }
             }
           }
@@ -176,11 +176,13 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "205d1e401409e6f8",
+  "active": "8109444033f4308c",
   "lastOpenFiles": [
+    "daily/2023-04-27.md",
+    "daily/2023-05-04.md",
+    "Day Planners/Day Planner-20230504.md",
     "Day Planners/Day Planner-20230428.md",
     "daily/2023-04-26.md",
-    "daily/2023-04-27.md",
     "Day Planners/Day Planner-20230427.md",
     "draft/doc.md",
     "draft/interview.md",
@@ -205,8 +207,6 @@
     "interview_everyday/day05.md",
     "interview_everyday/day06.md",
     "interview_everyday/day08.md",
-    "interview_everyday/day07.md",
-    "tips/keyboard.md",
     "sources/Pasted image 20230419171849 1.png",
     "math/MATH_INDEX",
     "english_words",
