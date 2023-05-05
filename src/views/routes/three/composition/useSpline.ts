@@ -12,7 +12,7 @@ export const useSpline = () => {
   let world: Spline | Object = reactive({});
   let reactiveData: reactiveData = reactive({
     percent: 0,
-    splineSceneUrl: `${import.meta.env.BASE_URL}data/models/scene.splinecode`,
+    splineSceneUrl: `${import.meta.env.BASE_URL}data/models/room.splinecode`,
   });
 
   const toggleRender = () => {
