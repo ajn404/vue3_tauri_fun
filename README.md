@@ -24,6 +24,8 @@ This template should help get you started developing with Vue 3 [Tauri](http://t
 - [spline demo](https://ajn404.github.io/vue3_tauri_fun/#/three/spline)
 
 ![spline](./public/imgs/page/spline.png)
+
+
 ## Prerequisites
 
 - Rust (nightly)
@@ -52,6 +54,8 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 
 ## development
+
+![script](./public/imgs/page/script.png)
 
 ## Project Setup
 

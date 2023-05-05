@@ -11,10 +11,8 @@ import { createCube } from '../basic/cube';
 import { createScene } from '../basic/scene';
 import { createRenderer } from '../basic/renderer';
 import { resize } from '../basic/resize';
-
 import { useStore } from '@/stores';
 import { watch, nextTick } from 'vue';
-import type { animationWorld } from './animationWorld';
 const store = useStore();
 //World
 

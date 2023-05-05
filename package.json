@@ -70,6 +70,7 @@
     "eslint-plugin-vue": "^9.11.0",
     "internal-ip": "^7.0.0",
     "jsdom": "^21.1.1",
+    "lil-gui": "^0.18.1",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.23",
     "postcss-aspect-ratio-mini": "^1.1.0",
