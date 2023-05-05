@@ -74,6 +74,8 @@ export const useVtk = (container: Ref<HTMLElement | null>) => {
   };
 
   onDeactivated(() => {
+    console.log(100);
+
     if (instances.renderer) {
       const {
         fullScreenRenderer,
