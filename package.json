@@ -28,6 +28,7 @@
     "@photo-sphere-viewer/core": "^5.1.5",
     "@splinetool/loader": "^0.9.311",
     "@tauri-apps/api": "^2.0.0-alpha.2",
+    "@types/cornerstone-core": "^2.3.0",
     "@types/p5": "^1.6.1",
     "@types/three": "^0.150.2",
     "axios": "^1.4.0",

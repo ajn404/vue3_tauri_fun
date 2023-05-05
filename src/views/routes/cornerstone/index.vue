@@ -28,12 +28,19 @@
 import * as cornerstone from 'cornerstone-core'
 import { type Ref, ref, nextTick } from 'vue';
 const dicomImage: Ref<HTMLElement | null> = ref(null);
+
+declare global {
+    interface Window {
+        cornerstone: typeof cornerstone
+    }
+}
 nextTick(() => {
     window.cornerstone = cornerstone
-    import('https://rawgit.com/cornerstonejs/cornerstone/master/example/exampleImageIdLoader.js').then(() => {
+    const exampleUrl = 'https://rawgit.com/cornerstonejs/cornerstone/master/example/exampleImageIdLoader.js'
+    import(exampleUrl).then(() => {
         cornerstone.enable(dicomImage.value);
         const imageId = 'example://1';
-        cornerstone.loadImage(imageId).then(function (image) {
+        cornerstone.loadImage(imageId).then(function (image: any) {
             cornerstone.displayImage(dicomImage.value, image);
             const viewport = cornerstone.getViewport(dicomImage.value);
             // document.getElementById('bottomright').textContent = "Zoom: " + viewport.scale + "x";
