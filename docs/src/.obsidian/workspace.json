@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "shell_record/man.md",
+                "file": "draft/doc.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "shell_record/man.md",
+                "file": "draft/doc.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "shell_record/man.md",
+                "file": "draft/doc.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "shell_record/man.md"
+                "file": "draft/doc.md"
               }
             }
           }
@@ -178,8 +178,9 @@
   },
   "active": "f36808e48cb75bdd",
   "lastOpenFiles": [
-    "SUMMARY.md",
     "daily/2023-05-05.md",
+    "shell_record/man.md",
+    "SUMMARY.md",
     "daily/2023-05-04.md",
     "Day Planners/Day Planner-20230505.md",
     "daily/2023-04-27.md",
@@ -199,7 +200,6 @@
     "Day Planners/Day Planner-20230425.md",
     "Day Planners/Day Planner-20230417.md",
     "[状态机和状态图简介.md",
-    "shell_record/man.md",
     "sources/1.png",
     "daily/2023-04-20.md",
     "interview_everyday/day09.md",

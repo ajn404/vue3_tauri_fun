@@ -4,3 +4,13 @@
 - [cheat sheet](https://devhints.io)
 - [camillemormal](https://camillemormal.com/)
 - [仿camillemormal](https://rococo-youtiao-1eb787.netlify.app/)
+# 个人blog
+- [大学时用hexo记录初学的状态](https://ajn404.github.io/log.github.io/archives/)
+- [毕业设计部署在netlify(其实就1开源项目)](https://ajn404.netlify.app/)
+- [2021开始用vuepress](http://ajn404.gitee.io/ngm.github.io/)
+- [2021开始用vuepress(gitee)](https://ajn404.github.io/ngm.github.io/)
+- [在vuepress大量使用p5](https://ajn404.github.io/rengm/)
+- [在vuepress大量使用p5(gitee)](https://ajn404.gitee.io/rengm/)
+- [用vue3的vuepress重新整理笔记](https://ajn404.github.io/note/)
+- [用vue3的vuepress重新整理笔记(gitee)](https://ajn404.gitee.io/note/)
+- [本项目的tauri 部署在netlify]([https://taurifun.netlify.app](https://taurifun.netlify.app/))

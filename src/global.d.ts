@@ -27,3 +27,4 @@ interface DocumentExtend extends Document {
 declare module 'ml5';
 declare module 'svgcanvas';
 declare module 'nprogress';
+declare module 'cornerstone-core';
