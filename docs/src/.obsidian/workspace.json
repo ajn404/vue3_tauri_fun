@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "draft/doc.md",
+                "file": "daily/2023-05-06.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "draft/doc.md",
+                "file": "daily/2023-05-06.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "draft/doc.md",
+                "file": "daily/2023-05-06.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "draft/doc.md"
+                "file": "daily/2023-05-06.md"
               }
             }
           }
@@ -179,7 +179,16 @@
   "active": "f36808e48cb75bdd",
   "lastOpenFiles": [
     "daily/2023-05-05.md",
+    "math/MATH_INDEX.md",
+    "interview_everyday/day08.md",
+    "interview_everyday/day07.md",
+    "interview_everyday/day09.md",
     "shell_record/man.md",
+    "tips/keyboard.md",
+    "daily/2023-05-06.md",
+    "Day Planners/Day Planner-20230425.md",
+    "Day Planners/Day Planner-20230506.md",
+    "draft/doc.md",
     "SUMMARY.md",
     "daily/2023-05-04.md",
     "Day Planners/Day Planner-20230505.md",
@@ -188,25 +197,16 @@
     "Day Planners/Day Planner-20230428.md",
     "daily/2023-04-26.md",
     "Day Planners/Day Planner-20230427.md",
-    "draft/doc.md",
     "draft/interview.md",
     "draft/record.md",
     "daily/2023-04-25.md",
     "Day Planners/Day Planner-20230426.md",
-    "math/MATH_INDEX.md",
     "sources/v8.png",
     "未命名.canvas",
     "daily/2023-04-24.md",
-    "Day Planners/Day Planner-20230425.md",
     "Day Planners/Day Planner-20230417.md",
     "[状态机和状态图简介.md",
     "sources/1.png",
-    "daily/2023-04-20.md",
-    "interview_everyday/day09.md",
-    "interview_everyday/day01.md",
-    "interview_everyday/day03.md",
-    "interview_everyday/day04.md",
-    "interview_everyday/day05.md",
     "sources/Pasted image 20230419171849 1.png",
     "math/MATH_INDEX",
     "english_words",

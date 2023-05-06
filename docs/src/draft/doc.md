@@ -13,4 +13,4 @@
 - [在vuepress大量使用p5(gitee)](https://ajn404.gitee.io/rengm/)
 - [用vue3的vuepress重新整理笔记](https://ajn404.github.io/note/)
 - [用vue3的vuepress重新整理笔记(gitee)](https://ajn404.gitee.io/note/)
-- [本项目的tauri 部署在netlify]([https://taurifun.netlify.app](https://taurifun.netlify.app/))
+- [本项目的tauri 部署在netlify](https://taurifun.netlify.app)
