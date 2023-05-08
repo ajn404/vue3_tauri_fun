@@ -1,6 +1,7 @@
-// 分支切换与cleanup
-console.log('4.4 demo1');
+console.log('4.4 完成分支切换和cleanup');
 {
+  let activeEffect;
+
   const bucket = new WeakMap();
   const data = { ok: true, text: 'hello world' };
   const obj = new Proxy(data, {
@@ -16,33 +17,49 @@ console.log('4.4 demo1');
     },
   });
 
-  function track(target, key) {
-    let depsMap = bucket.get(target);
-    if (!depsMap) {
-      depsMap = new Map();
-      bucket.set(target, depsMap);
-    }
-    let deps = depsMap.get(key);
-    if (!deps) {
-      deps = new Set();
-      depsMap.set(key, deps);
-    }
-    deps.add(activeEffect);
-  }
-
+  //set时触发副作用函数
   function trigger(target, key) {
     const depsMap = bucket.get(target);
     if (!depsMap) return;
     const deps = depsMap.get(key);
     if (!deps) return;
-    deps.forEach((fn) => fn());
+    // deps.forEach((fn) => fn());
+    const depsToRun = new Set(deps);
+    depsToRun.forEach((fn) => fn());
   }
-  //注册副作用函数
-  let activeEffect;
+
+  function track(target, key) {
+    let depsMap = bucket.get(target);
+    if (!depsMap) {
+      bucket.set(target, (depsMap = new Map()));
+    }
+    let deps = depsMap.get(key);
+    if (!deps) {
+      depsMap.set(key, (deps = new Set()));
+    }
+    deps.add(activeEffect);
+    activeEffect.deps.push(deps);
+  }
+
+  //清除
+  function cleanup(effectFn) {
+    for (let i = 0; i < effectFn.deps.length; i++) {
+      const deps = effectFn.deps[i];
+      deps.delete(effectFn);
+    }
+    effectFn.deps.length = 0;
+  }
+
   function effect(fn) {
     console.log('effect run');
-    activeEffect = fn;
-    fn();
+
+    const effectFn = function () {
+      cleanup(effectFn);
+      activeEffect = effectFn;
+      fn();
+    };
+    effectFn.deps = [];
+    effectFn();
   }
 
   effect(() => {

@@ -34,6 +34,15 @@ export const assertIsNumber = (
   }
 };
 
+export function assertIsHTMLElement(
+  value: unknown,
+  name: string
+): asserts value is HTMLElement {
+  if (!(value instanceof HTMLElement)) {
+    console.error(`Expect "${name}" to be a HTMLElement`);
+  }
+}
+
 //https://fettblog.eu/typescript-assertion-signatures/
 declare type InferValue<Prop extends PropertyKey, Desc> = Desc extends {
   get(): any;

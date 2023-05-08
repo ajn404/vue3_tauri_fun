@@ -39,10 +39,12 @@ export const useP5 = (method: p5Function, option?: p5Option) => {
   onMounted(() => {
     //防抖
     watch(() => store.viewStyle, debounce(update, 100));
-    addEventListener('resize', debounce(update, 100), false);
+    if (!option?.banResize)
+      addEventListener('resize', debounce(update, 100), false);
   });
   onUnmounted(() => {
     drop_instance();
+    removeEventListener('resize', update, false);
   });
 
   nextTick(() => {

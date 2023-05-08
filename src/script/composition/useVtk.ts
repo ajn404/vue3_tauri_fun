@@ -11,6 +11,8 @@ import vtkActor from '@kitware/vtk.js/Rendering/Core/Actor';
 import vtkPDBReader from '@kitware/vtk.js/IO/Misc/PDBReader';
 import vtkSphereMapper from '@kitware/vtk.js/Rendering/Core/SphereMapper';
 import vtkStickMapper from '@kitware/vtk.js/Rendering/Core/StickMapper';
+import vtkTexture from '@kitware/vtk.js/Rendering/Core/Texture';
+import vtkLight from '@kitware/vtk.js/Rendering/Core/Light';
 //@ts-ignore
 import vtkMoleculeToRepresentation from '@kitware/vtk.js/Filters/General/MoleculeToRepresentation.js';
 export const useVtk = (container: Ref<HTMLElement | null>) => {
@@ -28,7 +30,6 @@ export const useVtk = (container: Ref<HTMLElement | null>) => {
       });
 
       const fullScreenRenderer = vtkFullScreenRenderWindow.newInstance({
-        background: [68 / 255, 14 / 255, 37 / 255],
         container: container?.value,
       });
 
@@ -46,17 +47,40 @@ export const useVtk = (container: Ref<HTMLElement | null>) => {
       sphereMapper.setInputConnection(filter.getOutputPort(0));
       sphereMapper.setScaleArray(filter.getSphereScaleArrayName());
       sphereActor.setMapper(sphereMapper);
+
       stickMapper.setInputConnection(filter.getOutputPort(1));
       stickMapper.setScaleArray('stickScales');
       stickMapper.setOrientationArray('orientation');
       stickActor.setMapper(stickMapper);
+
       reader.setUrl(`${baseUrl.value}data/vtk/2LYZ.pdb`).then(() => {
+        // console.log(reader.getOutputData().getAtoms());
         renderer.resetCamera();
         renderWindow.render();
         loading.close();
+        const texture = vtkTexture.newInstance();
+        const img = new Image();
+        img.src = `${import.meta.env.BASE_URL}imgs/page/spline.png`;
+        img.onload = () => {
+          texture.setInterpolate(true);
+          texture.setEdgeClamp(true);
+          texture.setImage(img);
+          renderer.setEnvironmentTexture(texture);
+          renderer.setEnvironmentTextureDiffuseStrength(1);
+          renderer.setEnvironmentTextureSpecularStrength(1);
+        };
       });
+
+      const redLight = vtkLight.newInstance({
+        positional: false,
+        color: [1.5, 0.0, 0.2],
+        intensity: 1.0,
+      });
+      redLight.setDirection([0.8, 1, -1]); // setDirection allows for direct setting instead of through a focal point
+      renderer.addLight(redLight);
       renderer.addActor(sphereActor);
       renderer.addActor(stickActor);
+
       renderer.resetCamera();
       renderWindow.render();
       return {

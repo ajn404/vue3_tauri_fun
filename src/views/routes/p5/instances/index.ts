@@ -9,6 +9,7 @@ export interface p5Option {
   index?: number;
   rate?: number;
   PI?: number;
+  banResize?: boolean;
 
   magnification?: number;
   switch?: boolean;
