@@ -6,68 +6,79 @@
     </div>
 </template>
 
-
 <script lang="ts" setup>
-import { assertIsHTMLElement } from '@/script/utils';
-import type { Renderer } from 'three';
-import * as THREE from 'three';
+import { nextTick, onUnmounted, reactive, ref, watch } from 'vue';
+import { textureWorld } from '../instances';
+import '../three.scss';
+import { MathUtils, Clock } from 'three';
 
-import { defineComponent, onMounted, reactive, ref, type Ref } from 'vue';
-let camera = reactive({}),
-    scene = reactive({}),
-    renderer: THREE.WebGLRenderer = reactive(new THREE.WebGLRenderer()),
-    controls = reactive({});
+import type { createCameraControlOption } from '../plugin';
+import { createCameraControl } from '../plugin';
+import { resize } from '../basic/resize';
+import type { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+const clock = new Clock();
 
-
-const container: Ref<HTMLElement | null> = ref(null);
-
-
-
-const init = () => {
-
-    assertIsHTMLElement(container.value, "three container");
-    {
-        renderer.setPixelRatio(window.devicePixelRatio);
-        renderer.setSize(container.value.clientWidth, container.value.clientHeight);
+class mandalaWorld extends textureWorld {
+    control: OrbitControls;
+    option?: createCameraControlOption;
+    constructor(container: HTMLElement, option?: createCameraControlOption) {
+        super(container);
+        this.option = option;
+        this.control = createCameraControl(
+            this.camera,
+            this.renderer.domElement,
+            this.option
+        );
     }
 
-    {
-        container.value.appendChild(renderer.domElement);
-        // addEventListener('mousedown', startDraw, false);
-        // addEventListener('mouseup', stopDraw, false);
-        // addEventListener('mousemove', doDraw, false);
-        // addEventListener('touchstart', onTouchEvent, false);
-        // addEventListener('touchend', stopDraw, false);
-        // addEventListener('touchmove', onTouchEvent, false);
-    }
-
-
-}
-
-onMounted(() => {
-    init()
-})
-</script>
-
-<script lang="ts">
-export default defineComponent({
-    name: "mandala",
-    data() {
-        return {
+    animate() {
+        const delta = clock.getDelta();
+        const rate = MathUtils.degToRad(30) * delta;
+        if (this.cube) {
+            this.cube.rotation.x += rate * 10;
+            this.cube.rotation.y += rate;
+            this.cube.rotation.z += rate;
         }
-    },
-    mounted() {
+    }
+    render(container: HTMLElement) {
+        resize(this, container);
+        this.control?.update();
+        this.animate();
+        if (container.getBoundingClientRect().width > 0) {
+            this.animationFrame = requestAnimationFrame(
+                this.render.bind(this, container)
+            );
+        } else return;
+    }
+}
+const container = ref();
+let world: mandalaWorld | Object = reactive({});
+let option: createCameraControlOption = reactive({
+    dampingFactor: 0.05,
+    enableDamping: false,
+    control: true,
+});
+const toggleRender = () => {
+    if (container.value) {
+        world = new mandalaWorld(container.value, option);
+        if (world instanceof mandalaWorld) {
+            world.render(container.value);
+        }
+    }
+};
+nextTick(() => {
+    toggleRender();
+});
+const destroyInstance = () => {
+    if (world instanceof mandalaWorld) {
+        world.control.dispose();
+        world.stop();
+        world.beforeDestroy();
+    }
+};
+onUnmounted(() => {
+    destroyInstance();
+});
 
-    },
-    activated() {
 
-    },
-    deactivated() {
-
-    },
-    unmounted() {
-
-    },
-
-})
 </script>

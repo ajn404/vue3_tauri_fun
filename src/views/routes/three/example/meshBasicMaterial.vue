@@ -843,7 +843,7 @@ const setup = (val?: selectMaterial) => {
     container.value.innerHTML = '';
     container.value.appendChild(renderer.domElement);
 
-    const gui = new GUI({ container: container.value });
+    const gui = new GUI({});
     gui.domElement.classList.add('absolute');
     gui.domElement.classList.add('right-2');
     gui.domElement.classList.add('top-0');

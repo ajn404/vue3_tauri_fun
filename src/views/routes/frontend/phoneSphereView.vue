@@ -1,5 +1,5 @@
 <template>
-  <div id="container" class="m-auto" ref="container"></div>
+    <div id="container" class="m-auto" ref="container"></div>
 </template>
 <script lang="ts" setup>
 import { Viewer } from '@photo-sphere-viewer/core';
@@ -13,20 +13,20 @@ const viewer: any = ref(null);
 const img_url = ref(imgPath);
 
 onMounted(async () => {
-  if (container.value) {
-    const res = await getImgSize(imgPath);
-    let { width, height } = res;
-    let c_height = container.value.clientHeight;
-    let cal_height = (c_height * height) / width;
-    cal_height = cal_height > c_height ? c_height : cal_height;
-    viewer.value = new Viewer({
-      container: container.value,
-      panorama: img_url.value,
-      size: {
-        height: `${cal_height}px`,
-        width: `${container.value.clientWidth}px`,
-      },
-    });
-  }
+    if (container.value) {
+        const res = await getImgSize(imgPath);
+        let { width, height } = res;
+        let c_height = container.value.clientHeight;
+        let cal_height = (c_height * height) / width;
+        cal_height = cal_height > c_height ? c_height : cal_height;
+        viewer.value = new Viewer({
+            container: container.value,
+            panorama: `${import.meta.env.BASE_URL}imgs/textures/360.jpg`,
+            size: {
+                height: `${cal_height}px`,
+                width: `${container.value.clientWidth}px`,
+            },
+        });
+    }
 });
 </script>
