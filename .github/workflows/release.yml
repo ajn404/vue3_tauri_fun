@@ -63,3 +63,20 @@ jobs:
           releaseDraft: false
           prerelease: false
           args: ${{ matrix.settings.args }}
+#   create-changelog:
+#     runs-on:
+#       ubuntu-latest
+#       # 需要等build结束后才执行此处
+#     needs: publish-tauri
+#     steps:
+#       - uses: actions/checkout@v3
+#         with:
+#           fetch-depth: 0
+#       - uses: actions/setup-node@v3
+#         with:
+#           node-version: 16.x
+#           # 生成版本更新日志
+#       - run: npx changelogithub
+#         env:
+#           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+

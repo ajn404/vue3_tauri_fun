@@ -17,6 +17,7 @@
     "format": "npx prettier . --write",
     "format:check": "npx prettier . --check",
     "docs": "mdbook serve docs",
+    "tauri": "tauri",
     "tauri:dev": "tauri dev",
     "tauri:build": "tauri build",
     "test:e2e": "npx cypress open",
