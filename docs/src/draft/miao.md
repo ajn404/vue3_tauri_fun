@@ -9,11 +9,11 @@
 ```
 ## JIT
 
-	喵~JIT是Just-In-Time的缩写，意思是即时编译喵~它是一种动态编译技术，可以在程序运行时将字节码编译成本地机器码喵~这种技术可以提高程序的执行效率和性能喵~JIT编译器通常会将频繁执行的代码编译成本地机器码，从而减少解释器的执行时间喵~如果你有任何其他问题，请随时问我喵~
+喵~JIT是Just-In-Time的缩写，意思是即时编译喵~它是一种动态编译技术，可以在程序运行时将字节码编译成本地机器码喵~这种技术可以提高程序的执行效率和性能喵~JIT编译器通常会将频繁执行的代码编译成本地机器码，从而减少解释器的执行时间喵~如果你有任何其他问题，请随时问我喵~
 
 ## words
 
-	我可以再提供一些例子喵~以下是一些不太常见的英语单词：  
+我可以再提供一些例子喵~以下是一些不太常见的英语单词：  
 1. Quixotic：不切实际的，空想的。  
 2. Halcyon：宁静的，平和的。  
 3. Mellifluous：柔和而悦耳的声音或音乐。  
@@ -27,11 +27,11 @@
 
 
 ## @nestjs/config
-	@nestjs/config是一个用于处理配置文件的Nest.js模块。它提供了一种简单的方法来加载和解析配置文件，并将其注入到您的应用程序中。要使用@nestjs/config，您需要首先安装它，可以使用以下命令：  
+@nestjs/config是一个用于处理配置文件的Nest.js模块。它提供了一种简单的方法来加载和解析配置文件，并将其注入到您的应用程序中。要使用@nestjs/config，您需要首先安装它，可以使用以下命令：  
 ```shell
 npm install --save @nestjs/config
 ```
-	安装完成后，您需要在您的应用程序模块中导入ConfigModule，如下所示：  
+安装完成后，您需要在您的应用程序模块中导入ConfigModule，如下所示：  
 ```ts
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
@@ -40,7 +40,7 @@ import { ConfigModule } from '@nestjs/config';
 })
 export class AppModule {}
 ```
-	在这个例子中，我们导入了ConfigModule并在AppModule中使用了ConfigModule.forRoot()方法。这将加载默认的.env文件并将其注入到您的应用程序中。您可以通过在.env文件中设置键值对来配置您的应用程序，例如：  
+在这个例子中，我们导入了ConfigModule并在AppModule中使用了ConfigModule.forRoot()方法。这将加载默认的.env文件并将其注入到您的应用程序中。您可以通过在.env文件中设置键值对来配置您的应用程序，例如：  
 ```ts
 DATABASE_HOST=localhost
 DATABASE_PORT=5432
@@ -48,7 +48,7 @@ DATABASE_USER=user
 DATABASE_PASSWORD=password
 ```
 
-	要访问这些配置变量，您可以使用ConfigService，如下所示：  
+要访问这些配置变量，您可以使用ConfigService，如下所示：  
 ```ts
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
@@ -68,12 +68,12 @@ export class AppService {
     return this.configService.get<string>('DATABASE_PASSWORD');
   }
 ```
-	在这个例子中，我们注入了ConfigService，并使用get方法来获取我们在.env文件中设置的配置变量。您可以根据需要添加更多的方法来获取其他配置变量。
-	希望这个回答能够帮助您使用@nestjs/config。如果您有任何其他编程问题，请随时问我喵~
+在这个例子中，我们注入了ConfigService，并使用get方法来获取我们在.env文件中设置的配置变量。您可以根据需要添加更多的方法来获取其他配置变量。
+希望这个回答能够帮助您使用@nestjs/config。如果您有任何其他编程问题，请随时问我喵~
 
 ## npmrc
 
-	喵~好的我的主人。根据您的查询，.npmrc是一个用于配置npm的文件。npm是Node.js的包管理器，用于安装、升级和管理Node.js模块。.npmrc文件包含了npm的配置选项，例如默认的注册表、代理设置、缓存位置等等。您可以在该文件中设置这些选项，以便在使用npm时自定义npm的行为。  
+喵~好的我的主人。根据您的查询，.npmrc是一个用于配置npm的文件。npm是Node.js的包管理器，用于安装、升级和管理Node.js模块。.npmrc文件包含了npm的配置选项，例如默认的注册表、代理设置、缓存位置等等。您可以在该文件中设置这些选项，以便在使用npm时自定义npm的行为。  
 在大多数情况下，您不需要手动编辑.npmrc文件，因为npm会自动创建和更新该文件。但是，如果您需要自定义npm的行为，您可以手动编辑该文件。例如，如果您想要使用不同的默认注册表，您可以在.npmrc文件中添加以下行：  
 ```npmrc
 registry=https://registry.npm.taobao.org/
@@ -82,16 +82,16 @@ registry=https://registry.npm.taobao.org/
 总的来说，.npmrc文件是npm的配置文件，用于自定义npm的行为。希望这个回答能够帮助您理解.npmrc文件的作用。如果您有任何其他编程问题，请随时问我喵~
 
 ## Promise的实现机制
-	喵~好的我的主人。根据您的查询，Promise是JavaScript中一种用于处理异步操作的对象。Promise提供了一种简单的方法来处理异步操作的结果，例如从服务器获取数据或执行长时间运行的计算。Promise的实现机制使用了一种称为“Promise/A+规范”的标准，这是一种由社区制定的规范，用于定义Promise的行为和实现细节。  
-	Promise/A+规范定义了Promise对象的行为和方法，以及它们应该如何与其他Promise对象交互。Promise/A+规范还定义了Promise对象的状态，包括“pending”、“fulfilled”和“rejected”三种状态。当Promise对象处于“pending”状态时，表示异步操作正在进行中。当异步操作完成时，Promise对象将进入“fulfilled”或“rejected”状态，表示操作成功或失败。  
-	Promise的实现机制使用了一种称为“观察者模式”的设计模式。在这种模式中，Promise对象充当了被观察者，它会通知所有已注册的观察者（也称为“回调函数”），以便它们可以处理Promise对象的状态变化。当Promise对象进入“fulfilled”或“rejected”状态时，它会调用所有已注册的回调函数，并将异步操作的结果传递给它们。  
-	总的来说，Promise的实现机制使用了Promise/A+规范和观察者模式。这种设计模式使得Promise对象可以更容易地处理异步操作的结果，并且可以更好
+喵~好的我的主人。根据您的查询，Promise是JavaScript中一种用于处理异步操作的对象。Promise提供了一种简单的方法来处理异步操作的结果，例如从服务器获取数据或执行长时间运行的计算。Promise的实现机制使用了一种称为“Promise/A+规范”的标准，这是一种由社区制定的规范，用于定义Promise的行为和实现细节。  
+Promise/A+规范定义了Promise对象的行为和方法，以及它们应该如何与其他Promise对象交互。Promise/A+规范还定义了Promise对象的状态，包括“pending”、“fulfilled”和“rejected”三种状态。当Promise对象处于“pending”状态时，表示异步操作正在进行中。当异步操作完成时，Promise对象将进入“fulfilled”或“rejected”状态，表示操作成功或失败。  
+Promise的实现机制使用了一种称为“观察者模式”的设计模式。在这种模式中，Promise对象充当了被观察者，它会通知所有已注册的观察者（也称为“回调函数”），以便它们可以处理Promise对象的状态变化。当Promise对象进入“fulfilled”或“rejected”状态时，它会调用所有已注册的回调函数，并将异步操作的结果传递给它们。  
+总的来说，Promise的实现机制使用了Promise/A+规范和观察者模式。这种设计模式使得Promise对象可以更容易地处理异步操作的结果，并且可以更好
 
 ## joi
 
-	喵~好的我的主人。根据您的查询，joi是一个用于验证JavaScript对象的库。它提供了一种简单的方法来验证对象的结构和内容，并且可以与Node.js和浏览器一起使用。joi的实现机制使用了一种称为“链式调用”的设计模式，这种模式使得代码更易于阅读和编写。  
-	在使用joi时，您可以定义一个验证规则，并将其应用于要验证的对象。例如，以下代码演示了如何使用joi验证一个用户对象：  
-```js
+喵~好的我的主人。根据您的查询，joi是一个用于验证JavaScript对象的库。它提供了一种简单的方法来验证对象的结构和内容，并且可以与Node.js和浏览器一起使用。joi的实现机制使用了一种称为“链式调用”的设计模式，这种模式使得代码更易于阅读和编写。  
+在使用joi时，您可以定义一个验证规则，并将其应用于要验证的对象。例如，以下代码演示了如何使用joi验证一个用户对象：  
+```ts
 const Joi = require('joi');
 const userSchema = Joi.object({
   name: Joi.string().required(),
@@ -110,13 +110,12 @@ if (result.error) {
   console.log('User is valid');
 }
 ```
-	在这个例子中，我们定义了一个名为userSchema的验证规则，该规则包含了三个属性：name、email和age。每个属性都有一个对应的验证方法，例如Joi.string()用于验证字符串类型，Joi.number()用于验证数字类型。在每个验证方法后面，我们可以使用链式调用来添加更多的验证条件，例如Joi.string().email()用于验证电子邮件地址。最后，我们使用userSchema.validate()方法将验证规则应用于用户对象，并检查结果是否包含错误。  
-	总的来说，joi是一个用于验证JavaScript对象的库，它使用了链式调用的设计模式，使得代码更易于阅读和编写。希望这个回答能够帮助您理解joi的实现机制。如果您有任何其他编程问题，请随时问我喵~
+在这个例子中，我们定义了一个名为userSchema的验证规则，该规则包含了三个属性：name、email和age。每个属性都有一个对应的验证方法，例如Joi.string()用于验证字符串类型，Joi.number()用于验证数字类型。在每个验证方法后面，我们可以使用链式调用来添加更多的验证条件，例如Joi.string().email()用于验证电子邮件地址。最后，我们使用userSchema.validate()方法将验证规则应用于用户对象，并检查结果是否包含错误。  
+总的来说，joi是一个用于验证JavaScript对象的库，它使用了链式调用的设计模式，使得代码更易于阅读和编写。希望这个回答能够帮助您理解joi的实现机制。如果您有任何其他编程问题，请随时问我喵~
 ## nestjs data mapper pattern
-
-	喵~好的**我的主人**。根据您的查询，nestjs的data mapper pattern是一种用于处理数据持久化的设计模式。它提供了一种简单的方法来将应用程序的数据映射到数据库中，并且可以与TypeORM和其他ORM一起使用。data mapper pattern的实现机制使用了一种称为“数据映射器”的对象，这种对象充当了应用程序和数据库之间的中介，使得它们可以相互通信。  
+喵~好的**我的主人**。根据您的查询，nestjs的data mapper pattern是一种用于处理数据持久化的设计模式。它提供了一种简单的方法来将应用程序的数据映射到数据库中，并且可以与TypeORM和其他ORM一起使用。data mapper pattern的实现机制使用了一种称为“数据映射器”的对象，这种对象充当了应用程序和数据库之间的中介，使得它们可以相互通信。  
   
-	在nestjs中，您可以使用@nestjs/mongoose和@nestjs/typeorm模块来实现data mapper pattern。这些模块提供了一种简单的方法来将应用程序的数据映射到MongoDB和MySQL等数据库中。例如，以下代码演示了如何在nestjs中使用@nestjs/typeorm模块来实现data mapper pattern：  
+在nestjs中，您可以使用@nestjs/mongoose和@nestjs/typeorm模块来实现data mapper pattern。这些模块提供了一种简单的方法来将应用程序的数据映射到MongoDB和MySQL等数据库中。例如，以下代码演示了如何在nestjs中使用@nestjs/typeorm模块来实现data mapper pattern：  
 
 ```ts
 import { Module } from '@nestjs/common';
@@ -130,7 +129,7 @@ import { UserService } from './user.service';
 })
 export class UserModule {}
 ```
-	在这个例子中，我们创建了一个名为UserModule的nestjs模块，并使用TypeOrmModule.forFeature()方法将User实体添加到模块中。这将使得我们可以在UserService中使用TypeORM来访问和操作User实体。例如，以下代码演示了如何在UserService中使用TypeORM来查询用户：  
+在这个例子中，我们创建了一个名为UserModule的nestjs模块，并使用TypeOrmModule.forFeature()方法将User实体添加到模块中。这将使得我们可以在UserService中使用TypeORM来访问和操作User实体。例如，以下代码演示了如何在UserService中使用TypeORM来查询用户：  
 ```ts
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -161,14 +160,111 @@ export class UserService {
 
 }
 ```
-
 在这个例子中，我们创建了一个名为UserService的nestjs服务，
 并使用@InjectRepository()装饰器将User实体注入到服务中。
 然后，我们可以在服务中使用TypeORM的Repository对象来访问和操作User实体。例如，我们可以
-	使用userRepository.find()方法来查询所有用户，
-	使用userRepository.findOne()方法来查询单个用户，
-	使用userRepository.save()方法来创建用户，
-	使用userRepository.update()方法来更新用户，
-	使用userRepository.delete()方法来删除用户。  
+使用userRepository.find()方法来查询所有用户，
+使用userRepository.findOne()方法来查询单个用户，
+使用userRepository.save()方法来创建用户，
+使用userRepository.update()方法来更新用户，
+使用userRepository.delete()方法来删除用户。  
   
 总的来说，nestjs的data mapper pattern是一种用于处理数据持久化的设计模式，它使用了数据映射器对象来将应用程序的数据映射到数据库中。在nestjs中，您可以使用@nestjs/mongoose和@nestjs/typeorm模块来实现data mapper pattern，并使用TypeORM和其他ORM来访问和操作数据库。希望这个回答能够帮助您理解nestjs的data mapper pattern。如果您有任何其他编程问题，请随时问我喵~
+
+
+## nestjs中的service,module和resolver
+喵~好的我的主人。根据您的查询，nestjs中的service、module和resolver是三个重要的概念，它们在nestjs应用程序的开发中扮演着不同的角色。  
+  
+首先，nestjs中的service是一种用于处理业务逻辑的类。它们通常用于封装数据访问逻辑、处理数据验证和转换、执行业务规则等。在nestjs中，您可以使用@Injectable()装饰器将一个类标记为service，并使用依赖注入来将其注入到其他类中。例如，以下代码演示了如何在nestjs中创建一个名为UserService的service：  
+```ts
+import { Injectable } from '@nestjs/common';
+import { User } from './user.entity';
+
+@Injectable()
+export class UserService {
+  private readonly users: User[] = [];
+
+  findAll(): User[] {
+    return this.users;
+  }
+
+  findOne(id: number): User {
+    return this.users[id];
+  }
+
+  create(user: User): void {
+    this.users.push(user);
+  }
+
+  update(id: number, user: User): void {
+    this.users[id] = user;
+  }
+
+  delete(id: number): void {
+    this.users.splice(id, 1);
+  }
+}
+```
+  
+在这个例子中，我们创建了一个名为UserService的nestjs service，并使用@Injectable()装饰器将其标记为service。然后，我们定义了一些方法来处理用户数据，例如findAll()方法用于查询所有用户，findOne()方法用于查询单个用户，create()方法用于创建用户，update()方法用于更新用户，delete()方法用于删除用户。这些方法可以在其他类中使用，例如controller和resolver。  
+  
+其次，nestjs中的module是一种用于组织应用程序的类。它们通常用于定义应用程序的依赖关系、配置模块、导出服务等。在nestjs中，您可以使用@Module()装饰器将一个类标记为module，并使用imports、providers和exports属性来定义模块的依赖关系、服务和导出。例如，以下代码演示了如何在nestjs中创建一个名为UserModule的module：  
+```ts
+import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { User } from './user.entity';
+import { UserService } from './user.service';
+
+@Module({
+  imports: [TypeOrmModule.forFeature([User])],
+  providers: [UserService],
+  exports: [UserService],
+})
+export class UserModule {}
+```
+  
+在这个例子中，我们创建了一个名为UserModule的nestjs module，并使用providers属性将UserService添加到模块中。这将使得我们可以在其他类中使用UserService。我们还使用exports属性将UserService导出，以便其他模块可以使用它。  
+  
+最后，nestjs中的resolver是一种用于处理HTTP请求的类。它们通常用于定义HTTP端点、处理HTTP请求、验证请求参数等。在nestjs中，您可以使用@Resolver()装饰器将一个类标记为resolver，并使用@Query()、@Mutation()等装饰器来定义HTTP端点。例如，以下代码演示了如何在nestjs中创建一个名为UserResolver的resolver：  
+```ts
+import { Resolver, Query, Args, Mutation } from '@nestjs/graphql';
+import { UserService } from './user.service';
+import { User } from './user.entity';
+
+@Resolver()
+export class UserResolver {
+  constructor(private readonly userService: UserService) {}
+
+  @Query(() => [User])
+  async users(): Promise<User[]> {
+    return this.userService.findAll();
+  }
+
+  @Query(() => User)
+  async user(@Args('id') id: number): Promise<User> {
+    return this.userService.findOne(id);
+  }
+
+  @Mutation(() => User)
+  async createUser(@Args('user') user: User): Promise<User> {
+    this.userService.create(user);
+    return user;
+  }
+
+  @Mutation(() => User)
+  async updateUser(@Args('id') id: number, @Args('user') user: User): Promise<User> {
+    this.userService.update(id, user);
+    return user;
+  }
+
+  @Mutation(() => Boolean)
+  async deleteUser(@Args('id') id: number): Promise<boolean> {
+    this.userService.delete(id);
+    return true;
+  }
+}
+```
+  
+在这个例子中，我们创建了一个名为UserResolver的nestjs resolver，并使用@Query()和@Mutation()装饰器定义了HTTP端点。例如，users()方法用于查询所有用户，user()方法用于查询单个用户，createUser()方法用于创建用户，updateUser()方法用于更新用户，deleteUser()方法用于删除用户。这些方法可以在HTTP端点中使用，例如GraphQL和REST API。  
+  
+总的来说，nestjs中的service、module和resolver是三个重要的概念，它们在nestjs应用程序的开发中扮演着不同的角色。service用于处理业务逻辑，module用于组织应用程序，resolver用于处理HTTP请求。希望这个回答能够帮助您理解nestjs中的service、module和resolver。如果您有任何其他编程问题，请随时问我喵~
