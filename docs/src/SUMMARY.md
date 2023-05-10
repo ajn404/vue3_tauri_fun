@@ -18,6 +18,9 @@
 - [shell](./draft/shell.md)
     - [man](./shell_record/man.md)
 
+
+- [喵](./draft/miao.md)
+
 - [每日](./daily/2023-04-17.md)
     - [2024-04-17](./daily/2023-04-17.md)
     - [2024-04-18](./daily/2023-04-18.md)

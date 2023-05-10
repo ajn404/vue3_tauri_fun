@@ -58,7 +58,7 @@ class mandalaWorld extends textureWorld {
     }
 
     addProject() {
-        //这里需要先load texture
+        //需要先load texture
     }
 
     animate() {
