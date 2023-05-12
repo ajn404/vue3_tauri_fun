@@ -41,5 +41,4 @@
     - [2024-05-08](./daily/2023-05-08.md)
     - [2024-05-09](./daily/2023-05-09.md)
 - [Math](./math/MATH_INDEX.md)
-- [Miao](./miao/index.md)
 - 

@@ -814,7 +814,7 @@
                                     <div class="ml-5">
                                         <div
                                             class="bg-gray-200 rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
-                                            <input placeholder="checkbox" checked="" type="checkbox"
+                                            <input placeholder="checkbox" type="checkbox"
                                                 class="focus:opacity-100 checkbox opacity-0 absolute cursor-pointer w-full h-full" />
                                             <div class="check-icon hidden bg-indigo-700 text-white rounded-sm">
                                                 <svg class="icon icon-tabler icon-tabler-check"
@@ -1083,7 +1083,7 @@
                                     <div class="ml-5">
                                         <div
                                             class="bg-gray-200 rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
-                                            <input placeholder="checkbox" checked="" type="checkbox"
+                                            <input placeholder="checkbox" type="checkbox"
                                                 class="focus:opacity-100 checkbox opacity-0 absolute cursor-pointer w-full h-full" />
                                             <div class="check-icon hidden bg-indigo-700 text-white rounded-sm">
                                                 <svg class="icon icon-tabler icon-tabler-check"
@@ -1352,7 +1352,7 @@
                                     <div class="ml-5">
                                         <div
                                             class="bg-gray-200 rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
-                                            <input placeholder="checkbox" checked="" type="checkbox"
+                                            <input placeholder="checkbox" type="checkbox"
                                                 class="checkbox opacity-0 absolute cursor-pointer w-full h-full" />
                                             <div class="check-icon hidden bg-indigo-700 text-white rounded-sm">
                                                 <svg class="icon icon-tabler icon-tabler-check"
@@ -3080,36 +3080,33 @@
                                     <div class="md:col-span-5">
                                         <label for="full_name">Full Name</label>
                                         <input type="text" name="full_name" id="full_name"
-                                            class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" />
+                                            class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" />
                                     </div>
 
                                     <div class="md:col-span-5">
                                         <label for="email">Email Address</label>
                                         <input type="text" name="email" id="email"
-                                            class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value=""
+                                            class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
                                             placeholder="email@domain.com" />
                                     </div>
 
                                     <div class="md:col-span-3">
                                         <label for="address">Address / Street</label>
                                         <input type="text" name="address" id="address"
-                                            class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value=""
-                                            placeholder="" />
+                                            class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" placeholder="" />
                                     </div>
 
                                     <div class="md:col-span-2">
                                         <label for="city">City</label>
                                         <input type="text" name="city" id="city"
-                                            class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value=""
-                                            placeholder="" />
+                                            class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" placeholder="" />
                                     </div>
 
                                     <div class="md:col-span-2">
                                         <label for="country">Country / region</label>
                                         <div class="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
                                             <input name="country" id="country" placeholder="Country"
-                                                class="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
-                                                value="" />
+                                                class="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent" />
                                             <button tabindex="-1"
                                                 class="cursor-pointer outline-none focus:outline-none transition-all text-gray-300 hover:text-red-600">
                                                 <svg class="w-4 h-4 mx-2 fill-current" xmlns="http://www.w3.org/2000/svg"
@@ -3134,8 +3131,7 @@
                                         <label for="state">State / province</label>
                                         <div class="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
                                             <input name="state" id="state" placeholder="State"
-                                                class="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
-                                                value="" />
+                                                class="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent" />
                                             <button tabindex="-1"
                                                 class="cursor-pointer outline-none focus:outline-none transition-all text-gray-300 hover:text-red-600">
                                                 <svg class="w-4 h-4 mx-2 fill-current" xmlns="http://www.w3.org/2000/svg"
@@ -3160,7 +3156,7 @@
                                         <label for="zipcode">Zipcode</label>
                                         <input type="text" name="zipcode" id="zipcode"
                                             class="transition-all flex items-center h-10 border mt-1 rounded px-4 w-full bg-gray-50"
-                                            placeholder="" value="" />
+                                            placeholder="" />
                                     </div>
 
                                     <div class="md:col-span-5">
