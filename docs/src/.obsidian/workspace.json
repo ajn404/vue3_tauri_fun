@@ -13,9 +13,52 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "draft/miao.md",
+                "file": "miao/miao_ts.md",
                 "mode": "source",
-                "source": false
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "a8af1d890bf93623",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "math/MATH_INDEX.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "ca2e37d045dcd30c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "SUMMARY.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      },
+      {
+        "id": "c244bc6b4a53de9c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0e67af92469e028c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "miao/miao_mixin.md",
+                "mode": "source",
+                "source": true
               }
             }
           }
@@ -77,7 +120,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 240.5
+    "width": 200
   },
   "right": {
     "id": "bfa15fb42edc9896",
@@ -93,7 +136,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "draft/miao.md",
+                "file": "SUMMARY.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +153,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "draft/miao.md",
+                "file": "SUMMARY.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +176,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "draft/miao.md"
+                "file": "SUMMARY.md"
               }
             }
           }
@@ -184,13 +227,23 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "fe7b26920b202586",
+  "active": "8109444033f4308c",
   "lastOpenFiles": [
-    "database/postgresql.md",
+    "Day Planners/Day Planner-20230512.md",
+    "Day Planners",
+    "miao/index.md",
     "SUMMARY.md",
-    "database",
-    "未命名.md",
+    "miao/miao_mixin.md",
+    "miao/miao_nest.md",
+    "miao/miao_ts.md",
+    "miao/miao_vue.md",
     "draft/miao.md",
+    "math/MATH_INDEX.md",
+    "未命名.md",
+    "miao",
+    "Day Planners/Day Planner-20230511.md",
+    "database/postgresql.md",
+    "database",
     "Day Planners/Day Planner-20230510.md",
     "daily/2023-05-09.md",
     "daily/2023-05-08.md",
@@ -200,19 +253,10 @@
     "Day Planners/Day Planner-20230507.md",
     "daily/2023-05-05.md",
     "daily/2023-05-06.md",
-    "math/MATH_INDEX.md",
     "interview_everyday/day08.md",
     "interview_everyday/day07.md",
     "interview_everyday/day09.md",
     "shell_record/man.md",
-    "tips/keyboard.md",
-    "Day Planners/Day Planner-20230425.md",
-    "Day Planners/Day Planner-20230506.md",
-    "draft/doc.md",
-    "Day Planners/Day Planner-20230505.md",
-    "daily/2023-04-27.md",
-    "Day Planners/Day Planner-20230504.md",
-    "Day Planners/Day Planner-20230428.md",
     "sources/v8.png",
     "未命名.canvas",
     "sources/1.png",
@@ -226,10 +270,8 @@
     "math/未命名.canvas",
     "daily",
     "Excalidraw",
-    "Day Planners",
     "tips",
     "Pasted image 20230417141640.png",
-    "Pasted image 20230417140625.png",
-    "math"
+    "Pasted image 20230417140625.png"
   ]
 }

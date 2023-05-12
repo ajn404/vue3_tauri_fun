@@ -3,5 +3,7 @@
   "alwaysUpdateLinks": true,
   "vimMode": false,
   "attachmentFolderPath": "sources",
-  "newLinkFormat": "absolute"
+  "newLinkFormat": "absolute",
+  "defaultViewMode": "source",
+  "livePreview": false
 }

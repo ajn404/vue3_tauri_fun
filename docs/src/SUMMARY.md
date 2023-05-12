@@ -19,7 +19,12 @@
     - [man](./shell_record/man.md)
 
 
-- [喵](./draft/miao.md)
+- [喵](./miao/index.md)
+    - [nest喵](./miao/miao_nest.md)
+    - [ts喵](./miao/miao_ts.md)
+    - [vue喵](./miao/miao_vue.md)
+    - [混合喵](./miao/miao_mixin.md)
+	
 
 - [每日](./daily/2023-04-17.md)
     - [2024-04-17](./daily/2023-04-17.md)
@@ -36,3 +41,5 @@
     - [2024-05-08](./daily/2023-05-08.md)
     - [2024-05-09](./daily/2023-05-09.md)
 - [Math](./math/MATH_INDEX.md)
+- [Miao](./miao/index.md)
+- 
