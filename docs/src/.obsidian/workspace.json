@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "miao/miao_ts.md",
+                "file": "miao/index.md",
                 "mode": "source",
                 "source": true
               }
@@ -25,8 +25,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "math/MATH_INDEX.md",
-                "mode": "preview",
+                "file": "SUMMARY.md",
+                "mode": "source",
                 "source": true
               }
             }
@@ -37,14 +37,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "miao/index.md",
+                "file": "miao/miao_mixin.md",
                 "mode": "source",
                 "source": true
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       },
       {
         "id": "c244bc6b4a53de9c",
@@ -87,7 +87,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -161,7 +161,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "miao/miao_nest.md",
+                "file": "SUMMARY.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -178,7 +178,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "miao/miao_nest.md",
+                "file": "SUMMARY.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -201,7 +201,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "miao/miao_nest.md"
+                "file": "SUMMARY.md"
               }
             }
           }
@@ -252,14 +252,14 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "f05c63fada006ff0",
+  "active": "a8af1d890bf93623",
   "lastOpenFiles": [
-    "miao/index.md",
     "math/MATH_INDEX.md",
-    "miao/miao_nest.md",
+    "miao/index.md",
+    "SUMMARY.md",
     "miao/miao_ts.md",
     "miao/miao_mixin.md",
-    "SUMMARY.md",
+    "miao/miao_nest.md",
     "Day Planners/Day Planner-20230512.md",
     "Day Planners",
     "miao/miao_vue.md",
