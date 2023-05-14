@@ -13,9 +13,11 @@ declare global {
 if (window) window.p5 = p5;
 
 export const useP5 = (method: p5Function, option?: p5Option) => {
+  //#region 
   const container: Ref<HTMLElement | null> = ref(null);
   const p5_instance: Ref<p5 | null> = ref(null);
   const store = useStore();
+  // #endregion 
 
   const drop_instance = () => {
     if (p5_instance.value) {
