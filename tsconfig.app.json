@@ -7,6 +7,8 @@
     "composite": true,
     "baseUrl": ".",
     "ignoreDeprecations": "5.0",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "lib": ["ES2016", "DOM", "DOM.Iterable"],
     "paths": {
       "@/*": ["./src/*"]
