@@ -21,7 +21,6 @@ import type { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js
 import { createCameraControl } from '../plugin';
 import SplineLoader from '@splinetool/loader';
 import type { reactiveData } from '../composition';
-
 const clock = new Clock();
 const store = useStore();
 
@@ -81,6 +80,8 @@ class Spline {
       loader.load(
         url,
         (splineScene) => {
+          console.log(splineScene);
+          
           resolve(splineScene);
           //   console.clear();
         },
@@ -113,6 +114,8 @@ class Spline {
       this.cube.rotation.z += rate;
     }
   }
+
+    
 
   //真正的动画函数在这里
   render(container: HTMLElement) {

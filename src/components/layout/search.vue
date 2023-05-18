@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref, type Ref, reactive } from 'vue';
+import { onMounted, ref, type Ref, reactive, onBeforeUnmount } from 'vue';
 import type {
     AutocompleteFetchSuggestionsCallback,
     AutocompleteInstance,
@@ -55,25 +55,28 @@ const createFilter = (queryString: string) => {
     };
 };
 const store = useStore();
+const keydown = (e: KeyboardEvent) => {
+    if ((e.ctrlKey || e.key === 'Meta') && e.key === 'k' && search.value) {
+        search.value.focus();
+    }
+}
 onMounted(() => {
     if (search.value && store.menu) {
         search.value.focus();
     }
+    addEventListener('keydown', keydown);
+});
 
-    addEventListener('keydown', (e: KeyboardEvent) => {
+onBeforeUnmount(() => {
+    removeEventListener('keydown', keydown)
+}),
 
-        if ((e.ctrlKey || e.key === 'Meta') && e.key === 'k' && search.value) {
+    router.afterEach((to, from) => {
+        if (search.value && store.menu) {
             search.value.focus();
+            key.value = to.name?.toString() || '';
         }
     });
-});
-
-router.afterEach((to, from) => {
-    if (search.value && store.menu) {
-        search.value.focus();
-        key.value = to.name?.toString() || '';
-    }
-});
 </script>
 
 <style lang="scss" scoped>
