@@ -6,4 +6,4 @@
 6. # region #endregion
 7. commond d  common k commond shift l 多选
 8. commond f时可以用option + enter进行多选
-9. 
+9. ctrl shift b 跳转类型定义
