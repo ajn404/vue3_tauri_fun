@@ -54,3 +54,16 @@ Emmet是一种快速编写HTML和CSS的工具，它可以帮助您更快地编�
 在这里，我们使用Emmet缩写来快速创建HTML结构，包括标题、导航、段落和页脚。通过使用Emmet，我们可以更快地编写代码并提高生产力。
 
 希望这可以帮助您开始使用Emmet！如果您有任何其他问题，请随时问我，喵~
+
+
+### https://dev.to/arjavdave/installing-nginx-on-mac-46ac
+
+nginx
+
+```
+brew install nginx
+nginx
+nginx -s stop
+```
+
+### https://hackmd.io/@leonsnoopy/B1vcwTCQV

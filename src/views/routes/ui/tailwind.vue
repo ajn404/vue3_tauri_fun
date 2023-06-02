@@ -1,6 +1,6 @@
 <template>
     <div class="view h-auto flex flex-col gap-2">
-        <div class="p-4 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
+        <div class="p-4 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center  space-x-4">
             <div class="flex-shrink-0">
                 <img class="h-12 w-12" src="@/assets/k.webp" alt="ChitChat Logo" />
             </div>
