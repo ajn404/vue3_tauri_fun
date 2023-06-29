@@ -45,7 +45,7 @@ export const waveCube: p5Function = (
       sketch.rect(x, 0, rect_width - gap, h);
       sketch.rect(x, y1, rect_width - gap, h);
       sketch.rect(x, y2, rect_width - gap, h);
-      offset += 0.1;
+      offset += 1.1;
       // r = sketch.random(255), b = sketch.random(255), g = sketch.random(255);
       // sketch.fill(r, g, b);
     }
@@ -53,7 +53,7 @@ export const waveCube: p5Function = (
 
   sketch.draw = async () => {
     sketch.background(0);
-    sketch.fill(r, g, b);
+    sketch.fill(255, 99, 99);
     await draw_loop();
   };
 };

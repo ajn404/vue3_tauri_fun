@@ -29,3 +29,4 @@ declare module 'ml5';
 declare module 'svgcanvas';
 declare module 'nprogress';
 declare module 'cornerstone-core';
+declare module 'pdf2html';

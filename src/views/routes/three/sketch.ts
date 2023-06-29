@@ -78,7 +78,7 @@ export default class Sketch {
     this.material = new THREE.ShaderMaterial({
       fragmentShader: `
                     void main(){
-                        gl_FragColor = vec4(0.4,0.3,0.5,0.9);
+                        gl_FragColor = vec4(0.9,0.3,0.5,0.9);
                     }
                 `,
       vertexShader: `
