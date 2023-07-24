@@ -37,18 +37,25 @@
   const data = { txt: 'hello world' };
   const obj = new Proxy(data, {
     get(target, key) {
+      //没有activeEffect直接return
       if (!activeEffect) return target[key];
+      //根据target取出桶中的depsMap,depsMap是Map类型，表示为key->effects Set
       let depsMap = bucket.get(target);
+      //在桶中新建map与target关联
       if (!depsMap) {
         depsMap = new Map();
         bucket.set(target, depsMap);
       }
+
       let deps = depsMap.get(key);
       if (!deps) {
         deps = new Set();
         depsMap.set(key, deps);
       }
+      //这里是读取操作，最后需将激活的副作用函数收集在桶中
       deps.add(activeEffect);
+
+      console.log('bucket', bucket);
       return target[key];
     },
 
@@ -73,9 +80,12 @@
   }
 
   effect(() => {
+    console.log('1');
     //读取操作
     document.body.innerText = obj.txt;
   });
+
+  obj.txt = '666';
 }
 
 //封装上述过程
