@@ -1,0 +1,302 @@
+{
+  "main": {
+    "id": "fe4507b374d69779",
+    "type": "split",
+    "children": [
+      {
+        "id": "7e1f236a94f80850",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fe7b26920b202586",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "miao/index.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "a8af1d890bf93623",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "draft/record.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "ca2e37d045dcd30c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "miao/miao_mixin.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "c244bc6b4a53de9c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0e67af92469e028c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "miao/miao_mixin.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "6e676ab3e4fab627",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "miao/index.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "f05c63fada006ff0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "miao/miao_nest.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "109093cb7bb0e830",
+    "type": "split",
+    "children": [
+      {
+        "id": "4b53d0a699518dec",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8109444033f4308c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "9e4d0f037d2e99f0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "c4638760ff617e07",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "bdcc77b0f9938fdd",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "bfa15fb42edc9896",
+    "type": "split",
+    "children": [
+      {
+        "id": "f55ffc2357fdac78",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e34e92733ac51976",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "draft/record.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "2bff99eadca960d8",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "draft/record.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "05774645042043d1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "bd83e3f7df3b9008",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "draft/record.md"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "90e3d18f902c7564",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a908fb7eb6bd7c75",
+            "type": "leaf",
+            "state": {
+              "type": "timeline",
+              "state": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "2f3d0c0cfc5c717f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "647ca1c6963b35dc",
+            "type": "leaf",
+            "state": {
+              "type": "map-of-content",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "obsidian-excalidraw-plugin:新建 Excalidraw 绘图": false,
+      "map-of-content:Update Map of Content": false
+    }
+  },
+  "active": "a8af1d890bf93623",
+  "lastOpenFiles": [
+    "SUMMARY.md",
+    "math/MATH_INDEX.md",
+    "miao/index.md",
+    "miao/miao_ts.md",
+    "miao/miao_mixin.md",
+    "miao/miao_nest.md",
+    "Day Planners/Day Planner-20230512.md",
+    "Day Planners",
+    "miao/miao_vue.md",
+    "draft/miao.md",
+    "未命名.md",
+    "miao",
+    "Day Planners/Day Planner-20230511.md",
+    "database/postgresql.md",
+    "database",
+    "Day Planners/Day Planner-20230510.md",
+    "daily/2023-05-09.md",
+    "daily/2023-05-08.md",
+    "Day Planners/Day Planner-20230509.md",
+    "daily/2023-05-04.md",
+    "Day Planners/Day Planner-20230508.md",
+    "Day Planners/Day Planner-20230507.md",
+    "daily/2023-05-05.md",
+    "daily/2023-05-06.md",
+    "interview_everyday/day08.md",
+    "interview_everyday/day07.md",
+    "interview_everyday/day09.md",
+    "shell_record/man.md",
+    "sources/v8.png",
+    "未命名.canvas",
+    "sources/1.png",
+    "sources/Pasted image 20230419171849 1.png",
+    "math/MATH_INDEX",
+    "english_words",
+    "sources",
+    "Pasted Image 20230417164539_429.png",
+    "Pasted Image 20230417154042_064.png",
+    "draft",
+    "math/未命名.canvas",
+    "daily",
+    "Excalidraw",
+    "tips",
+    "Pasted image 20230417141640.png",
+    "Pasted image 20230417140625.png"
+  ]
+}

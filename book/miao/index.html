@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>喵 - chatgpt自问自答 和 一些记录</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../draft/doc.html"><strong aria-hidden="true">1.</strong> doc</a></li><li class="chapter-item expanded "><a href="../draft/record.html"><strong aria-hidden="true">2.</strong> record</a></li><li class="chapter-item expanded "><a href="../draft/interview.html"><strong aria-hidden="true">3.</strong> interview</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../interview_everyday/day01.html"><strong aria-hidden="true">3.1.</strong> 第一天</a></li><li class="chapter-item expanded "><a href="../interview_everyday/day02.html"><strong aria-hidden="true">3.2.</strong> 第二天</a></li><li class="chapter-item expanded "><a href="../interview_everyday/day03.html"><strong aria-hidden="true">3.3.</strong> 第三天</a></li><li class="chapter-item expanded "><a href="../interview_everyday/day04.html"><strong aria-hidden="true">3.4.</strong> 第四天</a></li><li class="chapter-item expanded "><a href="../interview_everyday/day05.html"><strong aria-hidden="true">3.5.</strong> 第五天</a></li><li class="chapter-item expanded "><a href="../interview_everyday/day06.html"><strong aria-hidden="true">3.6.</strong> 第六天</a></li><li class="chapter-item expanded "><a href="../interview_everyday/day07.html"><strong aria-hidden="true">3.7.</strong> 第七天</a></li><li class="chapter-item expanded "><a href="../interview_everyday/day08.html"><strong aria-hidden="true">3.8.</strong> 第八天</a></li></ol></li><li class="chapter-item expanded "><a href="../draft/shell.html"><strong aria-hidden="true">4.</strong> shell</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../shell_record/man.html"><strong aria-hidden="true">4.1.</strong> man</a></li></ol></li><li class="chapter-item expanded "><a href="../miao/index.html" class="active"><strong aria-hidden="true">5.</strong> 喵</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../miao/miao_nest.html"><strong aria-hidden="true">5.1.</strong> nest喵</a></li><li class="chapter-item expanded "><a href="../miao/miao_ts.html"><strong aria-hidden="true">5.2.</strong> ts喵</a></li><li class="chapter-item expanded "><a href="../miao/miao_vue.html"><strong aria-hidden="true">5.3.</strong> vue喵</a></li><li class="chapter-item expanded "><a href="../miao/miao_mixin.html"><strong aria-hidden="true">5.4.</strong> 混合喵</a></li></ol></li><li class="chapter-item expanded "><a href="../daily/2023-04-17.html"><strong aria-hidden="true">6.</strong> 每日</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../daily/2023-04-17.html"><strong aria-hidden="true">6.1.</strong> 2024-04-17</a></li><li class="chapter-item expanded "><a href="../daily/2023-04-18.html"><strong aria-hidden="true">6.2.</strong> 2024-04-18</a></li><li class="chapter-item expanded "><a href="../daily/2023-04-19.html"><strong aria-hidden="true">6.3.</strong> 2024-04-19</a></li><li class="chapter-item expanded "><a href="../daily/2023-04-20.html"><strong aria-hidden="true">6.4.</strong> 2024-04-20</a></li><li class="chapter-item expanded "><a href="../daily/2023-04-24.html"><strong aria-hidden="true">6.5.</strong> 2024-04-24</a></li><li class="chapter-item expanded "><a href="../daily/2023-04-25.html"><strong aria-hidden="true">6.6.</strong> 2024-04-25</a></li><li class="chapter-item expanded "><a href="../daily/2023-04-26.html"><strong aria-hidden="true">6.7.</strong> 2024-04-26</a></li><li class="chapter-item expanded "><a href="../daily/2023-04-27.html"><strong aria-hidden="true">6.8.</strong> 2024-04-27</a></li><li class="chapter-item expanded "><a href="../daily/2023-05-04.html"><strong aria-hidden="true">6.9.</strong> 2024-05-04</a></li><li class="chapter-item expanded "><a href="../daily/2023-05-05.html"><strong aria-hidden="true">6.10.</strong> 2024-05-05</a></li><li class="chapter-item expanded "><a href="../daily/2023-05-06.html"><strong aria-hidden="true">6.11.</strong> 2024-05-06</a></li><li class="chapter-item expanded "><a href="../daily/2023-05-08.html"><strong aria-hidden="true">6.12.</strong> 2024-05-08</a></li><li class="chapter-item expanded "><a href="../daily/2023-05-09.html"><strong aria-hidden="true">6.13.</strong> 2024-05-09</a></li></ol></li><li class="chapter-item expanded "><a href="../math/MATH_INDEX.html"><strong aria-hidden="true">7.</strong> Math</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">chatgpt自问自答 和 一些记录</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/ajn404/vue3_tauri_fun" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p><svg t="1683871668390" class="icon" style="width:100%;margin:auto;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1546" height="500"><path d="M603.306667 170.666667l85.333333 64-64 106.666666s-42.666667-106.666667-21.333333-170.666666zM874.666667 170.666667l-85.333334 64 64 106.666666s42.666667-106.666667 21.333334-170.666666z" fill="#37474F" p-id="1547"></path><path d="M576 640l106.666667 213.418667S682.666667 896 725.333333 896h85.333334s0-42.666667-42.666667-42.666667l-64-149.333333 42.666667-170.666667-170.666667 106.666667zM213.333333 704.042667l42.666667 149.376S261.333333 896 298.666667 896h85.333333s0-42.666667-42.666667-42.666667l-42.666666-127.978666-85.333334-21.312z" fill="#455A64" p-id="1548"></path><path d="M405.333333 661.376c-42.666667 64-106.666667 106.666667-106.666666 106.666667l-85.333334-64s21.333333-85.333333 21.333334-192l170.666666 149.333333z" fill="#455A64" p-id="1549"></path><path d="M576 661.333333c-89.664-32.597333-170.666667 0.042667-170.666667 0.042667L234.666667 661.333333V405.333333c149.333333-256 533.333333 42.666667 533.333333 42.666667s0.746667 8.170667 0.554667 21.312C767.786667 526.634667 749.546667 678.677333 576 661.333333z" fill="#455A64" p-id="1550"></path><path d="M258.133333 460.8h-29.866666c-68.181333 0-121.6-53.418667-121.6-121.6s53.418667-121.6 121.6-121.6h29.866666c32.832 0 57.6-24.768 57.6-57.6a32 32 0 0 1 64 0c0 68.181333-53.418667 121.6-121.6 121.6h-29.866666c-32.832 0-57.6 24.746667-57.6 57.578667s24.768 57.6 57.6 57.6h29.866666a32 32 0 0 1 0 64.021333z" fill="#455A64" p-id="1551"></path><path d="M736 352m-138.666667 0a138.666667 138.666667 0 1 0 277.333334 0 138.666667 138.666667 0 1 0-277.333334 0Z" fill="#455A64" p-id="1552"></path><path d="M256 853.418667l-29.269333-102.464L192 832s0 64 42.666667 64h64c-37.333333 0-42.666667-42.581333-42.666667-42.581333zM683.157333 858.752A43.818667 43.818667 0 0 0 661.333333 853.376v-42.645333l-74.432-148.906667c-3.690667-0.234667-7.061333-0.106667-10.901333-0.490667v192.128s0 42.581333 42.666667 42.581334h85.333333s-0.085333-2.24-0.512-5.418667c-14.869333-8.213333-19.2-23.68-20.330667-31.872zM405.333333 661.376c-29.162667 43.754667-67.882667 77.12-89.706666 94.101333 0 0-1.28 0.896-2.368 1.877334a19.2 19.2 0 0 1-0.789334 0.597333l0.021334 0.042667c-1.152 0.917333-2.24 1.664-2.368 1.770666l5.610666 16.768 4.266667-8.533333s85.333333-42.624 128-106.624l10.304-12.373333c-32.149333 4.010667-52.970667 12.373333-52.970667 12.373333zM736 490.666667a138.666667 138.666667 0 0 1-138.666667-138.666667c0-1.621333 0.192-3.178667 0.256-4.8a663.552 663.552 0 0 0-41.472-16.96A178.346667 178.346667 0 0 0 554.666667 352c0 100.010667 81.344 181.333333 181.333333 181.333333a182.826667 182.826667 0 0 0 25.258667-1.962666c3.669333-16.192 5.610667-31.445333 6.506666-44.501334A137.877333 137.877333 0 0 1 736 490.666667zM746.666667 405.333333s-11.562667 16-21.333334 0l-21.333333-21.312v-21.333333L768.021333 362.666667v21.333333L746.666667 405.333333z" fill="#263238" p-id="1553"></path><path d="M832 298.666667s6.229333 63.978667-32 63.978666L768.021333 362.666667s-7.125333-64 31.978667-64H832zM640 298.688S632.021333 362.666667 672 362.666667l32 0.021333S712.021333 298.666667 672 298.666667l-32 0.021333z" fill="#FFEB3B" p-id="1554"></path></svg></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../shell_record/man.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../miao/miao_nest.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../shell_record/man.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../miao/miao_nest.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

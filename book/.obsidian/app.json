@@ -1,0 +1,9 @@
+{
+  "promptDelete": false,
+  "alwaysUpdateLinks": true,
+  "vimMode": false,
+  "attachmentFolderPath": "sources",
+  "newLinkFormat": "absolute",
+  "defaultViewMode": "source",
+  "livePreview": false
+}

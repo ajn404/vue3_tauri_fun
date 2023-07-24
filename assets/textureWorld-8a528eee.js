@@ -1,0 +1,1 @@
+import{e as r}from"./world-8aeda606.js";import{a as s}from"./animationWorld-88208ed4.js";import{c as o}from"./light-b9170a66.js";import"./three-b6bfeeee.js";class m extends s{constructor(t){super(t)}addProject(){var e;const t=o();this.cube=r(),this.cube.updateMatrix(),(e=this.scene)==null||e.add(t,this.cube)}}export{m as t};

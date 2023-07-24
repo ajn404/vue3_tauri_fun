@@ -1,0 +1,240 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>2024-04-20 - chatgpt自问自答 和 一些记录</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../draft/doc.html"><strong aria-hidden="true">1.</strong> doc</a></li><li class="chapter-item expanded "><a href="../draft/record.html"><strong aria-hidden="true">2.</strong> record</a></li><li class="chapter-item expanded "><a href="../draft/interview.html"><strong aria-hidden="true">3.</strong> interview</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../interview_everyday/day01.html"><strong aria-hidden="true">3.1.</strong> 第一天</a></li><li class="chapter-item expanded "><a href="../interview_everyday/day02.html"><strong aria-hidden="true">3.2.</strong> 第二天</a></li><li class="chapter-item expanded "><a href="../interview_everyday/day03.html"><strong aria-hidden="true">3.3.</strong> 第三天</a></li><li class="chapter-item expanded "><a href="../interview_everyday/day04.html"><strong aria-hidden="true">3.4.</strong> 第四天</a></li><li class="chapter-item expanded "><a href="../interview_everyday/day05.html"><strong aria-hidden="true">3.5.</strong> 第五天</a></li><li class="chapter-item expanded "><a href="../interview_everyday/day06.html"><strong aria-hidden="true">3.6.</strong> 第六天</a></li><li class="chapter-item expanded "><a href="../interview_everyday/day07.html"><strong aria-hidden="true">3.7.</strong> 第七天</a></li><li class="chapter-item expanded "><a href="../interview_everyday/day08.html"><strong aria-hidden="true">3.8.</strong> 第八天</a></li></ol></li><li class="chapter-item expanded "><a href="../draft/shell.html"><strong aria-hidden="true">4.</strong> shell</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../shell_record/man.html"><strong aria-hidden="true">4.1.</strong> man</a></li></ol></li><li class="chapter-item expanded "><a href="../miao/index.html"><strong aria-hidden="true">5.</strong> 喵</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../miao/miao_nest.html"><strong aria-hidden="true">5.1.</strong> nest喵</a></li><li class="chapter-item expanded "><a href="../miao/miao_ts.html"><strong aria-hidden="true">5.2.</strong> ts喵</a></li><li class="chapter-item expanded "><a href="../miao/miao_vue.html"><strong aria-hidden="true">5.3.</strong> vue喵</a></li><li class="chapter-item expanded "><a href="../miao/miao_mixin.html"><strong aria-hidden="true">5.4.</strong> 混合喵</a></li></ol></li><li class="chapter-item expanded "><a href="../daily/2023-04-17.html"><strong aria-hidden="true">6.</strong> 每日</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../daily/2023-04-17.html"><strong aria-hidden="true">6.1.</strong> 2024-04-17</a></li><li class="chapter-item expanded "><a href="../daily/2023-04-18.html"><strong aria-hidden="true">6.2.</strong> 2024-04-18</a></li><li class="chapter-item expanded "><a href="../daily/2023-04-19.html"><strong aria-hidden="true">6.3.</strong> 2024-04-19</a></li><li class="chapter-item expanded "><a href="../daily/2023-04-20.html" class="active"><strong aria-hidden="true">6.4.</strong> 2024-04-20</a></li><li class="chapter-item expanded "><a href="../daily/2023-04-24.html"><strong aria-hidden="true">6.5.</strong> 2024-04-24</a></li><li class="chapter-item expanded "><a href="../daily/2023-04-25.html"><strong aria-hidden="true">6.6.</strong> 2024-04-25</a></li><li class="chapter-item expanded "><a href="../daily/2023-04-26.html"><strong aria-hidden="true">6.7.</strong> 2024-04-26</a></li><li class="chapter-item expanded "><a href="../daily/2023-04-27.html"><strong aria-hidden="true">6.8.</strong> 2024-04-27</a></li><li class="chapter-item expanded "><a href="../daily/2023-05-04.html"><strong aria-hidden="true">6.9.</strong> 2024-05-04</a></li><li class="chapter-item expanded "><a href="../daily/2023-05-05.html"><strong aria-hidden="true">6.10.</strong> 2024-05-05</a></li><li class="chapter-item expanded "><a href="../daily/2023-05-06.html"><strong aria-hidden="true">6.11.</strong> 2024-05-06</a></li><li class="chapter-item expanded "><a href="../daily/2023-05-08.html"><strong aria-hidden="true">6.12.</strong> 2024-05-08</a></li><li class="chapter-item expanded "><a href="../daily/2023-05-09.html"><strong aria-hidden="true">6.13.</strong> 2024-05-09</a></li></ol></li><li class="chapter-item expanded "><a href="../math/MATH_INDEX.html"><strong aria-hidden="true">7.</strong> Math</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">chatgpt自问自答 和 一些记录</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/ajn404/vue3_tauri_fun" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>开始用new bing了</p>
+<h3 id="socketio"><a class="header" href="#socketio">socket.io</a></h3>
+<p><a href="https://blog.csdn.net/qq_31967569/article/details/105386113">Socket.io是一个WebSocket库，包括了客户端的js和服务器端的nodejs，它的目标是构建可以在不同浏览器和移动设备上使用的实时应用。它会自动根据浏览器从WebSocket、AJAX长轮询、Iframe流等等各种方式中选择最佳的方式来实现网络实时应用，非常方便和人性化，而且支持的浏览器最低达IE5.5。</a><a href="https://blog.csdn.net/qq_31967569/article/details/105386113">1</a></p>
+<p><a href="https://blog.csdn.net/qq_31967569/article/details/105386113">Socket.io可以实现实时分析、实时通信和聊天、二进制流传输等功能。</a><a href="https://blog.csdn.net/qq_31967569/article/details/105386113">1</a></p>
+<h3 id="code-whisperer"><a class="header" href="#code-whisperer">code whisperer</a></h3>
+<p><a href="https://blog.csdn.net/chinesehuazhou2/article/details/126903714">CodeWhisperer是亚马逊出品的一款基于机器学习的通用代码生成器，可实时提供代码建议。在编写代码时，它会自动根据您现有的代码和注释生成建议。</a><a href="https://blog.csdn.net/chinesehuazhou2/article/details/126903714">1</a></p>
+<h3 id="js-map"><a class="header" href="#js-map">js Map</a></h3>
+<p>JavaScript中的Map是一种新的数据结构，它是一组键值对的有序列表，其中每个键唯一且对应一个值。Map对象在JavaScript中被广泛使用，它提供了一种更好的方式来存储和访问数据。Map对象可以使用set()方法添加键值对，使用get()方法获取键对应的值，使用delete()方法删除键值对，使用has()方法检查Map对象中是否存在某个键，使用forEach()方法遍历Map对象中的所有键值对。</p>
+<h3 id="ts除了类型提示还有什么用"><a class="header" href="#ts除了类型提示还有什么用">ts除了类型提示还有什么用</a></h3>
+<p>TypeScript除了类型提示，还有以下用途：</p>
+<ol>
+<li>TypeScript可以在编译时检查代码错误，从而减少运行时错误。</li>
+<li>TypeScript可以使代码更易于维护和重构。</li>
+<li>TypeScript可以使代码更易于阅读和理解。</li>
+<li>TypeScript可以使代码更易于调试。</li>
+<li>TypeScript可以使代码更易于测试。</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../daily/2023-04-19.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../daily/2023-04-24.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../daily/2023-04-19.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../daily/2023-04-24.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

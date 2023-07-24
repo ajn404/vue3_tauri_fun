@@ -1,0 +1,1 @@
+const f=(r,o=.01)=>r.rotateZ(r.frameCount*o).rotateX(r.frameCount*o).rotateY(r.frameCount*o),u=r=>r.color(r.random(0,255),r.random(0,255),r.random(0,255)),d=(r,o,m,e)=>{const t=new Array(r);for(let a=0;a<r-1;a+=1){t[a]=new Array(o);for(let n=0;n<o-1;n+=1)t[a][n]={x:a*m,y:n*e}}return t};export{d as m,u as r,f as t};

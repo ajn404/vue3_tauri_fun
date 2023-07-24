@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>2024-05-04 - chatgpt自问自答 和 一些记录</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../draft/doc.html"><strong aria-hidden="true">1.</strong> doc</a></li><li class="chapter-item expanded "><a href="../draft/record.html"><strong aria-hidden="true">2.</strong> record</a></li><li class="chapter-item expanded "><a href="../draft/interview.html"><strong aria-hidden="true">3.</strong> interview</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../interview_everyday/day01.html"><strong aria-hidden="true">3.1.</strong> 第一天</a></li><li class="chapter-item expanded "><a href="../interview_everyday/day02.html"><strong aria-hidden="true">3.2.</strong> 第二天</a></li><li class="chapter-item expanded "><a href="../interview_everyday/day03.html"><strong aria-hidden="true">3.3.</strong> 第三天</a></li><li class="chapter-item expanded "><a href="../interview_everyday/day04.html"><strong aria-hidden="true">3.4.</strong> 第四天</a></li><li class="chapter-item expanded "><a href="../interview_everyday/day05.html"><strong aria-hidden="true">3.5.</strong> 第五天</a></li><li class="chapter-item expanded "><a href="../interview_everyday/day06.html"><strong aria-hidden="true">3.6.</strong> 第六天</a></li><li class="chapter-item expanded "><a href="../interview_everyday/day07.html"><strong aria-hidden="true">3.7.</strong> 第七天</a></li><li class="chapter-item expanded "><a href="../interview_everyday/day08.html"><strong aria-hidden="true">3.8.</strong> 第八天</a></li></ol></li><li class="chapter-item expanded "><a href="../draft/shell.html"><strong aria-hidden="true">4.</strong> shell</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../shell_record/man.html"><strong aria-hidden="true">4.1.</strong> man</a></li></ol></li><li class="chapter-item expanded "><a href="../miao/index.html"><strong aria-hidden="true">5.</strong> 喵</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../miao/miao_nest.html"><strong aria-hidden="true">5.1.</strong> nest喵</a></li><li class="chapter-item expanded "><a href="../miao/miao_ts.html"><strong aria-hidden="true">5.2.</strong> ts喵</a></li><li class="chapter-item expanded "><a href="../miao/miao_vue.html"><strong aria-hidden="true">5.3.</strong> vue喵</a></li><li class="chapter-item expanded "><a href="../miao/miao_mixin.html"><strong aria-hidden="true">5.4.</strong> 混合喵</a></li></ol></li><li class="chapter-item expanded "><a href="../daily/2023-04-17.html"><strong aria-hidden="true">6.</strong> 每日</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../daily/2023-04-17.html"><strong aria-hidden="true">6.1.</strong> 2024-04-17</a></li><li class="chapter-item expanded "><a href="../daily/2023-04-18.html"><strong aria-hidden="true">6.2.</strong> 2024-04-18</a></li><li class="chapter-item expanded "><a href="../daily/2023-04-19.html"><strong aria-hidden="true">6.3.</strong> 2024-04-19</a></li><li class="chapter-item expanded "><a href="../daily/2023-04-20.html"><strong aria-hidden="true">6.4.</strong> 2024-04-20</a></li><li class="chapter-item expanded "><a href="../daily/2023-04-24.html"><strong aria-hidden="true">6.5.</strong> 2024-04-24</a></li><li class="chapter-item expanded "><a href="../daily/2023-04-25.html"><strong aria-hidden="true">6.6.</strong> 2024-04-25</a></li><li class="chapter-item expanded "><a href="../daily/2023-04-26.html"><strong aria-hidden="true">6.7.</strong> 2024-04-26</a></li><li class="chapter-item expanded "><a href="../daily/2023-04-27.html"><strong aria-hidden="true">6.8.</strong> 2024-04-27</a></li><li class="chapter-item expanded "><a href="../daily/2023-05-04.html" class="active"><strong aria-hidden="true">6.9.</strong> 2024-05-04</a></li><li class="chapter-item expanded "><a href="../daily/2023-05-05.html"><strong aria-hidden="true">6.10.</strong> 2024-05-05</a></li><li class="chapter-item expanded "><a href="../daily/2023-05-06.html"><strong aria-hidden="true">6.11.</strong> 2024-05-06</a></li><li class="chapter-item expanded "><a href="../daily/2023-05-08.html"><strong aria-hidden="true">6.12.</strong> 2024-05-08</a></li><li class="chapter-item expanded "><a href="../daily/2023-05-09.html"><strong aria-hidden="true">6.13.</strong> 2024-05-09</a></li></ol></li><li class="chapter-item expanded "><a href="../math/MATH_INDEX.html"><strong aria-hidden="true">7.</strong> Math</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">chatgpt自问自答 和 一些记录</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/ajn404/vue3_tauri_fun" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="react与vue-2的diff算法区别"><a class="header" href="#react与vue-2的diff算法区别">React与Vue 2的Diff算法区别</a></h2>
+<p>React和Vue 2使用不同的算法来执行Diff过程，即比较组件的先前和当前状态的虚拟DOM树，并确定更新真实DOM所需的最小更改次数。</p>
+<h3 id="react-diff算法"><a class="header" href="#react-diff算法">React Diff算法</a></h3>
+<p>React使用一种称为“树协调”（tree reconciliation）的Diff算法来执行Diff过程。该算法通过比较先前和当前的虚拟DOM树，并使用最小的更改次数将其与当前状态同步，从而更新真实DOM。</p>
+<p>树协调算法通过对虚拟DOM树进行深度优先遍历，并将每个节点与其在先前树中的对应节点进行比较来工作。如果节点已更改，则React使用新节点及其子节点更新真实DOM。如果节点已删除，则React将其从真实DOM中删除。如果节点已添加，则React将其添加到真实DOM中。</p>
+<h3 id="vue-2-diff算法"><a class="header" href="#vue-2-diff算法">Vue 2 Diff算法</a></h3>
+<p>Vue 2使用一种称为“动态规划”（dynamic programming）的Diff算法来执行Diff过程。该算法通过将虚拟DOM树分解为较小的子树，并将每个子树与其在先前树中的对应子树进行比较来工作。</p>
+<p>动态规划算法首先比较先前和当前树的根节点。如果根节点不同，则Vue 2使用新的根节点及其子节点更新真实DOM。如果根节点相同，则Vue 2将树分解为较小的子树，并将每个子树与其在先前树中的对应子树进行比较。</p>
+<p>Vue 2还使用“key”属性来优化Diff过程。key属性是虚拟DOM树中每个节点的唯一标识符。当Vue 2执行Diff过程时，它使用key属性来确定哪些节点已添加、删除或移动。这使得Vue 2能够使用最小的更改次数将真实DOM与当前状态同步。</p>
+<p>总之，React和Vue 2使用不同的算法来执行Diff过程。React使用树协调算法，而Vue 2使用动态规划算法。Vue 2还使用“key”属性来优化Diff过程。</p>
+<h3 id="vue-3引入了一种新的diff算法"><a class="header" href="#vue-3引入了一种新的diff算法">Vue 3引入了一种新的Diff算法，</a></h3>
+<p>称为“Fast Diff”，它是Vue 2中使用的动态规划算法的改进。Fast Diff通过比较先前和当前的虚拟DOM树并标记已更改的节点来工作。然后，它执行“patch”操作，以使用最小的更改次数将真实DOM与当前状态同步。</p>
+<p>Fast Diff和Vue 2中使用的动态规划算法之间的一个关键区别是，Fast Diff不会将虚拟DOM树分解为较小的子树。相反，它一次比较整个树，这使得它更快，更高效。</p>
+<p>Vue 3继续使用“key”属性来优化Diff过程。但是，它引入了一个名为“teleport”的新功能，允许组件在DOM树的不同位置呈现其子项。这个功能需要更高级的Diff算法，这就是为什么引入了Fast Diff的原因。</p>
+<p>综上所述，Vue 3使用一种称为“Fast Diff”的新Diff算法，它比Vue 2中使用的动态规划算法更快，更高效。它还继续使用“key”属性，并引入了一个名为“teleport”的新功能，该功能需要更高级的Diff算法。</p>
+<h2 id="关于react-fiberfiber的引入究竟对react有什么架构层面的影响double-fiber-tree是否有必要存在"><a class="header" href="#关于react-fiberfiber的引入究竟对react有什么架构层面的影响double-fiber-tree是否有必要存在">关于react fiber。fiber的引入究竟对react有什么架构层面的影响，double fiber tree是否有必要存在？</a></h2>
+<p>React Fiber是React 16中引入的一种新的协调引擎，它是React的一种新的内部架构。它的目的是提高React的性能和可维护性，并为React的未来发展打下基础。Fiber的引入对React有以下几个架构层面的影响：</p>
+<p>1. 异步渲染：Fiber允许React在渲染过程中中断和恢复渲染，从而使React能够更好地处理大型和复杂的UI。这是通过将渲染过程分解为小的可中断的单元来实现的。</p>
+<p>2. 渲染优先级：Fiber引入了渲染优先级的概念，这使得React能够更好地控制渲染的顺序和优先级。这对于实现流畅的用户体验非常重要。</p>
+<p>3. 更好的错误处理：Fiber提供了更好的错误处理机制，使得React能够更好地处理错误和异常情况。</p>
+<p>双Fiber树是Fiber架构的一部分，它是一种用于实现异步渲染的技术。它包含两个Fiber树：当前树和工作树。当前树是当前正在渲染的树，而工作树是下一次渲染的树。当React需要中断渲染时，它会切换到工作树，然后在工作树上执行渲染。一旦渲染完成，React会将工作树与当前树交换，从而实现异步渲染。</p>
+<p>双Fiber树的存在是必要的，因为它允许React在渲染过程中中断和恢复渲染。这是实现异步渲染的关键。因此，双Fiber树是Fiber架构的一个重要组成部分。</p>
+<p>希望这些信息能够回答您的问题。如果您需要更多信息，请告诉我。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../daily/2023-04-27.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../daily/2023-05-05.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../daily/2023-04-27.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../daily/2023-05-05.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

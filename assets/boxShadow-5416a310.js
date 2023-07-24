@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as o,a as c}from"./index-27e8f055.js";import"./p5-1003a71f.js";const s={},a={class:"view"},n=c("div",{class:"box shadow h-1/4 w-1/4 leading-none text-center relative top-1/2 left-1/2 place-content-center grid p-10"}," hi there , i am ajn404 ",-1),r=[n];function i(_,d){return t(),o("div",a,r)}const p=e(s,[["render",i]]);export{p as default};
